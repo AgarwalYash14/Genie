@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Wanted Sans Medium";
+    src: url("fonts/WantedSans-Medium-BF65baf1388963b.otf");
+}
+
+@font-face {
+    font-family: "Wanted Sans Regular";
+    src: url("fonts/WantedSans-Regular-BF65baf13579965.otf");
+}
+
+@font-face {
+    font-family: "TBJNorguba";
+    src: url("fonts/TBJNorguba-Regular.woff");
+}
+
+@font-face {
+    font-family: "NeuwMachina";
+    src: url("fonts/NeueMachina-Regular.otf");
+}
+
+@font-face {
+    font-family: "NeuwMachinaBold";
+    src: url("fonts/NeueMachina-Ultrabold.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Wanted Sans Regular", sans-serif;
+    /* font-weight: 500; */
+    background-color: #ffffee;
+}
+
+.logo {
+    font-family: "TBJNorguba";
+}
+
+@layer utilities {
+    font-[NeuwMachina] {
+        font-family: "NeuwMachina", sans-serif;
+    }
+    font-[NeuwMachinaBold] {
+        font-family: "NeuwMachinaBold", sans-serif;
+    }
+}
