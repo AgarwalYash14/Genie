@@ -94,16 +94,16 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="flex items-center justify-between py-5 select-none">
+            <nav className="flex items-center justify-between py-5 select-none z-40">
                 <div className="flex items-center gap-4">
                     <h1 className="text-4xl logo hover:text-green-600">
                         GENIE
                     </h1>
                 </div>
-                <div>
+                <div className="hidden md:flex">
                     <Autocomplete />
                 </div>
-                <div className="flex items-center gap-8">
+                <div className="hidden items-center gap-8 md:flex">
                     <div className="flex gap-2">
                         <img
                             id="cart"
@@ -118,7 +118,7 @@ export default function Navbar() {
                         <img src={bookings} alt="" className="h-6" />
                         <span className="h-6">Bookings</span>
                     </div>
-                    <div className="w-[0.125rem] h-6 bg-zinc-300 rounded-full"></div>
+                    <div className="w-[0.125rem] h-6 bg-black rounded-full"></div>
                     {isLoggedIn ? (
                         <>
                             <div>
@@ -159,7 +159,7 @@ export default function Navbar() {
                     )}
                 </div>
             </nav>
-            <hr className="m-auto border" />
+            <hr className="border border-black" />
             <PortalLayout isOpen={showLogin} onClose={closeLogin}>
                 <Login
                     onLoginSuccess={handleLoginSuccess}

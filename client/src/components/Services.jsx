@@ -1,9 +1,9 @@
 import { arrow } from "../assets";
 
-const Services = ({ id, serviceImage, serviceName }) => {
+const Services = ({ serviceImage, serviceName }) => {
     return (
         <>
-            <div className="relative">
+            <div className="relative -z-10">
                 <div className="absolute top-1/2 -translate-y-1/2 -z-10">
                     <img src={arrow} alt="" />
                 </div>
