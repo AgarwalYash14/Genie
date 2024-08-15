@@ -62,7 +62,7 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-zinc-950 text-[#FFFFEE] flex items-center justify-center rounded-3xl p-6 gap-32 max-lg:flex-col max-2xl:gap-20 max-xl:gap-12 max-lg:gap-0">
+                <div className="bg-zinc-950 text-[#FFFFEE] flex items-center justify-center rounded-3xl p-6 gap-12 max-lg:flex-col max-lg:gap-0">
                     <div className="flex justify-center gap-32 px-32 py-6 border border-t-0 border-b-0 max-sm:flex-col max-sm:gap-8 max-lg:border-0 max-lg:border-b max-2xl:gap-20 max-2xl:px-20 max-xl:gap-14 max-xl:px-10 max-lg:px-8">
                         <div className="text-center">
                             <h1

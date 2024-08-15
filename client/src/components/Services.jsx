@@ -3,11 +3,11 @@ import { arrow } from "../assets";
 const Services = ({ serviceImage, serviceName }) => {
     return (
         <>
-            <div className="relative -z-10">
+            <div className="relative">
                 <div className="absolute top-1/2 -translate-y-1/2 -z-10">
-                    <img src={arrow} alt="" />
+                    <img src={arrow} alt="arrow" />
                 </div>
-                <div className="outline-1 outline-dotted rounded-xl overflow-hidden hover:outline-2 hover:outline-orange-500 hover:translate-x-12 hover:bg-amber-50 hover:shadow-xl transition-all">
+                <div className="w-full outline-1 outline-dotted rounded-xl overflow-hidden hover:outline-2 hover:outline-black hover:translate-x-12 hover:bg-white hover:shadow-xl transition-all bg-[#FFFFEE]">
                     <button className="flex items-center">
                         <img
                             src={serviceImage}

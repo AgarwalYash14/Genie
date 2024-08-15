@@ -6,12 +6,12 @@ import cart from "./navbar/Cart.svg";
 
 import bg from "./hero/bg.svg";
 
-import WomenSalon from "./services/WomenSalon.jpg";
-import MenSalon from "./services/MenSalon.jpg";
+import WomenSalon from "./services/WomenSalon.svg";
+import MenSalon from "./services/MenSalon.svg";
 import AcRepair from "./services/ACRepair.jpg";
-import CleaningControl from "./services/CleaningControl.jpg";
-import Electrician from "./services/Electrician.jpg";
-import Painting from "./services/Painting.jpg";
+import CleaningControl from "./services/CleaningControl.svg";
+import Electrician from "./services/Electrician.svg";
+import Painting from "./services/Painting.svg";
 
 import arrow from "./services/arrow.svg";
 
