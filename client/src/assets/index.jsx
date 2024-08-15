@@ -8,7 +8,7 @@ import bg from "./hero/bg.svg";
 
 import WomenSalon from "./services/WomenSalon.svg";
 import MenSalon from "./services/MenSalon.svg";
-import AcRepair from "./services/ACRepair.jpg";
+import AcRepair from "./services/ACRepair.svg";
 import CleaningControl from "./services/CleaningControl.svg";
 import Electrician from "./services/Electrician.svg";
 import Painting from "./services/Painting.svg";

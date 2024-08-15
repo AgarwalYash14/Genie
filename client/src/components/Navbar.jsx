@@ -118,7 +118,7 @@ export default function Navbar() {
                         <img src={bookings} alt="" className="h-6" />
                         <span className="h-6">Bookings</span>
                     </div>
-                    <div className="w-[0.125rem] h-6 bg-black rounded-full"></div>
+                    <div className="w-[0.09rem] h-6 bg-black rounded-full"></div>
                     {isLoggedIn ? (
                         <>
                             <div>
@@ -159,7 +159,7 @@ export default function Navbar() {
                     )}
                 </div>
             </nav>
-            <hr className="border border-black" />
+            <hr className="-border-1 border-black" />
             <PortalLayout isOpen={showLogin} onClose={closeLogin}>
                 <Login
                     onLoginSuccess={handleLoginSuccess}
