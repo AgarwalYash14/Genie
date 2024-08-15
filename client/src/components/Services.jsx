@@ -1,110 +1,25 @@
-import {
-    AcRepair,
-    CleaningControl,
-    Electrician,
-    MenSalon,
-    Painting,
-    WomenSalon,
-} from "../assets";
+import { arrow } from "../assets";
 
-export default function Services() {
+const Services = ({ id, serviceImage, serviceName }) => {
     return (
         <>
-            <div className="w-96 flex flex-col gap-2 p-3 text-center text-sm border border-dotted border-black content-center rounded-3xl overflow-hidden">
-                <div className="border border-dotted border-black rounded-t-2xl overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
+            <div className="relative">
+                <div className="absolute top-1/2 -translate-y-1/2 -z-10">
+                    <img src={arrow} alt="" />
+                </div>
+                <div className="outline-1 outline-dotted rounded-xl overflow-hidden hover:outline-2 hover:outline-orange-500 hover:translate-x-12 hover:bg-amber-50 hover:shadow-xl transition-all">
+                    <button className="flex items-center">
                         <img
-                            src={WomenSalon}
-                            alt=""
-                            className="w-32 h-20 object-cover  border-r border-dotted border-black rounded-tl-2xl overflow-hidden hover:border-b-2 hover:border-dashed hover:border-orange-500"
+                            src={serviceImage}
+                            alt={serviceName}
+                            className="w-32 h-20 object-cover"
                         />
-                        <h1 className="p-1">Women&apos;s Salon & Spa</h1>
+                        <h1 className="p-4">{serviceName}</h1>
                     </button>
                 </div>
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src={MenSalon}
-                            alt=""
-                            className="w-32 h-20 object-cover border-r border-dotted border-black"
-                        />
-                        <h1 className="p-1">Men&apos;s Salon & Spa</h1>
-                    </button>
-                </div>
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src={AcRepair}
-                            alt=""
-                            className="w-32 h-20 object-cover border-r border-dotted border-black overflow-hidden"
-                        />
-                        <h1 className="p-1">AC & Appliances Repair</h1>
-                    </button>
-                </div>
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src={CleaningControl}
-                            alt=""
-                            className="w-32 h-20 object-cover border-r border-dotted border-black"
-                        />
-                        <h1 className="p-1">Cleaning & Pest Control</h1>
-                    </button>
-                </div>
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src={Electrician}
-                            alt=""
-                            className="w-32 h-20 object-cover border-r border-dotted border-black"
-                        />
-                        <h1 className="p-1">
-                            Electrician, Plumber &<br />
-                            Carpenter
-                        </h1>
-                    </button>
-                </div>
-                {/* <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src=""
-                            alt=""
-                            className="h-20 object-cover border-b border-dotted border-black"
-                        />
-                        <h1 className="p-1"></h1>
-                    </button>
-                </div> */}
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src={Painting}
-                            alt=""
-                            className="w-32 h-20 object-cover border-r border-dotted border-black"
-                        />
-                        <h1 className="p-1">Painting & Waterproofing</h1>
-                    </button>
-                </div>
-                {/* <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src=""
-                            alt=""
-                            className="h-20 object-cover border-b border-dotted border-black"
-                        />
-                        <h1 className="p-1"></h1>
-                    </button>
-                </div>
-                <div className="border border-dotted border-black overflow-hidden hover:border-2 hover:border-dashed hover:border-orange-500">
-                    <button className="w-full flex items-center gap-4">
-                        <img
-                            src=""
-                            alt=""
-                            className="h-20 object-cover border-b border-dotted border-black"
-                        />
-                        <h1 className="p-1"></h1>
-                    </button>
-                </div> */}
             </div>
         </>
     );
-}
+};
+
+export default Services;

@@ -13,6 +13,8 @@ import CleaningControl from "./services/CleaningControl.jpg";
 import Electrician from "./services/Electrician.jpg";
 import Painting from "./services/Painting.jpg";
 
+import arrow from "./services/arrow.svg";
+
 export { logo, user, bookings, cart };
 
 export { bg };
@@ -24,4 +26,5 @@ export {
     CleaningControl,
     Electrician,
     Painting,
+    arrow,
 };
