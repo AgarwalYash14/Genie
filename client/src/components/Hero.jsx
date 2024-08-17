@@ -1,13 +1,10 @@
 import { bg } from "../assets";
 import { TbArrowUpRight } from "react-icons/tb";
-import Services from "./Services";
-import ServiceDetails from "./ServiceDetails";
-import { servicesData } from "../data/servicesData";
 
 export default function Hero() {
     return (
         <>
-            <div className="flex flex-col gap-6 py-6">
+            <div className="flex flex-col gap-8 py-4">
                 <h1
                     className="text-center text-7xl font-[NeuwMachina]"
                     style={{
@@ -112,18 +109,6 @@ export default function Hero() {
                             <br />a clean up?
                         </h1>
                     </div>
-                </div>
-                <div className="flex gap-14">
-                    <div className="w-[36rem] flex flex-col gap-4 p-4 text-center text-sm border border-dotted border-black content-center rounded-2xl">
-                        {servicesData.map((service, index) => (
-                            <Services
-                                key={index}
-                                serviceImage={service.serviceImage}
-                                serviceName={service.serviceName}
-                            />
-                        ))}
-                    </div>
-                    <ServiceDetails />
                 </div>
             </div>
         </>

@@ -48,3 +48,14 @@ export const logout = async () => {
         console.error("Logout failed", error);
     }
 };
+
+export const getServices = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/services`, {
+            withCredentials: true,
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
