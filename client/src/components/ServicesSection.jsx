@@ -22,9 +22,9 @@ export default function ServicesSection() {
         <>
             <div className="flex gap-14 pb-4">
                 <div className="w-[36rem] flex flex-col gap-4 p-4 text-center text-sm border border-dotted border-black content-center rounded-2xl">
-                    {servicesData.map((service, index) => (
+                    {servicesData.map((service) => (
                         <Services
-                            key={index}
+                            key={service._id}
                             serviceImage={service.serviceImage}
                             serviceName={service.serviceName}
                         />
