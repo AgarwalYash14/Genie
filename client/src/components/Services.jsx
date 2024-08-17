@@ -10,7 +10,9 @@ const Services = ({ serviceImage, serviceName }) => {
                 <div className="w-full outline-1 outline-dotted rounded-xl overflow-hidden hover:outline-2 hover:outline-black hover:translate-x-12 hover:bg-amber-50 hover:shadow-xl transition-all bg-[#FFFFEE]">
                     <button className="flex items-center">
                         <img
-                            src={`http://localhost:3000/${serviceImage}`}
+                            src={`${
+                                import.meta.env.VITE_BACKEND_URL
+                            }/${serviceImage}`}
                             alt={serviceName}
                             className="w-32 h-20 object-cover"
                         />
