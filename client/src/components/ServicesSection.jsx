@@ -27,7 +27,7 @@ export default function ServicesSection() {
     return (
         <>
             <div className="flex gap-14 pb-4">
-                <SkeletonTheme baseColor="#fef08a" highlightColor="#F5F5DC">
+                <SkeletonTheme baseColor="#bfdbfe" highlightColor="#F5F5DC">
                     <div className="w-[36rem] flex flex-col gap-4 p-4 text-center text-sm border border-dotted border-black content-center rounded-2xl">
                         {isLoading
                             ? Array(5)
