@@ -59,3 +59,17 @@ export const getServices = async () => {
         throw error.response ? error.response.data : error;
     }
 };
+
+export const getServiceDetails = async (serviceName) => {
+    try {
+        const response = await axios.get(
+            `${API_URL}/services/${encodeURIComponent(serviceName)}/details`,
+            {
+                withCredentials: true,
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};

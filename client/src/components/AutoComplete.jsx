@@ -27,7 +27,7 @@ const PlacesAutocomplete = () => {
             googleMapsApiKey={import.meta.env.VITE_PLACES_NEW_API_KEY}
             libraries={["places"]}
         >
-            <div className="flex items-center border border-gray-500 rounded focus-within::outline-none focus-within:ring-1 focus-within:ring-blue-400 focus-within:border-0 transition-all overflow-hidden">
+            <div className="flex items-center ring-1 ring-black rounded outline-none focus-within:ring-1 focus-within:ring-blue-400 focus-within:border-0 transition-all overflow-hidden">
                 <div className="px-3 py-1">
                     <MdLocationPin size="17px" />
                 </div>
@@ -39,7 +39,7 @@ const PlacesAutocomplete = () => {
                     <input
                         type="text"
                         placeholder="Enter a location"
-                        className="text-sm text-ellipsis outline-none px-3 py-2 bg-transparent border border-l-gray-500 focus-within:ring-1 focus-within:ring-blue-400 focus-within:border-0 transition-all"
+                        className="text-sm text-ellipsis outline-none ring-1 ring-black px-3 py-2 bg-transparent focus-within:ring-1 focus-within:ring-blue-400 focus-within:border-0 transition-all"
                     />
                 </Autocomplete>
             </div>

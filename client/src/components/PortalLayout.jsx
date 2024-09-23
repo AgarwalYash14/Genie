@@ -1,11 +1,9 @@
 import { useEffect, useRef } from "react";
 import { IoClose } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 export default function PortalLayout({ isOpen, onClose, children }) {
     const portalRef = useRef(null);
     const contentRef = useRef(null);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -14,19 +12,17 @@ export default function PortalLayout({ isOpen, onClose, children }) {
                 !contentRef.current.contains(event.target)
             ) {
                 onClose();
-                navigate("/");
             }
         };
 
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
                 onClose();
-                navigate("/");
             }
         };
 
         if (isOpen) {
-            document.body.style.overflow = "hidden";
+            // document.body.style.overflow = "hidden";
             document.addEventListener("mousedown", handleClickOutside);
             document.addEventListener("keydown", handleKeyDown);
         }

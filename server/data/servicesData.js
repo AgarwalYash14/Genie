@@ -8,7 +8,7 @@ const servicesData = [
         serviceName: "Men's Salon & Spa",
     },
     {
-        serviceImage: "assets/services/AcRepair.svg",
+        serviceImage: "assets/services/ACRepair.svg",
         serviceName: "AC & Appliances Repair",
     },
     {

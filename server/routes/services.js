@@ -29,4 +29,13 @@ router.get("/:serviceName/details", async (req, res) => {
     }
 });
 
+router.get("/all/details", async (req, res) => {
+    try {
+        const serviceDetails = await ServiceDetail.find();
+        res.json(serviceDetails);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching all service details" });
+    }
+});
+
 export default router;

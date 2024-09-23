@@ -4,7 +4,7 @@ import { TbArrowUpRight } from "react-icons/tb";
 export default function Hero() {
     return (
         <>
-            <div className="flex flex-col gap-8 py-4">
+            <div className="flex flex-col gap-8 py-6">
                 <h1
                     className="text-center text-7xl font-[NeuwMachina]"
                     style={{
@@ -24,8 +24,8 @@ export default function Hero() {
                             />
                             <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
                             <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
-                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-32 before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
-                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-32 before:h-6 before:w-1 before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
+                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
+                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-6 before:w-1 before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
                         </div>
                         <div className="relative">
                             <h1 className="before:content-[''] before:absolute before:-top-[10.2rem] before:-left-0 before:h-20 before:w-20 before:bg-transparent before:rounded-bl-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
@@ -39,7 +39,7 @@ export default function Hero() {
                             </h1>
                         </div>
 
-                        <div className="absolute top-1/3 right-10 space-y-8 -translate-y-1/3 text-zinc-500 text-base text-[1.1vw]">
+                        <div className="absolute top-[26%] right-10 space-y-8 -translate-y-1/3 text-zinc-500 text-base text-[1.1vw]">
                             <h1>Easy to book</h1>
                             <h1>Verified housekeepers</h1>
                             <h1>Secure payments</h1>

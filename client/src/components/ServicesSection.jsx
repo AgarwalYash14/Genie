@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { getServices } from "../utils/api";
 import Services from "./Services";
-import ServiceDetails from "./ServiceDetails";
 import SkeletonService from "./SkeletonService";
 import { SkeletonTheme } from "react-loading-skeleton";
+import PortalLayout from "./PortalLayout";
 
 export default function ServicesSection() {
     const [servicesData, setServicesData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedService, setSelectedService] = useState(null);
+
+    const handleServiceClick = (serviceName) => {
+        setSelectedService(serviceName);
+    };
 
     useEffect(() => {
         const fetchServices = async () => {
@@ -26,9 +31,12 @@ export default function ServicesSection() {
     }, []);
     return (
         <>
-            <div className="flex gap-14 pb-4">
+            <div className="py-2">
+                <h1 className="text-4xl py-4 font-[NeuwMachinaBold]">
+                    OUR SERVICES
+                </h1>
                 <SkeletonTheme baseColor="#bfdbfe" highlightColor="#F5F5DC">
-                    <div className="w-[36rem] flex flex-col gap-4 p-4 text-center text-sm border border-dotted border-black content-center rounded-2xl">
+                    <div className="w-full grid grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
                         {isLoading
                             ? Array(5)
                                   .fill()
@@ -40,13 +48,17 @@ export default function ServicesSection() {
                                       key={service._id}
                                       serviceImage={service.serviceImage}
                                       serviceName={service.serviceName}
+                                      onServiceClick={handleServiceClick} // Make sure this is defined and passed
                                   />
                               ))}
                     </div>
                 </SkeletonTheme>
-
-                <ServiceDetails />
             </div>
+            <PortalLayout
+                isOpen={!!selectedService}
+                onClose={() => setSelectedService(null)}
+                serviceName={selectedService}
+            />
         </>
     );
 }

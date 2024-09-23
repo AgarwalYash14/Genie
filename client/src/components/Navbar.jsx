@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { bookings, cart } from "../assets";
+import { bookings, cart, logo } from "../assets";
 import { HiUser } from "react-icons/hi2";
 
 import Autocomplete from "./AutoComplete";
@@ -95,10 +95,14 @@ export default function Navbar() {
     return (
         <>
             <nav className="flex items-center justify-between py-5 select-none z-40">
-                <div className="flex items-center gap-4">
-                    <h1 className="text-4xl logo hover:text-green-600">
+                <div className="flex items-center gap-1">
+                    <img src={logo} alt="" />
+                    <Link
+                        to="/"
+                        className="text-4xl logo hover:text-green-600 transition-colors duration-300"
+                    >
                         GENIE
-                    </h1>
+                    </Link>
                 </div>
                 <div className="hidden md:flex">
                     <Autocomplete />
@@ -135,17 +139,15 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            <div onClick={openLogin} className="flex gap-2">
-                                <label
-                                    htmlFor="bookings"
-                                    className="h-6 hover:text-orange-500"
-                                >
-                                    Login
-                                </label>
+                            <div
+                                onClick={openLogin}
+                                className="flex gap-2 hover:text-orange-500"
+                            >
+                                <span className="h-6 ">Login</span>
                             </div>
                             <div
                                 onClick={openRegister}
-                                className="group relative px-4 py-1 rounded flex items-center justify-center gap-1  border-2 border-black overflow-hidden hover:rounded-full hover:text-white"
+                                className="group relative px-4 py-1 rounded flex items-center justify-center gap-1 border-2 border-black overflow-hidden hover:rounded-full hover:text-white duration-200 transition-all"
                             >
                                 <div className="w-full h-full relative flex items-center justify-center gap-2 z-50">
                                     <HiUser htmlFor="user" size="18px" />
