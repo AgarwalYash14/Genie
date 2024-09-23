@@ -22,7 +22,7 @@ export default function PortalLayout({ isOpen, onClose, children }) {
         };
 
         if (isOpen) {
-            // document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
             document.addEventListener("mousedown", handleClickOutside);
             document.addEventListener("keydown", handleKeyDown);
         }
