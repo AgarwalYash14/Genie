@@ -65,7 +65,6 @@ router.post("/register", async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
-                    httpOnly: true,
                     secure: process.env.NODE_ENV === "production",
                     maxAge: 3600000,
                 }).json({
@@ -126,7 +125,6 @@ router.post("/login", async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
-                    httpOnly: true,
                     secure: process.env.NODE_ENV === "production",
                     maxAge: 3600000,
                 }).json({
