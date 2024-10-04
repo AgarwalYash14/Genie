@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { login } from "../utils/api";
+import { Link } from "react-router-dom";
 
 export default function Login({ onLoginSuccess, onClose }) {
     const [userData, setUserData] = useState({
@@ -41,7 +42,7 @@ export default function Login({ onLoginSuccess, onClose }) {
         <>
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-8 p-10 pt-8"
+                className="w-96 flex flex-col gap-8 p-10 pt-0"
             >
                 <h1 className="text-lg text-center">Login to your Account</h1>
                 <div className="flex flex-col gap-3">
@@ -98,7 +99,7 @@ export default function Login({ onLoginSuccess, onClose }) {
                 <h1 className="text-sm text-center -mt-4">
                     Don&apos;t have an account?{" "}
                     <a className="font-bold underline underline-offset-2">
-                        Register Now
+                        <Link to="/register">Register Now</Link>
                     </a>
                 </h1>
             </form>

@@ -4,6 +4,7 @@ import Services from "./Services";
 import SkeletonService from "./SkeletonService";
 import { SkeletonTheme } from "react-loading-skeleton";
 import PortalLayout from "./PortalLayout";
+import ServiceDetails from "./ServiceDetails";
 
 export default function ServicesSection() {
     const [servicesData, setServicesData] = useState([]);
@@ -38,7 +39,7 @@ export default function ServicesSection() {
                 <SkeletonTheme baseColor="#bfdbfe" highlightColor="#F5F5DC">
                     <div className="w-full grid grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
                         {isLoading
-                            ? Array(5)
+                            ? Array(6)
                                   .fill()
                                   .map((_, index) => (
                                       <SkeletonService key={index} />
@@ -48,7 +49,7 @@ export default function ServicesSection() {
                                       key={service._id}
                                       serviceImage={service.serviceImage}
                                       serviceName={service.serviceName}
-                                      onServiceClick={handleServiceClick} // Make sure this is defined and passed
+                                      onServiceClick={handleServiceClick}
                                   />
                               ))}
                     </div>
@@ -57,8 +58,11 @@ export default function ServicesSection() {
             <PortalLayout
                 isOpen={!!selectedService}
                 onClose={() => setSelectedService(null)}
-                serviceName={selectedService}
-            />
+            >
+                {selectedService && (
+                    <ServiceDetails serviceName={selectedService} />
+                )}
+            </PortalLayout>
         </>
     );
 }

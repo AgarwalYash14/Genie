@@ -5,6 +5,7 @@ const serviceDetailSchema = new mongoose.Schema({
     subcategories: {
         type: Map,
         of: new mongoose.Schema({
+            image: String,
             serviceTypes: {
                 type: Map,
                 of: mongoose.Schema.Types.Mixed,

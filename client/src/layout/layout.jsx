@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 export default function Layout() {
     return (
         <>
-            <div className="fixed w-full px-10 bg-[#FFFFEE] max-sm:px-5">
+            <div className="fixed w-full px-10 bg-[#FFFFEE] max-sm:px-5 z-50">
                 <Navbar />
             </div>
             <div className="px-10 pt-20 max-sm:px-5">

@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="flex justify-between border-t border-black py-4 text-sm text-center">
                 <h1>&copy; Genie, 2024. All rights reserved.</h1>
                 <div className="flex">
-                    <h1>Made by&nbsp;</h1>
+                    <h1>Developed by&nbsp;</h1>
                     <a
                         href="https://agarwalyash.me/"
                         target="_blank"

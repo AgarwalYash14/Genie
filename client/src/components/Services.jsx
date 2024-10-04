@@ -5,8 +5,8 @@ const Services = ({ serviceImage, serviceName, onServiceClick }) => {
                 className="w-full "
                 onClick={() => onServiceClick(serviceName)}
             >
-                <div className="w-full overflow-hidden rounded-md border border-black hover:scale-105 hover:bg-amber-50 transition-all bg-[#FFFFEE]">
-                    <button >
+                <div className="w-full overflow-hidden rounded-md border border-black hover:shadow-lg hover:scale-105 duration-300 transition-transform">
+                    <button>
                         <img
                             src={`${
                                 import.meta.env.VITE_BACKEND_URL

@@ -2,6 +2,7 @@ export const servicesDetailsData = {
     "Women's Salon & Spa": {
         subcategories: {
             "Salon for Women": {
+                image: "assets/services/salonWomen.svg",
                 serviceTypes: {
                     "Salon Luxe": {
                         services: [
@@ -350,11 +351,16 @@ export const servicesDetailsData = {
                             },
                         ],
                     },
-                    "Salon Prime": {},
-                    "Salon Classic": {},
+                    "Salon Prime": {
+                        service: [],
+                    },
+                    "Salon Classic": {
+                        service: [],
+                    },
                 },
             },
             "Spa for Women": {
+                image: "assets/services/spaWomen.svg",
                 services: [
                     {
                         category: "Post Natal",
@@ -534,19 +540,33 @@ export const servicesDetailsData = {
                     },
                 ],
             },
-            "Hair Studio for Women": {},
-            "Nail Studio for Women": {},
-            "Makeup & Styling Studio": {},
+            "Hair Studio for Women": {
+                image: "assets/services/hairStudio.svg",
+            },
+            "Nail Studio for Women": {
+                image: "assets/services/nailStudio.svg",
+            },
+            "Makeup & Styling Studio": {
+                image: "assets/services/makeupStyle.svg",
+            },
         },
     },
 
-    "Men's Salon & Spa": {},
+    "Men's Salon & Spa": {
+        subcategories: {},
+    },
 
-    "AC & Appliances Repair": {},
+    "AC & Appliances Repair": {
+        subcategories: {},
+    },
 
-    "Cleaning & Pest Control": {},
+    "Cleaning & Pest Control": {
+        subcategories: {},
+    },
 
-    "Electrician, Plumber & Carpenter": {},
+    "Electrician, Plumber & Carpenter": {
+        subcategories: {},
+    },
 
     "Painting & Waterproofing": {
         subcategories: {

@@ -22,7 +22,7 @@ export default function PortalLayout({ isOpen, onClose, children }) {
         };
 
         if (isOpen) {
-            document.body.style.overflow = "hidden";
+            // document.body.style.overflow = "hidden";
             document.addEventListener("mousedown", handleClickOutside);
             document.addEventListener("keydown", handleKeyDown);
         }
@@ -44,9 +44,9 @@ export default function PortalLayout({ isOpen, onClose, children }) {
             >
                 <div
                     ref={contentRef}
-                    className="fixed w-96 bg-white outline-dotted outline-1 rounded-2xl left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl overflow-hidden"
+                    className="fixed bg-white outline-dotted outline-1 rounded-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl overflow-hidden"
                 >
-                    <div className="flex justify-end pt-5 pr-5">
+                    <div className="flex justify-end py-5 pr-5">
                         <div
                             onClick={onClose}
                             className="outline-dotted outline-1 rounded-lg p-1 hover:bg-zinc-100 transition-colors"

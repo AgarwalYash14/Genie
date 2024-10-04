@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { register } from "../utils/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register({ onRegisterSuccess, onClose }) {
     const [userData, setUserData] = useState({
@@ -36,7 +36,7 @@ export default function Register({ onRegisterSuccess, onClose }) {
         <>
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-8 p-10 pt-8"
+                className="w-96 flex flex-col gap-8 p-10 pt-0"
             >
                 <h1 className="text-lg text-center">Register your Account</h1>
                 <div className="flex flex-col gap-3">
@@ -108,7 +108,7 @@ export default function Register({ onRegisterSuccess, onClose }) {
                 <h1 className="text-sm text-center -mt-4">
                     Already have an account?{" "}
                     <a className="font-bold underline underline-offset-2">
-                        Login
+                        <Link to="/login">Login</Link>
                     </a>
                 </h1>
             </form>
