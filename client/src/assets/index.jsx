@@ -8,7 +8,7 @@ import bg from "./hero/bg.svg";
 
 import arrow from "./services/arrow.svg";
 
-import cart2 from "./services/Cart.svg";
+import cart2 from "./services/cart.svg";
 
 export { logo, user, bookings, cart };
 
