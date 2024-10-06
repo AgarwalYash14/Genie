@@ -1020,15 +1020,15 @@ export const servicesDetailsData = {
                 services: [],
             },
             "Chimney Repair & Service": {
-                image: "",
+                image: "assets/servicesSubCategories/chimney.svg",
                 services: [],
             },
             "Geyser Repair & Service": {
-                image: "",
+                image: "assets/servicesSubCategories/geyser.svg",
                 services: [],
             },
             "Water Purifier Repair & Service": {
-                image: "",
+                image: "assets/servicesSubCategories/waterPurifier.svg",
                 services: [],
             },
             "Microwave Repair": {
@@ -1052,13 +1052,16 @@ export const servicesDetailsData = {
 
     "Cleaning & Pest Control": {
         subcategories: {
-            "Bathroom & Kitchen cleaning": { image: "", services: [] },
+            "Bathroom & Kitchen cleaning": {
+                image: "assets/servicesSubCategories/bathroomCleaning.svg",
+                services: [],
+            },
             "Full Home Cleaning": {
-                image: "",
+                image: "assets/servicesSubCategories/homeCleaning.svg",
                 services: [],
             },
             "Sofa & Carpet Cleaning": {
-                image: "",
+                image: "assets/servicesSubCategories/sofaCleaning.svg",
                 services: [],
             },
         },
@@ -1067,20 +1070,23 @@ export const servicesDetailsData = {
     "Electrician, Plumber & Carpenter": {
         subcategories: {
             Electrician: {
-                image: "",
+                image: "assets/servicesSubCategories/electrician.svg",
                 services: [],
             },
             Plumber: {
-                image: "",
+                image: "assets/servicesSubCategories/plumber.svg",
                 services: [],
             },
-            Carpenter: { image: "", services: [] },
+            Carpenter: {
+                image: "assets/servicesSubCategories/carpenter.svg",
+                services: [],
+            },
         },
     },
     "Painting & Waterproofing": {
         subcategories: {
             "Painting Services": {
-                image: "",
+                image: "assets/servicesSubCategories/painter.svg",
                 services: [
                     {
                         category: "Full home painting & waterproofing",

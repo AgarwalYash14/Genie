@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getServiceDetails } from "../utils/api";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ServiceDetails = ({ serviceName }) => {
     const [details, setDetails] = useState(null);
@@ -35,7 +36,12 @@ const ServiceDetails = ({ serviceName }) => {
         }
     }, [selectedSubcategory, details, navigate, serviceName]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading)
+        return (
+            <div className="w-[35rem] h-36 flex justify-center items-center">
+                <ClipLoader />
+            </div>
+        );
     if (error) return <div>{error}</div>;
     if (!details) return <div>No details available</div>;
 
@@ -65,7 +71,7 @@ const ServiceDetails = ({ serviceName }) => {
                                     onClick={() =>
                                         handleSubcategorySelect(subcategory)
                                     }
-                                    className="h-36 text-center mb-2 rounded border border-dashed border-black hover:shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden"
+                                    className="w-44 h-36 text-center mb-2 rounded border border-dashed border-black hover:shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden"
                                 >
                                     <div className="h-full flex flex-col justify-between">
                                         <img
@@ -77,7 +83,7 @@ const ServiceDetails = ({ serviceName }) => {
                                                 ].image
                                             }`}
                                             alt={serviceName}
-                                            className="w-full h-28 p-2 object-contain border-b bg-gray-100"
+                                            className="w-full h-28 p-2 object-contain border-b bg-gray-100 text-sm"
                                         />
                                         <h1 className="text-sm h-[1.625rem] px-4">
                                             {subcategory}
