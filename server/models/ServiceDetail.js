@@ -1,28 +1,47 @@
 import mongoose from "mongoose";
 
-const serviceDetailSchema = new mongoose.Schema({
-    serviceName: String,
-    subcategories: {
+const serviceSchema = new mongoose.Schema({
+    category: String,
+    type: String,
+    image: String,
+    title: String,
+    time: String,
+    OurPrice: String,
+    MRP: String,
+    description: [String],
+});
+
+const serviceTypeSchema = new mongoose.Schema({
+    image: String,
+    services: [serviceSchema],
+});
+
+const subcategorySchema = new mongoose.Schema({
+    image: String,
+    serviceTypes: {
         type: Map,
-        of: new mongoose.Schema({
-            image: String,
-            serviceTypes: {
-                type: Map,
-                of: mongoose.Schema.Types.Mixed,
-            },
-            services: [
-                {
-                    category: String,
-                    image: String,
-                    title: String,
-                    time: String,
-                    OurPrice: String,
-                    MRP: String,
-                    description: [String],
-                },
-            ],
-        }),
+        of: serviceTypeSchema,
+        required: false,
+    },
+    services: {
+        type: [serviceSchema],
+        required: false,
     },
 });
 
-export default mongoose.model("ServiceDetail", serviceDetailSchema);
+const ServiceDetailSchema = new mongoose.Schema({
+    serviceName: String,
+    subcategories: {
+        type: Map,
+        of: subcategorySchema,
+        required: false,
+    },
+    services: {
+        type: [serviceSchema],
+        required: false,
+    },
+});
+
+const ServiceDetail = mongoose.model("ServiceDetail", ServiceDetailSchema);
+
+export default ServiceDetail;

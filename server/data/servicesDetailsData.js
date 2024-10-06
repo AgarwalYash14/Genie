@@ -2,9 +2,10 @@ export const servicesDetailsData = {
     "Women's Salon & Spa": {
         subcategories: {
             "Salon for Women": {
-                image: "assets/services/salonWomen.svg",
+                image: "assets/servicesSubCategories/salonWomen.svg",
                 serviceTypes: {
                     "Salon Luxe": {
+                        image: "assets/serviceTypes/salonLuxe.jpeg",
                         services: [
                             {
                                 category: "Waxing",
@@ -305,7 +306,7 @@ export const servicesDetailsData = {
                                 category: "Threading & Face Wax",
                                 type: "",
                                 image: "",
-                                title: "Face wax",
+                                title: "Face waxing",
                                 time: "",
                                 OurPrice: "199",
                                 MRP: "199",
@@ -352,18 +353,446 @@ export const servicesDetailsData = {
                         ],
                     },
                     "Salon Prime": {
-                        service: [],
+                        image: "assets/serviceTypes/salonPrime.jpeg",
+                        services: [
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Full arms, underarms & full legs waxing (RICA)",
+                                time: "55 mins",
+                                OurPrice: "949",
+                                MRP: "949",
+                                description: [
+                                    "RICA wax for arms & legs, RICA peel-off wax for underarms",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Full arms & underarms waxing",
+                                time: "",
+                                OurPrice: "309",
+                                MRP: "309",
+                                description: [],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Bikini waxing",
+                                time: "",
+                                OurPrice: "949",
+                                MRP: "949",
+                                description: [
+                                    "Waxing covers the entire pelvis area",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Full arms, underarms & full legs waxing",
+                                time: "55 mins",
+                                OurPrice: "1098",
+                                MRP: "1098",
+                                description: [
+                                    "100% colophony-free, low-heat, uniform wax application",
+                                    "RICA peel-off is used for underarms",
+                                    "100% colophony-free, low-heat, uniform wax application",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Full legs waxing",
+                                time: "55 mins",
+                                OurPrice: "359",
+                                MRP: "359",
+                                description: [
+                                    "100% colophony-free, low-heat, uniform wax application",
+                                    "Premium quality wax recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Half legs waxing",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Waxing covers area from toe to knee",
+                                    "Oil-based wax, helps in tan removal, delayed hair growth",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Full body waxing",
+                                time: "15 mins",
+                                OurPrice: "1349",
+                                MRP: "1349",
+                                description: [
+                                    "Waxing covers full arms, full legs, underarms, stomach & back",
+                                    "100% colophony free, low-heat, uniform wax application, no redness/rashes",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Underarms waxing",
+                                time: "15 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [
+                                    "Honey/RlCA peel-off wax",
+                                    "Hassle-free hair removal",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Half arms waxing",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Waxing covers the area from hand to elbow",
+                                    "Oil-based wax, helps in tan removal, delayed hair growth",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Back waxing",
+                                time: "15 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Waxing covers the area from shoulders to pelvis",
+                                    "Oil-based wax, helps in tan removal, delayed hair growth",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Stomach waxing",
+                                time: "15 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Waxing covers from below the bust to the pelvis",
+                                    "Oil-based wax, helps in tan removal, delayed hair growth",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Waxing",
+                                type: "",
+                                image: "",
+                                title: "Bikini line waxing",
+                                time: "15 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [
+                                    "Waxing covers the area around the pelvis, not the pelvis itself",
+                                    "Oil-based wax, helps in tan removal, delayed hair growth",
+                                    "Recommended for all skin types, particularly sensitive skin",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "03+ power brightening facial",
+                                time: "85 mins",
+                                OurPrice: "1799",
+                                MRP: "1799",
+                                description: [
+                                    "Niacinamide & meladerm Vit-C revitalize, brighten & moisturize the skin",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "Glovite lightening facial",
+                                time: "80 mins",
+                                OurPrice: "949",
+                                MRP: "949",
+                                description: [
+                                    "Aloevera extract & hyaluronic acid lighten & shield the skin from UV damage",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "03+ shine & glow facial",
+                                time: "80 mins",
+                                OurPrice: "1699",
+                                MRP: "1699",
+                                description: [
+                                    "Vitamin B-5 & jojoba oil reduce pigmentation & brighten the skin",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "Elysian firming wine glow facial",
+                                time: "75 mins",
+                                OurPrice: "1049",
+                                MRP: "1049",
+                                description: [
+                                    "Grape seed oil & vitamin E promote skin elasticity & even out skin texture",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "03+ feel youthful facial",
+                                time: "80 mins",
+                                OurPrice: "1599",
+                                MRP: "1599",
+                                description: [
+                                    "Hyaluronic acid deeply replenishes & revitalizes the skin",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "03+ tan clear cleanup",
+                                time: "45 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Witch hazel & grape oil extract help clarify skin & reduce tan",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "Sara fruit cleanup",
+                                time: "45 mins",
+                                OurPrice: "699",
+                                MRP: "699",
+                                description: [
+                                    "Orange & citrus extracts promote healthy, glowing & refreshed skin",
+                                ],
+                            },
+                            {
+                                category: "Facial & Clean-Up",
+                                type: "",
+                                image: "",
+                                title: "Elysian pinacolada hydrating cleanup",
+                                time: "45 mins",
+                                OurPrice: "759",
+                                MRP: "759",
+                                description: [
+                                    "Allantoin & avocado oil replenish the skin while boosting hydration",
+                                ],
+                            },
+                            {
+                                category: "Pedicure",
+                                type: "",
+                                image: "",
+                                title: "Elysian British rose pedicure",
+                                time: "",
+                                OurPrice: "759",
+                                MRP: "759",
+                                description: [
+                                    "Rose salt soak, scrub, cream massage, mask for soft & nourished feet",
+                                ],
+                            },
+                            {
+                                category: "Pedicure",
+                                type: "",
+                                image: "",
+                                title: "Foot massage",
+                                time: "10 mins",
+                                OurPrice: "200",
+                                MRP: "200",
+                                description: [
+                                    "Micromovement techniques relax feet & stimulate pressure points",
+                                ],
+                            },
+                            {
+                                category: "Pedicure",
+                                type: "",
+                                image: "",
+                                title: "Elysian candle spa pedicure",
+                                time: "",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Himalayan salt & peppermint oil soothe & hydrate the feet",
+                                ],
+                            },
+                            {
+                                category: "Pedicure",
+                                type: "",
+                                image: "",
+                                title: "Cut, file & polish",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Quick & basic nail grooming session with a wide range of nail polishes",
+                                ],
+                            },
+                            {
+                                category: "Manicure",
+                                type: "",
+                                image: "",
+                                title: "Elysian British rose manicure",
+                                time: "45 mins",
+                                OurPrice: "699",
+                                MRP: "699",
+                                description: [
+                                    "Rose salt soak, scrub, cream massage, mask for soft & nourished hands",
+                                ],
+                            },
+                            {
+                                category: "Manicure",
+                                type: "",
+                                image: "",
+                                title: "Cut, file & polish",
+                                time: "15 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [
+                                    "Quick & basic nail grooming session with a wide range of nail polishes",
+                                ],
+                            },
+                            {
+                                category: "Manicure",
+                                type: "",
+                                image: "",
+                                title: "Elysian candle spa manicure",
+                                time: "60 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Soothing fizz ball therapy, scrub, wax massage, double masks for gorgeous hands",
+                                ],
+                            },
+                            {
+                                category: "Bleach & detan",
+                                type: "",
+                                image: "",
+                                title: "Bleach",
+                                time: "",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Oilivia bleach to remove dark spots, tan, pigmentation, blemishes...",
+                                ],
+                            },
+                            {
+                                category: "Bleach & detan",
+                                type: "",
+                                image: "",
+                                title: "Detan",
+                                time: "",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "RAAGA detan pack infused with milk, honey, and fruit extracts to remove tan",
+                                ],
+                            },
+                            {
+                                category: "Hair care",
+                                type: "",
+                                image: "",
+                                title: "Head massage",
+                                time: "20 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Relaxing oil massage to relieve stress & promote hair growth",
+                                ],
+                            },
+                            {
+                                category: "Hair care",
+                                type: "",
+                                image: "",
+                                title: "Hair color/mehandi (only application)",
+                                time: "",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "We don't provide the colour; please have it ready before service",
+                                ],
+                            },
+                            {
+                                category: "Hair care",
+                                type: "",
+                                image: "",
+                                title: "Hair massage (10 min.)",
+                                time: "10 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Relaxing oil massage to relieve stress & promote hair growth",
+                                ],
+                            },
+                            {
+                                category: "Threading & Face Wax",
+                                type: "",
+                                image: "",
+                                title: "Threading",
+                                time: "",
+                                OurPrice: "29",
+                                MRP: "29",
+                                description: [
+                                    "Good quality thread for facial areas' hair removal & desired eyebrow shape",
+                                ],
+                            },
+                            {
+                                category: "Threading & Face Wax",
+                                type: "",
+                                image: "",
+                                title: "Face waxing",
+                                time: "",
+                                OurPrice: "69",
+                                MRP: "69",
+                                description: [
+                                    "RICA peel-off wax to remove even the tiniest, hard to remove hair",
+                                ],
+                            },
+                        ],
                     },
                     "Salon Classic": {
-                        service: [],
+                        image: "assets/serviceTypes/salonClassic.jpeg",
+                        services: [],
                     },
                 },
             },
             "Spa for Women": {
-                image: "assets/services/spaWomen.svg",
+                image: "assets/servicesSubCategories/spaWomen.svg",
                 services: [
                     {
                         category: "Post Natal",
+                        type: "",
                         image: "",
                         title: "Post Natal Massage",
                         time: "75 mins",
@@ -376,30 +805,37 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Swedish massage",
+                        type: "",
                         image: "",
                         title: "Swedish Therapy + Free 10 mins head massage",
                         time: "70 mins",
                         OurPrice: "1299",
                         MRP: "1640",
+                        description: [],
                     },
                     {
                         category: "Swedish massage",
+                        type: "",
                         image: "",
                         title: "Swedish 60 mins + Foot Massage 20 mins",
                         time: "80 mins",
                         OurPrice: "1748",
                         MRP: "1840",
+                        description: [],
                     },
                     {
                         category: "Swedish massage",
+                        type: "",
                         image: "",
                         title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
                         time: "80 mins",
                         OurPrice: "1648",
                         MRP: "1740",
+                        description: [],
                     },
                     {
                         category: "Swedish massage",
+                        type: "",
                         image: "",
                         title: "Stress relief swedish massage",
                         time: "75 mins",
@@ -412,14 +848,17 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Stress relief",
+                        type: "",
                         image: "",
                         title: "Deep tissue therapy + Free 10 mins head massage",
                         time: "70 mins",
                         OurPrice: "1449",
                         MRP: "1790",
+                        description: [],
                     },
                     {
                         category: "Stress relief",
+                        type: "",
                         image: "",
                         title: "Top to toe stress relief massage",
                         time: "100 mins",
@@ -432,6 +871,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Stress relief",
+                        type: "",
                         image: "",
                         title: "Hectic day care massage",
                         time: "45 mins",
@@ -444,6 +884,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Pain relief",
+                        type: "",
                         image: "",
                         title: "Deep tissue pain relief massage",
                         time: "75 mins",
@@ -456,6 +897,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Pain relief",
+                        type: "",
                         image: "",
                         title: "Leg pain relief massage",
                         time: "40 mins",
@@ -468,6 +910,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Pain relief",
+                        type: "",
                         image: "",
                         title: "Back pain relief massage",
                         time: "40 mins",
@@ -480,6 +923,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Skin care scrubs",
+                        type: "",
                         image: "",
                         title: "Rejuvenating scrub & massage package",
                         time: "90 mins",
@@ -492,6 +936,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Add-ons",
+                        type: "",
                         image: "",
                         title: "Head massage",
                         time: "20 mins",
@@ -504,6 +949,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Add-ons",
+                        type: "",
                         image: "",
                         title: "Foot massage",
                         time: "20 mins",
@@ -516,6 +962,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Add-ons",
+                        type: "",
                         image: "",
                         title: "Face massage",
                         time: "20 mins",
@@ -528,6 +975,7 @@ export const servicesDetailsData = {
                     },
                     {
                         category: "Add-ons",
+                        type: "",
                         image: "",
                         title: "Head & shoulder massage",
                         time: "20 mins",
@@ -541,39 +989,102 @@ export const servicesDetailsData = {
                 ],
             },
             "Hair Studio for Women": {
-                image: "assets/services/hairStudio.svg",
+                image: "assets/servicesSubCategories/hairStudio.svg",
             },
             "Nail Studio for Women": {
-                image: "assets/services/nailStudio.svg",
+                image: "assets/servicesSubCategories/nailStudio.svg",
             },
             "Makeup & Styling Studio": {
-                image: "assets/services/makeupStyle.svg",
+                image: "assets/servicesSubCategories/makeupStyle.svg",
             },
         },
     },
 
     "Men's Salon & Spa": {
-        subcategories: {},
+        subcategories: {
+            "Salon for Kids & Men": {
+                image: "assets/servicesSubCategories/menSalon.svg",
+                services: [],
+            },
+            "Massage for Men": {
+                image: "assets/servicesSubCategories/menMassage.svg",
+                services: [],
+            },
+        },
     },
 
     "AC & Appliances Repair": {
-        subcategories: {},
+        subcategories: {
+            "Ac Repair & Service": {
+                image: "assets/servicesSubCategories/ac.svg",
+                services: [],
+            },
+            "Chimney Repair & Service": {
+                image: "",
+                services: [],
+            },
+            "Geyser Repair & Service": {
+                image: "",
+                services: [],
+            },
+            "Water Purifier Repair & Service": {
+                image: "",
+                services: [],
+            },
+            "Microwave Repair": {
+                image: "assets/servicesSubCategories/microwave.svg",
+                services: [],
+            },
+            "Refrigerator Repair": {
+                image: "assets/servicesSubCategories/refrigerator.svg",
+                services: [],
+            },
+            "Television Repair": {
+                image: "assets/servicesSubCategories/television.svg",
+                services: [],
+            },
+            "Washing Machine Repair": {
+                image: "assets/servicesSubCategories/washingMachine.svg",
+                services: [],
+            },
+        },
     },
 
     "Cleaning & Pest Control": {
-        subcategories: {},
+        subcategories: {
+            "Bathroom & Kitchen cleaning": { image: "", services: [] },
+            "Full Home Cleaning": {
+                image: "",
+                services: [],
+            },
+            "Sofa & Carpet Cleaning": {
+                image: "",
+                services: [],
+            },
+        },
     },
 
     "Electrician, Plumber & Carpenter": {
-        subcategories: {},
+        subcategories: {
+            Electrician: {
+                image: "",
+                services: [],
+            },
+            Plumber: {
+                image: "",
+                services: [],
+            },
+            Carpenter: { image: "", services: [] },
+        },
     },
-
     "Painting & Waterproofing": {
         subcategories: {
             "Painting Services": {
+                image: "",
                 services: [
                     {
                         category: "Full home painting & waterproofing",
+                        type: "",
                         image: "",
                         title: "At home consulatation",
                         time: "",

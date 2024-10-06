@@ -1,4 +1,3 @@
-// scripts/populateServiceDetails.js
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import ServiceDetail from "../models/ServiceDetail.js";
@@ -14,14 +13,30 @@ mongoose
 const populateServiceDetails = async () => {
     try {
         await ServiceDetail.deleteMany({}); // Clear existing service details
-        const serviceDetails = Object.entries(servicesDetailsData).map(
-            ([serviceName, details]) => ({
+
+        for (const [serviceName, details] of Object.entries(
+            servicesDetailsData
+        )) {
+            const serviceDetailData = {
                 serviceName,
                 subcategories: details.subcategories,
-            })
-        );
-        const result = await ServiceDetail.insertMany(serviceDetails);
-        console.log(`${result.length} service details inserted`);
+                services: details.services,
+            };
+
+            // Remove undefined fields
+            Object.keys(serviceDetailData).forEach(
+                (key) =>
+                    serviceDetailData[key] === undefined &&
+                    delete serviceDetailData[key]
+            );
+
+            const serviceDetail = new ServiceDetail(serviceDetailData);
+
+            await serviceDetail.save();
+            const insertedDoc = await ServiceDetail.findOne({ serviceName });
+        }
+
+        console.log("All service details inserted successfully");
     } catch (error) {
         console.error("Error populating service details:", error);
     } finally {

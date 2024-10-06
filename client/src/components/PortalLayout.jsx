@@ -40,11 +40,11 @@ export default function PortalLayout({ isOpen, onClose, children }) {
         <>
             <div
                 ref={portalRef}
-                className="fixed w-screen h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-brightness-75 backdrop-blur-[2px] select-none z-50"
+                className="fixed w-screen h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-brightness-75 backdrop-blur-[2px] select-none z-50 overflow-hidden"
             >
                 <div
                     ref={contentRef}
-                    className="fixed bg-white outline-dotted outline-1 rounded-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl overflow-hidden"
+                    className="fixed max-h-[75%] bg-white outline-dotted outline-1 rounded-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl overflow-auto"
                 >
                     <div className="flex justify-end py-5 pr-5">
                         <div

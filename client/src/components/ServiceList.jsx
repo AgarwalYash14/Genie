@@ -50,7 +50,7 @@ const ServiceList = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div className="flex gap-8 pt-10 pb-6">
+        <div className="relative flex gap-8 pt-10 pb-6">
             <div className="sticky top-[7.5rem] w-1/4 self-start">
                 <h2 className="text-2xl font-bold pb-4">{serviceName}</h2>
                 <h3 className="text-4xl font-bold pb-8">
@@ -60,15 +60,24 @@ const ServiceList = () => {
                     <h1 className="font-black text-lg text-nowrap mb-4">
                         Select a service
                     </h1>
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => scrollToCategory(category)}
-                            className="w-full text-left py-2 hover:bg-gray-100"
-                        >
-                            {category}
-                        </button>
-                    ))}
+                    <div className="grid grid-cols-3 gap-4 gap-y-8">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => scrollToCategory(category)}
+                                className="w-full h-28 text-center text-sm"
+                            >
+                                <div>
+                                    <img
+                                        src=""
+                                        alt={category}
+                                        className="h-20 border border-dashed border-black rounded bg-gray-100"
+                                    />
+                                    <h1 className="h-8 py-1">{category}</h1>
+                                </div>
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
             <div className="w-1/2 flex flex-col p-8 pb-0 rounded-md border border-black">
@@ -170,7 +179,7 @@ const ServiceList = () => {
                                                     <img
                                                         src={service.image}
                                                         alt={service.title}
-                                                        className="w-36 h-24 object-contain rounded border text-sm"
+                                                        className="w-36 h-24 object-contain rounded border text-sm bg-gray-100"
                                                     />
 
                                                     <button className="w-24 bg-yellow-300 text-black py-0.5 rounded -translate-y-4">

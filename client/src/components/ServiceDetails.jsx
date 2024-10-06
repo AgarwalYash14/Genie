@@ -76,7 +76,7 @@ const ServiceDetails = ({ serviceName }) => {
                                                     subcategory
                                                 ].image
                                             }`}
-                                            alt="{serviceName}"
+                                            alt={serviceName}
                                             className="w-full h-28 p-2 object-contain border-b bg-gray-100"
                                         />
                                         <h1 className="text-sm h-[1.625rem] px-4">
@@ -105,14 +105,20 @@ const ServiceDetails = ({ serviceName }) => {
                                 }
                                 className="w-full text-left border border-dashed border-black hover:shadow-lg hover:scale-105 transition-transform duration-300 rounded"
                             >
-                                <div className="h-24 w-96 flex items-center">
+                                <div className="w-[28rem] h-44 flex items-center gap-4">
                                     <img
-                                        src=""
+                                        src={`${
+                                            import.meta.env.VITE_BACKEND_URL
+                                        }/${
+                                            details.subcategories[
+                                                selectedSubcategory
+                                            ].serviceTypes[serviceType].image
+                                        }`}
                                         alt={serviceType}
-                                        className="w-28 h-full"
+                                        className="w-36 h-full object-cover object-left-top border-r border-dashed border-black"
                                     />
                                     <div className="flex flex-col gap-1">
-                                        <h1 className="font-bold">
+                                        <h1 className="font-bold text-lg">
                                             {serviceType}
                                         </h1>
                                         <div>
