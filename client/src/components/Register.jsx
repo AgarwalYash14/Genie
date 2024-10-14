@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { register } from "../utils/api";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function Register({ onRegisterSuccess, onClose }) {
     const [userData, setUserData] = useState({
@@ -12,7 +11,6 @@ export default function Register({ onRegisterSuccess, onClose }) {
     });
 
     const [error, setError] = useState("");
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -26,7 +24,6 @@ export default function Register({ onRegisterSuccess, onClose }) {
             console.log("Register Successful", response);
             onRegisterSuccess(response.user);
             onClose();
-            navigate("/");
         } catch (error) {
             setError(error.msg || "An error occurred");
         }
@@ -107,9 +104,9 @@ export default function Register({ onRegisterSuccess, onClose }) {
                 </button>
                 <h1 className="text-sm text-center -mt-4">
                     Already have an account?{" "}
-                    <a className="font-bold underline underline-offset-2">
-                        <Link to="/login">Login</Link>
-                    </a>
+                    <span className="font-bold underline underline-offset-2">
+                        Login
+                    </span>
                 </h1>
             </form>
         </>

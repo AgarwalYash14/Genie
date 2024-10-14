@@ -1,14 +1,18 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { bookings, cart, logo } from "../assets";
 import { HiUser } from "react-icons/hi2";
 
-import Autocomplete from "./AutoComplete";
-import Login from "./Login";
-import Register from "./Register";
-import PortalLayout from "./PortalLayout";
+import Autocomplete from "../components/AutoComplete";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import PortalLayout from "../components/PortalLayout";
 import { getUserDetails, logout } from "../utils/api";
+
+import { CartContext } from "../context/CartContext";
+
+const libraries = ["places"];
 
 export default function Navbar() {
     const [showLogin, setShowLogin] = useState(false);
@@ -17,6 +21,8 @@ export default function Navbar() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const { getCartCount } = useContext(CartContext);
 
     const checkUserLoggedIn = useCallback(async () => {
         try {
@@ -35,33 +41,23 @@ export default function Navbar() {
         checkUserLoggedIn();
     }, [checkUserLoggedIn]);
 
-    useEffect(() => {
-        if (location.pathname === "/login") {
-            setShowLogin(true);
-        } else if (location.pathname === "/register") {
-            setShowRegister(true);
-        }
-    }, [location]);
+    useEffect(() => {}, [location]);
 
     const openLogin = () => {
         setShowLogin(true);
-        navigate("/login");
     };
 
     const closeLogin = useCallback(() => {
         setShowLogin(false);
-        navigate("/");
-    }, [navigate]);
+    }, []);
 
     const openRegister = () => {
         setShowRegister(true);
-        navigate("/register");
     };
 
     const closeRegister = useCallback(() => {
         setShowRegister(false);
-        navigate("/");
-    }, [navigate]);
+    }, []);
 
     const handleLoginSuccess = useCallback(
         (userData) => {
@@ -92,11 +88,18 @@ export default function Navbar() {
         }
     }, [navigate]);
 
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        const count = getCartCount();
+        setCartCount(count);
+    }, [getCartCount]);
+
     return (
         <>
             <nav className="flex items-center justify-between py-5 select-none z-40">
                 <div className="flex items-center gap-1">
-                    <img src={logo} alt="" />
+                    <img src={logo} alt="" className="h-12" />
                     <Link
                         to="/"
                         className="text-4xl logo hover:text-green-600 transition-colors duration-300"
@@ -105,21 +108,32 @@ export default function Navbar() {
                     </Link>
                 </div>
                 <div className="hidden md:flex">
-                    <Autocomplete />
+                    <Autocomplete libraries={libraries} />
                 </div>
                 <div className="hidden items-center gap-8 md:flex">
-                    <div className="flex gap-2">
+                    <div className="flex items-center gap-2 hover:text-orange-500">
                         <img
                             id="cart"
                             name="cart"
                             src={cart}
-                            alt=""
+                            alt="Cart"
                             className="h-6"
                         />
-                        <span className="h-6 hover:text-orange-500">Cart</span>
+                        <Link to="/viewcart">
+                            <div className="flex items-center gap-1 w-20 h-6">
+                                <span>Cart</span>
+                                <div className="flex">
+                                    (
+                                    <span className="pt-[0.055rem]">
+                                        {cartCount}
+                                    </span>
+                                    )
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                     <div className="flex gap-2 hover:text-orange-500">
-                        <img src={bookings} alt="" className="h-6" />
+                        <img src={bookings} alt="Bookings" className="h-6" />
                         <span className="h-6">Bookings</span>
                     </div>
                     <div className="w-[0.09rem] h-6 bg-black rounded-full"></div>

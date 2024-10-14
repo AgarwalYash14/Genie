@@ -2,6 +2,8 @@ import { Autocomplete, LoadScript } from "@react-google-maps/api";
 import { MdLocationPin } from "react-icons/md";
 import { useRef } from "react";
 
+const libraries = ["places"];
+
 const PlacesAutocomplete = () => {
     const autocompleteRef = useRef(null);
 
@@ -25,7 +27,8 @@ const PlacesAutocomplete = () => {
     return (
         <LoadScript
             googleMapsApiKey={import.meta.env.VITE_PLACES_NEW_API_KEY}
-            libraries={["places"]}
+            libraries={libraries}
+            id="script-loader"
         >
             <div className="flex items-center ring-1 ring-black rounded outline-none focus-within:ring-1 focus-within:ring-blue-400 focus-within:border-0 transition-all overflow-hidden">
                 <div className="px-3 py-1">

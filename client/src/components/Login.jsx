@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { login } from "../utils/api";
-import { Link } from "react-router-dom";
 
 export default function Login({ onLoginSuccess, onClose }) {
     const [userData, setUserData] = useState({
@@ -98,9 +97,9 @@ export default function Login({ onLoginSuccess, onClose }) {
                 </button>
                 <h1 className="text-sm text-center -mt-4">
                     Don&apos;t have an account?{" "}
-                    <a className="font-bold underline underline-offset-2">
-                        <Link to="/register">Register Now</Link>
-                    </a>
+                    <span className="font-bold underline underline-offset-2">
+                        Register Now
+                    </span>
                 </h1>
             </form>
         </>

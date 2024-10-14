@@ -6,14 +6,22 @@ const serviceSchema = new mongoose.Schema({
     image: String,
     title: String,
     time: String,
-    OurPrice: String,
-    MRP: String,
+    OurPrice: Number,
+    MRP: Number,
     description: [String],
 });
 
-const serviceTypeSchema = new mongoose.Schema({
-    image: String,
+const categorySchema = new mongoose.Schema({
+    name: String,
+    categoryImage: String,
     services: [serviceSchema],
+});
+
+const serviceTypeSchema = new mongoose.Schema({
+    name: String,
+    categoryImage: String,
+    image: String,
+    categories: [categorySchema],
 });
 
 const subcategorySchema = new mongoose.Schema({
@@ -26,6 +34,7 @@ const subcategorySchema = new mongoose.Schema({
     services: {
         type: [serviceSchema],
         required: false,
+        default: undefined,
     },
 });
 
@@ -39,6 +48,7 @@ const ServiceDetailSchema = new mongoose.Schema({
     services: {
         type: [serviceSchema],
         required: false,
+        default: undefined,
     },
 });
 

@@ -14,7 +14,12 @@ mongoose
 const populateServices = async () => {
     try {
         await Service.deleteMany({}); // Clear existing services
-        const result = await Service.insertMany(servicesData);
+        // const result = await Service.insertMany(servicesData);
+        const servicesWithOrder = servicesData.map((service, index) => ({
+            ...service,
+            order: index,
+        }));
+        const result = await Service.insertMany(servicesWithOrder);
         console.log(`${result.length} services inserted`);
     } catch (error) {
         console.error("Error populating services:", error);

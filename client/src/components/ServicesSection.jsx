@@ -20,7 +20,9 @@ export default function ServicesSection() {
             try {
                 setIsLoading(true);
                 const data = await getServices();
-                setServicesData(data);
+                // Sort services based on the 'order' property
+                const sortedData = data.sort((a, b) => a.order - b.order);
+                setServicesData(sortedData);
             } catch (error) {
                 console.error("Error fetching services:", error);
             } finally {
@@ -30,6 +32,7 @@ export default function ServicesSection() {
 
         fetchServices();
     }, []);
+
     return (
         <>
             <div className="py-2">
@@ -37,7 +40,7 @@ export default function ServicesSection() {
                     OUR SERVICES
                 </h1>
                 <SkeletonTheme baseColor="#bfdbfe" highlightColor="#F5F5DC">
-                    <div className="w-full grid grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
                         {isLoading
                             ? Array(6)
                                   .fill()

@@ -36,7 +36,7 @@
 body {
     font-family: "Wanted Sans Regular", sans-serif;
     background-color: #ffffee;
-    cursor: url("../public/cursor.svg"), pointer;
+    cursor: url("/cursor.svg"), pointer;
 }
 
 /* Custom Scrollbar for WebKit browsers */
@@ -46,52 +46,52 @@ body {
 }
 ::-webkit-scrollbar-track {
     background: #f0f0f0; /* Light background to make border visible */
-    border: 1px solid #60a5fa ;
+    border: 1px solid #60a5fa;
     border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #60a5fa ;
+    background: #60a5fa;
     border-radius: 8px;
     border: 3px solid #f0f0f0; /* Create a visual border effect */
 }
 ::-webkit-scrollbar-button:single-button {
-    background-color: #60a5fa ;
+    background-color: #60a5fa;
     width: 16px;
     height: 16px;
 }
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
     border: 6px solid transparent;
-    border-bottom-color: #60a5fa ;
+    border-bottom-color: #60a5fa;
 }
 ::-webkit-scrollbar-button:single-button:vertical:increment {
     border: 6px solid transparent;
-    border-top-color: #60a5fa ;
+    border-top-color: #60a5fa;
 }
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
     border: 6px solid transparent;
-    border-right-color: #60a5fa  ;
+    border-right-color: #60a5fa;
 }
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
     border: 6px solid transparent;
-    border-left-color: #60a5fa  ;
+    border-left-color: #60a5fa;
 }
 
 /* Custom Scrollbar for Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #60a5fa   #f0f0f0;
+    scrollbar-color: #60a5fa #f0f0f0;
 }
 
 button {
-    cursor: url("../public/cursor.svg"), pointer;
+    cursor: url("/cursor.svg"), pointer;
 }
 
 input {
-    cursor: url("../public/cursor.svg"), pointer;
+    cursor: url("/cursor.svg"), pointer;
 }
 
 textarea {
-    cursor: url("../public/cursor.svg"), pointer;
+    cursor: url("/cursor.svg"), pointer;
 }
 
 .logo {

@@ -1,20 +1,18 @@
 const Services = ({ serviceImage, serviceName, onServiceClick }) => {
     return (
         <>
-            <div
-                className="w-full "
-                onClick={() => onServiceClick(serviceName)}
-            >
+            <div onClick={() => onServiceClick(serviceName)}>
                 <div className="w-full overflow-hidden rounded-md border border-black hover:shadow-lg hover:scale-105 duration-300 transition-transform">
-                    <button>
+                    <button className="w-full">
                         <img
                             src={`${
                                 import.meta.env.VITE_BACKEND_URL
                             }/${serviceImage}`}
                             alt={serviceName}
-                            className="h-[9.5rem] w-full object-cover border-b border-black"
+                            loading="lazy"
+                            className="w-full h-36 object-contain p-3 border-b border-black bg-yellow-100"
                         />
-                        <h1 className="px-2 h-14 flex items-center justify-center">
+                        <h1 className="h-12 flex items-center justify-center px-4 text-sm">
                             {serviceName}
                         </h1>
                     </button>

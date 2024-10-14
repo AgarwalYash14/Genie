@@ -10,6 +10,10 @@ const ServiceSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    order: {
+        type: Number,
+        required: true,
+    },
 });
 
 export default mongoose.model("Service", ServiceSchema);
