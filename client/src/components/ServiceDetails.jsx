@@ -69,11 +69,14 @@ const ServiceDetails = ({ serviceName }) => {
 
     return (
         <div className="p-10 pt-0">
-            <h2 className="text-2xl text-center pb-8">{serviceName}</h2>
+            <h2 className="text-2xl text-center pb-8 font-bold">
+                {serviceName}
+            </h2>
 
             {!selectedSubcategory ? (
                 <div>
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        {" "}
                         {Object.keys(details.subcategories).map(
                             (subcategory) => (
                                 <button
@@ -81,7 +84,7 @@ const ServiceDetails = ({ serviceName }) => {
                                     onClick={() =>
                                         handleSubcategorySelect(subcategory)
                                     }
-                                    className="w-44 h-40 text-center mb-2 rounded border border-dashed border-black hover:scale-105 transition-transform duration-300 overflow-hidden"
+                                    className="w-44 h-40 text-center mb-2 rounded border border-dashed border-black black hover:border-0 hover:ring-1 ring-black hover:scale-105 transition-transform duration-300 overflow-hidden"
                                 >
                                     <div className="h-full flex flex-col justify-between">
                                         <img
@@ -93,10 +96,9 @@ const ServiceDetails = ({ serviceName }) => {
                                                 ].image
                                             }`}
                                             alt={serviceName}
-                                            loading="lazy"
                                             className="w-full h-28 p-2 object-contain border-b border-dashed border-black bg-gray-100 text-sm"
                                         />
-                                        <h1 className="text-sm h-12 flex items-center justify-center px-4">
+                                        <h1 className="text-sm leading-[1.25] h-12 flex items-center justify-center px-4">
                                             {subcategory}
                                         </h1>
                                     </div>
@@ -120,9 +122,9 @@ const ServiceDetails = ({ serviceName }) => {
                                 onClick={() =>
                                     handleServiceTypeSelect(serviceType)
                                 }
-                                className="w-full text-left border border-dashed border-black hover:scale-105 transition-all duration-300 rounded overflow-hidden"
+                                className="w-full text-left border border-dashed border-black hover:border-0 hover:ring-1 ring-black hover:scale-105 transition-transform duration-300 rounded overflow-hidden"
                             >
-                                <div className="w-[28rem] h-32 flex items-center gap-4">
+                                <div className="w-[28rem] h-36 flex items-center gap-4">
                                     <img
                                         src={`${
                                             import.meta.env.VITE_BACKEND_URL
@@ -132,7 +134,6 @@ const ServiceDetails = ({ serviceName }) => {
                                             ].serviceTypes[serviceType].image
                                         }`}
                                         alt={serviceType}
-                                        loading="lazy"
                                         className="w-36 h-full object-cover object-left-top border-r border-dashed border-black"
                                     />
                                     <div className="flex flex-col gap-1">

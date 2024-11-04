@@ -4,7 +4,7 @@ import { TbArrowUpRight } from "react-icons/tb";
 export default function Hero() {
     return (
         <>
-            <div className="flex flex-col gap-8 py-6">
+            <div className="flex flex-col gap-8 py-6 max-md:gap-4">
                 <h1
                     className="text-center text-7xl font-[NeuwMachina]"
                     style={{
@@ -16,45 +16,54 @@ export default function Hero() {
                 </h1>
                 <div className="relative flex -z-10">
                     <div className="relative overflow-hidden">
-                        <div className="relative w-10/12">
+                        <div className="relative w-10/12 max-lg:w-full">
                             <img
                                 src={bg}
                                 alt=""
-                                className="w-screen h-auto rounded-[3rem] rounded-r-[3rem]"
+                                className="w-screen object-cover rounded-[3rem] rounded-r-[3rem] max-md:rounded-3xl"
                             />
-                            <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
-                            <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
-                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
-                            <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-6 before:w-1 before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
+                            <div className="max-lg:hidden">
+                                <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
+                                <h1 className="before:content-[''] before:absolute before:bottom-36 before:right-0 before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
+                                <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
+                                <h1 className="before:content-[''] before:absolute before:bottom-0 before:right-[7.975rem] before:h-6 before:w-1 before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
+                            </div>
                         </div>
-                        <div className="relative">
+                        <div className="relative max-md:hidden">
                             <h1 className="before:content-[''] before:absolute before:-top-[10.2rem] before:-left-0 before:h-20 before:w-20 before:bg-transparent before:rounded-bl-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
                             <h1 className="before:content-[''] before:absolute before:-top-[6rem] before:left-0 before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
                             <h1 className="before:content-[''] before:absolute before:bottom-0 before:left-[20.97rem] before:h-20 before:w-20 before:bg-transparent before:rounded-bl-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
                             <h1 className="before:content-[''] before:absolute before:bottom-0 before:left-[20.97rem] before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
 
-                            <h1 className="absolute bg-[#FFFFEE] flex items-center gap-4 bottom-0 left-0 text-zinc-800 text-2xl px-20 py-6 rounded-tr-[3rem] underline underline-offset-4">
+                            <h1 className="absolute bg-[#FFFFEE] flex items-center gap-4 bottom-0 left-0 text-zinc-800 text-2xl px-20 py-6 rounded-tr-[3rem] underline underline-offset-4 max-md:text-xl:">
                                 Learn more
                                 <TbArrowUpRight size="35px" />
                             </h1>
                         </div>
+                        <div className="max-md:static w-full max-md:flex max-md:flex-col">
+                            <div className="absolute top-[26%] right-10 space-y-8 -translate-y-1/3 text-zinc-500 text-base text-[1.1vw] max-lg:static max-lg:translate-y-0">
+                                <h1>Easy to book</h1>
+                                <h1>Verified housekeepers</h1>
+                                <h1>Secure payments</h1>
+                                <h1>Responsibility</h1>
+                            </div>
 
-                        <div className="absolute top-[26%] right-10 space-y-8 -translate-y-1/3 text-zinc-500 text-base text-[1.1vw]">
-                            <h1>Easy to book</h1>
-                            <h1>Verified housekeepers</h1>
-                            <h1>Secure payments</h1>
-                            <h1>Responsibility</h1>
-                        </div>
-
-                        <div className="relative">
-                            <div
-                                className="absolute right-0 bottom-0 px-40 py-[4.5rem] bg-[#FFFFEE]
+                            <div className="relative">
+                                <div
+                                    className="absolute right-0 bottom-0 px-40 py-[4.5rem] bg-[#FFFFEE]
                                             before:content-[''] before:absolute before:top-0 before:bottom-0 
                                             before:-left-[3rem] before:w-[6rem] before:bg-[#FFFFEE] before:rounded-tl-[2.25rem]"
-                            ></div>
-                            <button className="absolute bottom-0 right-0 font-[NeuwMachinaBold] text-amber-50 text-3xl px-[3.75rem] py-12 rounded-[1.75rem] bg-blue-400">
-                                Book a Service
-                            </button>
+                                ></div>
+                                <div className="absolute bottom-0 right-0">
+                                    <button className="font-[NeuwMachinaBold] text-amber-50 text-3xl px-[3.75rem] py-12 rounded-[1.75rem] bg-blue-400">
+                                        Book a Service
+                                    </button>
+                                    <div className="max-lg:hidden">
+                                        <h1 className="before:content-[''] before:absolute before:bottom-0 before:-left-[5.8rem] before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>
+                                        <h1 className="before:content-[''] before:absolute before:bottom-0 before:-left-4 before:h-[1.6rem] before:w-[0.3rem] before:bg-[#FFFFEE] before:rounded-lr-full"></h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,7 +108,7 @@ export default function Hero() {
                     </div>
                     <div>
                         <h1
-                            className="font-[NeuwMachina] text-5xl py-6"
+                            className="font-[NeuwMachina] text-5xl py-6 max-lg:text-center max-lg:leading-[1.25]"
                             style={{
                                 fontSize:
                                     "clamp(1.75rem, 1.4286rem + 1.6071vw, 4rem)",

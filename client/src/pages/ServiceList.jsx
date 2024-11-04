@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { getServiceDetails } from "../utils/api";
-import { cart2, tick } from "../assets";
+import { cart2, quality, tick } from "../assets";
 import ClipLoader from "react-spinners/ClipLoader";
 import { CartContext } from "../context/CartContext";
 import ServiceCart from "../components/ServiceCart";
@@ -88,19 +88,21 @@ const ServiceList = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div className="relative flex gap-6 pt-10 pb-6">
+        <div className="relative grid grid-cols-4 gap-6 pt-10 pb-6 max-xl:grid-cols-5 max-md:flex max-md:flex-col">
             {/* Sidebar Component  */}
 
-            <div className="sticky top-[7.5rem] w-1/4 self-start">
-                <h2 className="text-2xl font-bold pb-4">{serviceName}</h2>
-                <h3 className="text-4xl font-bold pb-8">
+            <div className="sticky top-[7.5rem] self-start max-xl:col-span-2 max-md:static max-md:w-full max-md:text-center">
+                <h2 className="text-2xl font-bold pb-2 max-md:pb-2">
+                    {serviceName}
+                </h2>
+                <h3 className="text-4xl font-bold pb-8 max-md:pb-2">
                     {serviceType || subcategory}
                 </h3>
-                <div className="p-8 rounded-md border border-black">
+                <div className="p-6 rounded-md border border-black max-md:hidden">
                     <h1 className="font-black text-lg text-nowrap mb-4">
                         Select a service
                     </h1>
-                    <div className="grid grid-cols-3 gap-4 gap-y-5">
+                    <div className="grid grid-cols-3 gap-4 gap-y-5 max-lg:grid-cols-2">
                         {categories.map((category) => (
                             <button
                                 key={category.name}
@@ -113,7 +115,6 @@ const ServiceList = () => {
                                             import.meta.env.VITE_BACKEND_URL
                                         }${category.categoryImage}`}
                                         alt={category.name}
-                                        loading="lazy"
                                         className="w-full h-20 object-cover border border-dashed border-black rounded bg-gray-100 text-xs"
                                     />
                                     <h1 className="h-10 py-1 text-xs leading-4">
@@ -128,7 +129,7 @@ const ServiceList = () => {
 
             {/* Services Component  */}
 
-            <div className="w-1/2 flex flex-col p-8 pb-0 rounded-md border border-black">
+            <div className="col-span-2 flex flex-col p-8 pb-0 rounded-md border border-black max-xl:col-span-3">
                 {categories.map((category, index) => (
                     <div
                         key={category.name}
@@ -137,7 +138,7 @@ const ServiceList = () => {
                             index !== 0 ? "pt-8 border-t border-black" : ""
                         }
                     >
-                        <h1 className="text-green-600 pb-2 text-lg font-bold">
+                        <h1 className="text-green-600 pb-2 text font-bold uppercase tracking-wide">
                             {category.name}
                         </h1>
                         <div className="flex flex-col gap-8 mb-8">
@@ -153,7 +154,7 @@ const ServiceList = () => {
                                         filteredServices
                                     ) => (
                                         <div key={serviceIndex}>
-                                            <div className="flex justify-between">
+                                            <div className="flex justify-between max-[]:">
                                                 <div className="w-8/12">
                                                     <h4 className="font-bold">
                                                         {service.title}
@@ -228,7 +229,6 @@ const ServiceList = () => {
                                                                 .VITE_BACKEND_URL
                                                         }/${service.image}`}
                                                         alt={service.title}
-                                                        loading="lazy"
                                                         className="w-36 h-24 object-cover object-top rounded border border-black text-sm bg-gray-100"
                                                     />
                                                     {!cartServices.find(
@@ -296,8 +296,8 @@ const ServiceList = () => {
             </div>
 
             {/* Cart Component  */}
-            <div className="w-1/4 sticky top-[7.5rem] self-start overflow-hidden flex flex-col gap-6">
-                <div className="h-96 flex flex-col items-center justify-center gap-4 p-4 rounded-md border border-black">
+            <div className="sticky top-[7.5rem] self-start overflow-hidden flex flex-col gap-6 max-xl:hidden">
+                <div className="h-96 flex flex-col items-center justify-center gap-4 rounded-md border border-black overflow-hidden">
                     {cartServices.length === 0 ? (
                         <>
                             <div className="h-full w-full flex flex-col gap-4 justify-center items-center">
@@ -309,16 +309,23 @@ const ServiceList = () => {
                         <ServiceCart />
                     )}
                 </div>
-                <div className="p-4 border border-black rounded-md">
-                    <h1 className="font-bold">Quality Assured</h1>
-                    <ul className="pt-4 pl-2">
-                        <li className="flex gap-3">
+                <div className="relative p-4 border border-black rounded-md">
+                    <h1 className="text-orange-600 font-black uppercase tracking-wide font-[NeuwMachinaBold]">
+                        Quality Assured
+                    </h1>
+                    <img
+                        src={quality}
+                        alt=""
+                        className="absolute top-4 right-4 w-8"
+                    />
+                    <ul className="pl-4 pt-3 pb-0 text-neutral-800">
+                        <li className="flex gap-3 items-center">
                             <img src={tick} alt="" className="w-5 h-auto" />
-                            4.5+ Rated
+                            4.5+ Rated Services
                         </li>
-                        <li className="flex gap-3">
+                        <li className="flex gap-3 items-center">
                             <img src={tick} alt="" className="w-5 h-auto" />
-                            Luxury Experience
+                            Luxury Experience Guaranteed
                         </li>
                         <li className="flex gap-3 items-center">
                             <img src={tick} alt="" className="w-5 h-auto" />
@@ -326,7 +333,7 @@ const ServiceList = () => {
                         </li>
                         <li className="flex gap-3 items-center">
                             <img src={tick} alt="" className="w-5 h-auto" />
-                            Premium Branded Products
+                            Expert Professionals
                         </li>
                     </ul>
                 </div>

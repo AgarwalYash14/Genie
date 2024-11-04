@@ -54,4 +54,5 @@ const ServiceDetailSchema = new mongoose.Schema({
 
 const ServiceDetail = mongoose.model("ServiceDetail", ServiceDetailSchema);
 
+
 export default ServiceDetail;

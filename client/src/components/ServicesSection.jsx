@@ -40,7 +40,7 @@ export default function ServicesSection() {
                     OUR SERVICES
                 </h1>
                 <SkeletonTheme baseColor="#bfdbfe" highlightColor="#F5F5DC">
-                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
+                    <div className="w-full grid grid-cols-1 min-[425px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 py-4 text-center text-sm border-t border-black">
                         {isLoading
                             ? Array(6)
                                   .fill()

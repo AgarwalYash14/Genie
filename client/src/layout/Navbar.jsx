@@ -27,10 +27,11 @@ export default function Navbar() {
     const checkUserLoggedIn = useCallback(async () => {
         try {
             const userData = await getUserDetails();
-            if (userData) {
+            if (userData.isAuthenticated) {
                 setIsLoggedIn(true);
-                setUser(userData);
+                setUser(userData.user);
             }
+            console.log(userData);
         } catch (error) {
             console.error("Error fetching user details:", error);
             handleLogout();
@@ -82,7 +83,7 @@ export default function Navbar() {
             await logout();
             setIsLoggedIn(false);
             setUser(null);
-            navigate("/");
+            // navigate("/");
         } catch (error) {
             console.error("Logout failed", error);
         }
@@ -102,7 +103,7 @@ export default function Navbar() {
                     <img src={logo} alt="" className="h-12" />
                     <Link
                         to="/"
-                        className="text-4xl logo hover:text-green-600 transition-colors duration-300"
+                        className="text-[2.5rem] leading-[1] logo hover:text-green-600 transition-colors duration-300"
                     >
                         GENIE
                     </Link>
@@ -111,15 +112,15 @@ export default function Navbar() {
                     <Autocomplete libraries={libraries} />
                 </div>
                 <div className="hidden items-center gap-8 md:flex">
-                    <div className="flex items-center gap-2 hover:text-orange-500">
-                        <img
-                            id="cart"
-                            name="cart"
-                            src={cart}
-                            alt="Cart"
-                            className="h-6"
-                        />
-                        <Link to="/viewcart">
+                    <Link to="/viewcart">
+                        <div className="flex items-center gap-2 hover:text-orange-500">
+                            <img
+                                id="cart"
+                                name="cart"
+                                src={cart}
+                                alt="Cart"
+                                className="h-6"
+                            />
                             <div className="flex items-center gap-1 w-20 h-6">
                                 <span>Cart</span>
                                 <div className="flex">
@@ -130,8 +131,8 @@ export default function Navbar() {
                                     )
                                 </div>
                             </div>
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                     <div className="flex gap-2 hover:text-orange-500">
                         <img src={bookings} alt="Bookings" className="h-6" />
                         <span className="h-6">Bookings</span>

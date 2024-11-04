@@ -6,13 +6,15 @@ import ServiceDetails from "./components/ServiceDetails";
 import ServiceList from "./pages/ServiceList";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
     return (
-        <>
+        <AnimatePresence mode="wait">
             <CartProvider>
                 <Router>
                     <Routes>
+                        {/* <Route element={<RouteTransition />}> */}
                         <Route path="/" element={<Layout />}>
                             <Route index element={<HomePage />} />
                             <Route
@@ -29,10 +31,11 @@ function App() {
                             />
                             <Route path="/viewcart" element={<Cart />} />
                         </Route>
+                        {/* </Route> */}
                     </Routes>
                 </Router>
             </CartProvider>
-        </>
+        </AnimatePresence>
     );
 }
 

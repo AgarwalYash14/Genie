@@ -40,7 +40,7 @@ export default function PortalLayout({ isOpen, onClose, children }) {
         <>
             <div
                 ref={portalRef}
-                className="fixed w-screen h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-brightness-75 backdrop-blur-[2px] select-none z-50 overflow-hidden"
+                className="fixed w-screen h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-brightness-50 backdrop-blur-[2.5px] select-none z-50 overflow-hidden"
             >
                 <div
                     ref={contentRef}
@@ -49,7 +49,7 @@ export default function PortalLayout({ isOpen, onClose, children }) {
                     <div className="flex justify-end py-5 pr-5">
                         <div
                             onClick={onClose}
-                            className="outline-dotted outline-1 rounded-lg p-1 hover:bg-zinc-100 transition-colors"
+                            className="outline-dotted outline-1 rounded-lg p-1 hover:bg-stone-300 hover:outline transition-all duration-300"
                         >
                             <IoClose />
                         </div>

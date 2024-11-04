@@ -7,9 +7,9 @@ export default function ServiceCart() {
         useContext(CartContext);
 
     return (
-        <div className="flex flex-col justify-between h-full w-full">
-            <div className="flex items-center justify-between pb-2">
-                <h1 className="text-xl font-bold">Cart</h1>
+        <div className="flex flex-col justify-between h-full w-full overflow-hidden">
+            <div className="bg-yellow-200 flex items-center justify-between border-b border-black py-4 px-4 mb-4 overflow-hidden">
+                <h1 className="text-lg font-semibold">Cart</h1>
                 <button
                     onClick={clearCart}
                     className="underline-offset-2 text-sm rounded"
@@ -17,14 +17,14 @@ export default function ServiceCart() {
                     <img
                         src={clearCartImg}
                         alt=""
-                        className="h-4 text-red-600"
+                        className="h-5 text-red-600"
                     />
                 </button>
             </div>
-            <div className="h-full overflow-y-auto mb-4">
+            <div className="h-full overflow-y-auto mx-4 pr-4">
                 {cartServices.map((service, id) => (
-                    <div key={id} className="mr-4">
-                        <div className="flex justify-between items-end gap-4 py-4">
+                    <div key={id}>
+                        <div className="flex justify-between items-end gap-4">
                             <div className=" flex gap-4 w-2/3">
                                 {/* <div>
                                     <img
@@ -67,12 +67,12 @@ export default function ServiceCart() {
                             </div>
                         </div>
                         {id < cartServices.length - 1 && (
-                            <hr className="border-t border-dashed border-black" />
+                            <hr className="border-t border-dashed border-black my-4" />
                         )}
                     </div>
                 ))}
             </div>
-            <div className="bg-blue-400 flex items-center justify-between p-2 px-4 rounded-full text-neutral-100 border border-black text-nowrap">
+            <div className="bg-blue-400 flex items-center justify-between p-3 px-4 mt-4 border-t border-black text-nowrap">
                 <div className="w-full flex justify-between">
                     <p>Total:</p>
                     <p>₹{getCartTotal()}</p>

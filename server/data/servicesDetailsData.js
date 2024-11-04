@@ -10,7 +10,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Waxing",
                                 categoryImage:
-                                    "assets/categories/waxing-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/waxing.svg",
                                 services: [
                                     {
                                         title: "Full arms + Full legs waxing (tin waxing)",
@@ -201,7 +201,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Manicure",
                                 categoryImage:
-                                    "assets/categories/manicure-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/manicure.svg",
                                 services: [
                                     {
                                         title: "AVL sea-algae manicure",
@@ -238,7 +238,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Pedicure",
                                 categoryImage:
-                                    "assets/categories/pedicure-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/pedicure.svg",
                                 services: [
                                     {
                                         title: "Cut, file & polish",
@@ -275,7 +275,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Threading & Face Wax",
                                 categoryImage:
-                                    "assets/categories/pedicure-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/threadingAndFaceWax.svg",
                                 services: [
                                     {
                                         title: "Threading",
@@ -322,7 +322,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Bleach & Detan",
                                 categoryImage:
-                                    "assets/categories/pedicure-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/bleachAndDetan.svg",
                                 services: [
                                     {
                                         title: "Bleach",
@@ -349,7 +349,7 @@ export const servicesDetailsData = {
                             {
                                 name: "Massage Therapy",
                                 categoryImage:
-                                    "assets/categories/pedicure-main-image.jpg",
+                                    "/assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/categories/massageTherapy.svg",
                                 services: [
                                     {
                                         title: "Head massage",
@@ -1008,205 +1008,197 @@ export const servicesDetailsData = {
             },
             "Spa for Women": {
                 image: "assets/servicesSubCategories/spaWomen.svg",
-                services: [
-                    {
-                        title: "Post Natal",
-
-                        image: "",
-                        title: "Post Natal Massage",
-                        time: "75 mins",
-                        OurPrice: "1299",
-                        MRP: "1499",
-                        description: [
-                            "Reduces water retention and improves blood circulation",
-                            "Helps in relaxation and eases muscle tension",
-                        ],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish Therapy + Free 10 mins head massage",
-                        time: "70 mins",
-                        OurPrice: "1299",
-                        MRP: "1640",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish 60 mins + Foot Massage 20 mins",
-                        time: "80 mins",
-                        OurPrice: "1748",
-                        MRP: "1840",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
-                        time: "80 mins",
-                        OurPrice: "1648",
-                        MRP: "1740",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Stress relief swedish massage",
-                        time: "75 mins",
-                        OurPrice: "1299",
-                        MRP: "1499",
-                        description: [
-                            "Medium to light pressure full body massage to relax & unwind",
-                            "Treats superficial muscle layers, improves blood circulation & sleep quality",
-                        ],
-                    },
-                    {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Deep tissue therapy + Free 10 mins head massage",
-                        time: "70 mins",
-                        OurPrice: "1449",
-                        MRP: "1790",
-                        description: [],
-                    },
-                    {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Top to toe stress relief massage",
-                        time: "100 mins",
-                        OurPrice: "1899",
-                        MRP: "1899",
-                        description: [
-                            "Customisable pressure full body massage. Longer head massage & foot reflexology.",
-                            "Most comprehensive massage experience. Provides extended scalp & foot care.",
-                        ],
-                    },
-                    {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Hectic day care massage",
-                        time: "45 mins",
-                        OurPrice: "899",
-                        MRP: "899",
-                        description: [
-                            "Medium-pressure head, neck, shoulder and foot massage",
-                            "Reduces muscle stiffness & fatigue to make you feel refreshed",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Deep tissue pain relief massage",
-                        time: "75 mins",
-                        OurPrice: "1299",
-                        MRP: "1499",
-                        description: [
-                            "High-pressure full body massage to target pain points, knots & muscle soreness",
-                            "Treats deeper muscle layers, heals sports injuries & improves flexibility",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Leg pain relief massage",
-                        time: "40 mins",
-                        OurPrice: "849",
-                        MRP: "849",
-                        description: [
-                            "High-pressure focused massage to address all the pain points/ areas in the legs",
-                            "Eliminates pain, stiffness & inflammation in the affected areas",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Back pain relief massage",
-                        time: "40 mins",
-                        OurPrice: "849",
-                        MRP: "849",
-                        description: [
-                            "High-pressure focused massage to address all the pain points/ areas in the back",
-                            "Eliminates pain, stiffness & inflammation in the affected areas",
-                        ],
-                    },
-                    {
-                        title: "Skin care scrubs",
-
-                        image: "",
-                        title: "Rejuvenating scrub & massage package",
-                        time: "90 mins",
-                        OurPrice: "1649",
-                        MRP: "1649",
-                        description: [
-                            "20 mins full body scrub followed by medium to light pressure full body massage",
-                            "Removes dead skin cells, improves blood circulation & sleep quality",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Head massage",
-                        time: "20 mins",
-                        OurPrice: "349",
-                        MRP: "349",
-                        description: [
-                            "Reduces muscle soreness, improves circulation",
-                            "Promotes hair health & relieves stress",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Foot massage",
-                        time: "20 mins",
-                        OurPrice: "549",
-                        MRP: "549",
-                        description: [
-                            "Micromovement techniques with thumb & fingers to cover all the pressure points",
-                            "Relaxes your feet & entire body. Stimulates the nervous system.",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Face massage",
-                        time: "20 mins",
-                        OurPrice: "349",
-                        MRP: "349",
-                        description: [
-                            "Gentle massage with upward & outward circular motions",
-                            "Reduces fine lines, wrinkles, puffiness. Improves blood flow & facial appearance",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Head & shoulder massage",
-                        time: "20 mins",
-                        OurPrice: "449",
-                        MRP: "449",
-                        description: [
-                            "Medium-pressure massage that covers head, neck & shoulders",
-                            "Releases muscle tension & stiffness, nourishes scalp, conditions hair",
-                        ],
-                    },
-                ],
+                services: {
+                    categories: [
+                        {
+                            name: "Post Natal",
+                            categoryImage:
+                                "assets/serviceDetails/WomenSalon&Spa/SpaForWomen/PostNatal/postNatal.svg",
+                            services: [
+                                {
+                                    title: "Post Natal Massage",
+                                    time: "75 mins",
+                                    OurPrice: "1299",
+                                    MRP: "1499",
+                                    description: [
+                                        "Reduces water retention and improves blood circulation",
+                                        "Helps in relaxation and eases muscle tension",
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "Swedish Massage",
+                            categoryImage: "",
+                            services: [
+                                {
+                                    title: "Swedish Therapy + Free 10 mins head massage",
+                                    time: "70 mins",
+                                    OurPrice: "1299",
+                                    MRP: "1640",
+                                    description: [],
+                                },
+                                {
+                                    title: "Swedish 60 mins + Foot Massage 20 mins",
+                                    time: "80 mins",
+                                    OurPrice: "1748",
+                                    MRP: "1840",
+                                    description: [],
+                                },
+                                {
+                                    title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
+                                    time: "80 mins",
+                                    OurPrice: "1648",
+                                    MRP: "1740",
+                                    description: [],
+                                },
+                                {
+                                    title: "Stress relief swedish massage",
+                                    time: "75 mins",
+                                    OurPrice: "1299",
+                                    MRP: "1499",
+                                    description: [
+                                        "Medium to light pressure full body massage to relax & unwind",
+                                        "Treats superficial muscle layers, improves blood circulation & sleep quality",
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "Stress Relief",
+                            categoryImage: "",
+                            services: [
+                                {
+                                    title: "Deep tissue therapy + Free 10 mins head massage",
+                                    time: "70 mins",
+                                    OurPrice: "1449",
+                                    MRP: "1790",
+                                    description: [],
+                                },
+                                {
+                                    title: "Top to toe stress relief massage",
+                                    time: "100 mins",
+                                    OurPrice: "1899",
+                                    MRP: "1899",
+                                    description: [
+                                        "Customisable pressure full body massage. Longer head massage & foot reflexology.",
+                                        "Most comprehensive massage experience. Provides extended scalp & foot care.",
+                                    ],
+                                },
+                                {
+                                    title: "Hectic day care massage",
+                                    time: "45 mins",
+                                    OurPrice: "899",
+                                    MRP: "899",
+                                    description: [
+                                        "Medium-pressure head, neck, shoulder and foot massage",
+                                        "Reduces muscle stiffness & fatigue to make you feel refreshed",
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "Pain Relief",
+                            categoryImage: "",
+                            services: [
+                                {
+                                    title: "Deep tissue pain relief massage",
+                                    time: "75 mins",
+                                    OurPrice: "1299",
+                                    MRP: "1499",
+                                    description: [
+                                        "High-pressure full body massage to target pain points, knots & muscle soreness",
+                                        "Treats deeper muscle layers, heals sports injuries & improves flexibility",
+                                    ],
+                                },
+                                {
+                                    title: "Leg pain relief massage",
+                                    time: "40 mins",
+                                    OurPrice: "849",
+                                    MRP: "849",
+                                    description: [
+                                        "High-pressure focused massage to address all the pain points/ areas in the legs",
+                                        "Eliminates pain, stiffness & inflammation in the affected areas",
+                                    ],
+                                },
+                                {
+                                    title: "Back pain relief massage",
+                                    time: "40 mins",
+                                    OurPrice: "849",
+                                    MRP: "849",
+                                    description: [
+                                        "High-pressure focused massage to address all the pain points/ areas in the back",
+                                        "Eliminates pain, stiffness & inflammation in the affected areas",
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "Skin Care Scrubs",
+                            categoryImage: "",
+                            services: [
+                                {
+                                    title: "Rejuvenating scrub & massage package",
+                                    time: "90 mins",
+                                    OurPrice: "1649",
+                                    MRP: "1649",
+                                    description: [
+                                        "20 mins full body scrub followed by medium to light pressure full body massage",
+                                        "Removes dead skin cells, improves blood circulation & sleep quality",
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "Add-ons",
+                            categoryImage: "",
+                            services: [
+                                {
+                                    title: "Head massage",
+                                    time: "20 mins",
+                                    OurPrice: "349",
+                                    MRP: "349",
+                                    description: [
+                                        "Reduces muscle soreness, improves circulation",
+                                        "Promotes hair health & relieves stress",
+                                    ],
+                                },
+                                {
+                                    title: "Foot massage",
+                                    time: "20 mins",
+                                    OurPrice: "549",
+                                    MRP: "549",
+                                    description: [
+                                        "Micromovement techniques with thumb & fingers to cover all the pressure points",
+                                        "Relaxes your feet & entire body. Stimulates the nervous system.",
+                                    ],
+                                },
+                                {
+                                    title: "Face massage",
+                                    time: "20 mins",
+                                    OurPrice: "349",
+                                    MRP: "349",
+                                    description: [
+                                        "Gentle massage with upward & outward circular motions",
+                                        "Reduces fine lines, wrinkles, puffiness. Improves blood flow & facial appearance",
+                                    ],
+                                },
+                                {
+                                    title: "Head & shoulder massage",
+                                    time: "20 mins",
+                                    OurPrice: "449",
+                                    MRP: "449",
+                                    description: [
+                                        "Medium-pressure massage that covers head, neck & shoulders",
+                                        "Releases muscle tension & stiffness, nourishes scalp, conditions hair",
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
             },
+
             "Hair Studio for Women": {
                 image: "assets/servicesSubCategories/hairStudio.svg",
                 services: [
@@ -2740,7 +2732,6 @@ export const servicesDetailsData = {
                 services: [
                     {
                         title: "Full home painting & waterproofing",
-
                         image: "",
                         title: "At home consulatation",
                         time: "",
