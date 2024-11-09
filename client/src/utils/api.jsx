@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Set up base URL for the API and create an axios instance with default settings.
 const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 const axiosInstance = axios.create({
@@ -9,6 +10,7 @@ const axiosInstance = axios.create({
     },
 });
 
+// User Registration API
 export const register = async (userData) => {
     try {
         const response = await axiosInstance.post(
@@ -17,10 +19,11 @@ export const register = async (userData) => {
         );
         return response.data;
     } catch (error) {
-        throw error.response.data || error;
+        throw error.response?.data || error.message;
     }
 };
 
+// User Login API
 export const login = async (userData) => {
     try {
         const response = await axiosInstance.post(
@@ -29,37 +32,44 @@ export const login = async (userData) => {
         );
         return response.data;
     } catch (error) {
-        throw error.response.data;
+        throw error.response?.data || error.message;
     }
 };
 
+// Get User Details API
 export const getUserDetails = async () => {
     try {
         const response = await axiosInstance.get(`${API_URL}/users/user`);
-        return response.data;
+        const data = response.data;
+        data.user.cart = Array.isArray(data.user.cart) ? data.user.cart : [];
+        return data;
     } catch (error) {
-        throw error.response.data ? error.response.data : error;
+        console.error("Error fetching user details:", error);
+        throw error.response?.data || error.message;
     }
 };
 
+// User Logout API
 export const logout = async () => {
     try {
         await axiosInstance.post(`${API_URL}/users/logout`);
     } catch (error) {
-        console.error("Logout failed", error);
-        throw error;
+        console.error("Logout failed:", error);
+        throw error.response?.data || error.message;
     }
 };
 
+// Get Services List API
 export const getServices = async () => {
     try {
         const response = await axiosInstance.get(`${API_URL}/services`);
         return response.data;
     } catch (error) {
-        throw error.response ? error.response.data : error;
+        throw error.response?.data || error.message;
     }
 };
 
+// Get Service Details API
 export const getServiceDetails = async (serviceName) => {
     try {
         const response = await axiosInstance.get(
@@ -67,61 +77,64 @@ export const getServiceDetails = async (serviceName) => {
         );
         return response.data;
     } catch (error) {
-        throw error.response ? error.response.data : error;
+        throw error.response?.data || error.message;
     }
 };
 
+// Update User Cart API
 export const updateUserCart = async (cartItems) => {
     try {
-        // Validate and transform cart items before sending
-        const processedItems = cartItems.map(item => {
-            if (!item.service || !item.quantity) {
-                throw new Error("Invalid cart item: missing required fields");
-            }
+        if (!Array.isArray(cartItems)) {
+            throw new Error("Cart items should be an array");
+        }
 
-            // Ensure we have all required fields
-            const cartItem = {
-                service: item.service._id || item.service, // Handle both object and ID
-                quantity: parseInt(item.quantity),
-                title: item.service.title || item.title,
-                price: parseFloat(item.service.OurPrice || item.price),
-                total: parseFloat((item.service.OurPrice || item.price) * item.quantity)
-            };
+        // Transform the cart items to match backend structure
+        const processedItems = cartItems.map((item) => ({
+            service: item._id,
+            quantity: parseInt(item.quantity, 10),
+            title: item.title,
+            OurPrice: parseFloat(item.OurPrice),
+            total: parseFloat(item.OurPrice) * parseInt(item.quantity, 10),
+            category: item.category || "",
+            type: item.type || "",
+            time: item.time || "",
+            MRP: parseFloat(item.MRP || 0),
+            description: Array.isArray(item.description)
+                ? item.description
+                : [],
+            image: item.image || "",
+        }));
 
-            // Add optional fields if they exist
-            if (item.service.category || item.category) cartItem.category = item.service.category || item.category;
-            if (item.service.type || item.type) cartItem.type = item.service.type || item.type;
-            if (item.service.time || item.time) cartItem.time = item.service.time || item.time;
-            if (item.service.MRP || item.MRP) cartItem.MRP = parseFloat(item.service.MRP || item.MRP);
-            if (item.service.description || item.description) cartItem.description = item.service.description || item.description;
-
-            return cartItem;
-        });
-
-        const response = await axiosInstance.put(`${API_URL}/users/cart`, processedItems);
+        const response = await axiosInstance.put(
+            `${API_URL}/users/cart`,
+            processedItems
+        );
         return response.data;
     } catch (error) {
         console.error("Error updating cart:", error);
-        throw error.response?.data || error;
+        throw error.response?.data || error.message;
     }
 };
 
+// Get User Cart API
 export const getUserCart = async () => {
     try {
         const response = await axiosInstance.get(`${API_URL}/users/cart`);
-        return response.data;
+        const data = response.data;
+        return Array.isArray(data.cart) ? data.cart : [];
     } catch (error) {
-        console.error("Error fetching cart:", error);
-        throw error;
+        console.error("Error fetching user cart:", error);
+        throw error.response?.data || error.message;
     }
 };
 
+// Clear User Cart API
 export const clearUserCart = async () => {
     try {
         const response = await axiosInstance.delete(`${API_URL}/users/cart`);
-        return await response.data;
+        return response.data;
     } catch (error) {
         console.error("Error clearing cart:", error);
-        throw error;
+        throw error.response?.data || error.message;
     }
 };

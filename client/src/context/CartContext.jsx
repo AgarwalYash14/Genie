@@ -1,22 +1,109 @@
-import { createContext, useState, useEffect } from "react";
-import { updateUserCart, getUserCart, getUserDetails } from "../utils/api";
+import { createContext, useContext, useEffect, useState } from "react";
+import { updateUserCart, clearUserCart, getUserDetails } from "../utils/api";
 
-export const CartContext = createContext();
+export const CART_STORAGE_KEY = "userCart";
+const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
+export const useCart = () => {
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error("useCart must be used within a CartProvider");
+    }
+    return context;
+};
+
+export const CartProvider = ({ children, isAuthenticated }) => {
     const [cartServices, setCartServices] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Function to merge cart items
-    const mergeCartItems = (localCart, serverCart) => {
+    // Initialize and handle auth state changes
+    useEffect(() => {
+        const initializeCart = async () => {
+            try {
+                setLoading(true);
+                if (isAuthenticated) {
+                    const response = await getUserDetails();
+                    if (response.user && Array.isArray(response.user.cart)) {
+                        const localCart = JSON.parse(
+                            localStorage.getItem(CART_STORAGE_KEY) || "[]"
+                        );
+
+                        // Transform server cart
+                        const transformedServerCart = response.user.cart.map(
+                            (item) => ({
+                                _id: item.service,
+                                quantity: item.quantity,
+                                title: item.title,
+                                OurPrice: item.OurPrice,
+                                category: item.category,
+                                type: item.type,
+                                time: item.time,
+                                MRP: item.MRP,
+                                description: item.description,
+                                image: item.image,
+                            })
+                        );
+
+                        if (localCart.length > 0) {
+                            // Merge carts only if there are items in local storage
+                            const mergedCart = await mergeCartsOnLogin(
+                                localCart,
+                                transformedServerCart
+                            );
+                            setCartServices(mergedCart);
+                            localStorage.removeItem(CART_STORAGE_KEY);
+                        } else {
+                            // Use server cart if no local cart
+                            setCartServices(transformedServerCart);
+                        }
+                    }
+                } else {
+                    // Not authenticated - use local storage
+                    const localCart = JSON.parse(
+                        localStorage.getItem(CART_STORAGE_KEY) || "[]"
+                    );
+                    setCartServices(localCart);
+                }
+            } catch (err) {
+                console.error("Cart initialization error:", err);
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        initializeCart();
+    }, [isAuthenticated]);
+
+    // Modified save effect to prevent empty cart updates
+    useEffect(() => {
+        if (!loading && cartServices) {
+            if (isAuthenticated) {
+                if (cartServices.length > 0) {
+                    updateUserCart(cartServices).catch((err) => {
+                        console.error("Error updating server cart:", err);
+                        setError(err.message);
+                    });
+                }
+            } else {
+                localStorage.setItem(
+                    CART_STORAGE_KEY,
+                    JSON.stringify(cartServices)
+                );
+            }
+        }
+    }, [cartServices, isAuthenticated, loading]);
+
+    const mergeCartsOnLogin = async (localCart, serverCart) => {
+        console.log("Merging carts:", { localCart, serverCart });
+
         const mergedCart = [...serverCart];
 
         localCart.forEach((localItem) => {
             const existingItem = mergedCart.find(
-                (serverItem) => serverItem._id === localItem._id
+                (item) => item._id === localItem._id
             );
-
             if (existingItem) {
                 existingItem.quantity += localItem.quantity;
             } else {
@@ -24,253 +111,123 @@ export const CartProvider = ({ children }) => {
             }
         });
 
-        return mergedCart;
-    };
-
-    // Initialize cart and handle login status
-    useEffect(() => {
-        const initializeCart = async () => {
-            try {
-                const userDetails = await getUserDetails();
-                setIsLoggedIn(true);
-
-                // Get local cart before clearing
-                const localCart = localStorage.getItem("cartServices")
-                    ? JSON.parse(localStorage.getItem("cartServices"))
-                    : [];
-
-                // Get server cart
-                const serverCart = await getUserCart();
-
-                if (localCart.length > 0) {
-                    // Merge local cart with server cart
-                    const mergedCart = mergeCartItems(localCart, serverCart);
-                    setCartServices(mergedCart);
-
-                    // Update server with merged cart
-                    await updateUserCart(
-                        mergedCart.map((item) => ({
-                            service: item._id,
-                            quantity: item.quantity,
-                            price: item.OurPrice,
-                            total: item.OurPrice * item.quantity,
-                        }))
-                    );
-
-                    // Clear localStorage after successful merge
-                    localStorage.removeItem("cartServices");
-                } else {
-                    setCartServices(serverCart);
-                }
-            } catch (error) {
-                setIsLoggedIn(false);
-                // If not logged in, use localStorage
-                const localCart = localStorage.getItem("cartServices");
-                if (localCart) {
-                    setCartServices(JSON.parse(localCart));
-                }
-            }
-            setLoading(false);
-        };
-
-        initializeCart();
-    }, []);
-
-    // Save cart based on login status
-    useEffect(() => {
-        if (!loading) {
-            if (isLoggedIn) {
-                // Save to backend
-                updateUserCart(
-                    cartServices.map((item) => ({
-                        service: item._id,
-                        quantity: item.quantity,
-                        price: item.OurPrice,
-                        total: item.OurPrice * item.quantity,
-                    }))
-                ).catch((error) => {
-                    console.error("Failed to update cart in backend:", error);
-                });
-            } else {
-                // Save to localStorage
-                localStorage.setItem(
-                    "cartServices",
-                    JSON.stringify(cartServices)
-                );
-            }
-        }
-    }, [cartServices, isLoggedIn, loading]);
-
-    // Handle logout - sync with localStorage
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-        localStorage.setItem("cartServices", JSON.stringify(cartServices));
-    };
-
-    // Handle login - merge carts
-    const handleLogin = async () => {
+        // Update server with merged cart
         try {
-            setIsLoggedIn(true);
-            const localCart = JSON.parse(
-                localStorage.getItem("cartServices") || "[]"
-            );
-            const serverCart = await getUserCart();
-
-            const mergedCart = mergeCartItems(localCart, serverCart);
-            setCartServices(mergedCart);
-
-            await updateUserCart(
-                mergedCart.map((item) => ({
-                    service: item._id,
-                    quantity: item.quantity,
-                    price: item.OurPrice,
-                    total: item.OurPrice * item.quantity,
-                }))
-            );
-
-            localStorage.removeItem("cartServices");
+            await updateUserCart(mergedCart);
+            console.log("Successfully merged and updated cart:", mergedCart);
+            return mergedCart;
         } catch (error) {
-            console.error("Failed to handle login cart sync:", error);
+            console.error("Error updating merged cart:", error);
+            throw error;
         }
     };
 
     const addToCart = async (service) => {
-        const isServiceInCart = cartServices.find(
-            (cartService) => cartService._id === service._id
-        );
-
-        const updatedServices = isServiceInCart
-            ? cartServices.map((cartService) =>
-                  cartService._id === service._id
-                      ? { ...cartService, quantity: cartService.quantity + 1 }
-                      : cartService
-              )
-            : [...cartServices, { ...service, quantity: 1 }];
-
-        setCartServices(updatedServices);
-
-        if (isLoggedIn) {
-            try {
-                await updateUserCart(
-                    updatedServices.map((item) => ({
-                        service: item._id,
-                        quantity: item.quantity,
-                        price: item.OurPrice,
-                        total: item.OurPrice * item.quantity,
-                    }))
+        try {
+            setCartServices((prevServices) => {
+                const existingItemIndex = prevServices.findIndex(
+                    (item) => item._id === service._id
                 );
-            } catch (error) {
-                console.error("Failed to update cart in backend:", error);
-            }
+
+                if (existingItemIndex !== -1) {
+                    const updatedServices = [...prevServices];
+                    updatedServices[existingItemIndex] = {
+                        ...updatedServices[existingItemIndex],
+                        quantity:
+                            updatedServices[existingItemIndex].quantity + 1,
+                    };
+                    return updatedServices;
+                }
+
+                return [...prevServices, { ...service, quantity: 1 }];
+            });
+        } catch (err) {
+            setError(err.message);
         }
     };
 
     const removeFromCart = async (service) => {
-        const isServiceInCart = cartServices.find(
-            (cartService) => cartService._id === service._id
-        );
-
-        const updatedServices =
-            isServiceInCart.quantity === 1
-                ? cartServices.filter(
-                      (cartService) => cartService._id !== service._id
-                  )
-                : cartServices.map((cartService) =>
-                      cartService._id === service._id
-                          ? {
-                                ...cartService,
-                                quantity: cartService.quantity - 1,
-                            }
-                          : cartService
-                  );
-
-        setCartServices(updatedServices);
-
-        if (isLoggedIn) {
-            try {
-                await updateUserCart(
-                    updatedServices.map((item) => ({
-                        service: item._id,
-                        quantity: item.quantity,
-                        price: item.OurPrice,
-                        total: item.OurPrice * item.quantity,
-                    }))
+        try {
+            setCartServices((prevServices) => {
+                const existingItem = prevServices.find(
+                    (item) => item._id === service._id
                 );
-            } catch (error) {
-                console.error("Failed to update cart in backend:", error);
-            }
+
+                if (existingItem && existingItem.quantity > 1) {
+                    // If quantity > 1, decrement quantity
+                    return prevServices.map((item) =>
+                        item._id === service._id
+                            ? { ...item, quantity: item.quantity - 1 }
+                            : item
+                    );
+                }
+
+                // If quantity is 1 or item not found, remove item
+                return prevServices.filter((item) => item._id !== service._id);
+            });
+        } catch (err) {
+            setError(err.message);
         }
     };
 
     const clearCart = async () => {
-        setCartServices([]);
-        if (isLoggedIn) {
-            try {
-                await updateUserCart([]);
-            } catch (error) {
-                console.error("Failed to clear cart in backend:", error);
+        try {
+            if (isAuthenticated) {
+                await clearUserCart();
             }
+            setCartServices([]);
+            if (!isAuthenticated) {
+                localStorage.removeItem(CART_STORAGE_KEY);
+            }
+        } catch (err) {
+            setError(err.message);
         }
-    };
-
-    // Existing calculation functions remain the same
-    const getCartCount = () => {
-        return cartServices.reduce(
-            (count, service) => count + service.quantity,
-            0
-        );
-    };
-
-    const getCartTax = () => {
-        return cartServices
-            .reduce((total, service) => {
-                const taxPrice = service.OurPrice * 0.18;
-                const tax = taxPrice * service.quantity;
-                return total + tax;
-            }, 0)
-            .toFixed(2);
     };
 
     const getCartSubTotal = () => {
         return cartServices
-            .reduce((total, service) => {
-                const taxPrice = service.OurPrice * 0.18;
-                const tax = taxPrice * service.quantity;
-                return total + service.OurPrice * service.quantity - tax;
-            }, 0)
+            .reduce((total, item) => total + item.OurPrice * item.quantity, 0)
             .toFixed(2);
+    };
+
+    const getCartTax = () => {
+        return (getCartSubTotal() * 0.18).toFixed(2); // 18% tax
     };
 
     const getCartTotal = () => {
-        return cartServices
-            .reduce((total, service) => {
-                const totalPrice = service.OurPrice * service.quantity;
-                return total + totalPrice;
-            }, 0)
-            .toFixed(2);
+        return (
+            parseFloat(getCartSubTotal()) + parseFloat(getCartTax())
+        ).toFixed(2);
     };
 
-    if (loading) {
-        return null;
-    }
+    const getCartCount = () => {
+        return cartServices.reduce((count, item) => count + item.quantity, 0);
+    };
+
+    // Find cart item by service ID
+    const findCartItem = (serviceId) => {
+        return cartServices.find((item) => item._id === serviceId);
+    };
 
     return (
         <CartContext.Provider
             value={{
-                cartServices,
+                cartServices, // Matches your existing code structure
+                loading,
+                error,
                 addToCart,
                 removeFromCart,
                 clearCart,
-                getCartCount,
-                getCartTax,
                 getCartSubTotal,
+                getCartTax,
                 getCartTotal,
-                isLoggedIn,
-                handleLogin,
-                handleLogout,
+                getCartCount,
+                findCartItem,
             }}
         >
             {children}
         </CartContext.Provider>
     );
 };
+
+export { CartContext };

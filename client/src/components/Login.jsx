@@ -1,13 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { login } from "../utils/api";
-import { CartContext } from "../context/CartContext";
 
 export default function Login({ onLoginSuccess, onClose }) {
     const [userData, setUserData] = useState({
         emailOrPhone: "",
         password: "",
     });
-    const { handleLogin } = useContext(CartContext);
     const [error, setError] = useState("");
 
     const handleChange = (e) => {
@@ -17,7 +15,6 @@ export default function Login({ onLoginSuccess, onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
-        await handleLogin();
         try {
             const loginData = {
                 email: userData.emailOrPhone.includes("@")

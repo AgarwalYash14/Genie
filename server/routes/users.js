@@ -198,95 +198,52 @@ const auth = async (req, res, next) => {
     }
 };
 
-// Get user's cart
-router.get("/cart", auth, async (req, res) => {
-    try {
-        const user = await User.findById(req.user.id).populate({
-            path: "cart.service",
-            select: "_id name description OurPrice", // Add any other fields you need
-        });
-
-        res.json(user.cart);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ msg: "Server Error" });
-    }
-});
-
 // Update user's cart
 router.put("/cart", auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id);
-        if (!user) {
-            return res.status(404).json({ msg: "User not found" });
-        }
+        if (!user) return res.status(404).json({ msg: "User not found" });
 
-        // Validate cart items
         const cartItems = req.body;
         if (!Array.isArray(cartItems)) {
             return res.status(400).json({ msg: "Invalid cart data format" });
         }
 
-        // Validate and process each cart item
-        const processedCart = await Promise.all(
-            cartItems.map(async (item) => {
-                // Log the incoming item for debugging
-                console.log("Processing cart item:", item);
+        // Replace the entire cart instead of updating individual items
+        user.cart = cartItems.map((item) => ({
+            service: item.service,
+            quantity: parseInt(item.quantity, 10),
+            title: item.title || "",
+            OurPrice: parseFloat(item.OurPrice || 0),
+            total: parseFloat(item.OurPrice || 0) * parseInt(item.quantity, 10),
+            category: item.category || "",
+            type: item.type || "",
+            time: item.time || "",
+            MRP: parseFloat(item.MRP || 0),
+            description: Array.isArray(item.description)
+                ? item.description
+                : [],
+            image: item.image || "",
+        }));
 
-                // Basic validation
-                if (!item.service) {
-                    console.error("Missing service ID:", item);
-                    return null; // Skip invalid items
-                }
-
-                try {
-                    // Verify service exists
-                    const service = await ServiceDetail.findById(item.service);
-                    if (!service) {
-                        console.error(
-                            `Service not found for ID: ${item.service}`
-                        );
-                        return null; // Skip invalid services
-                    }
-
-                    // Use service details from database to ensure validity
-                    return {
-                        service: service._id,
-                        quantity: parseInt(item.quantity) || 1,
-                        category: service.category || "",
-                        type: service.type || "",
-                        title: service.title || service.name,
-                        time: service.time || "",
-                        price: parseFloat(service.OurPrice),
-                        MRP: service.MRP ? parseFloat(service.MRP) : undefined,
-                        description: service.description || [],
-                        total:
-                            parseFloat(service.OurPrice) *
-                            (parseInt(item.quantity) || 1),
-                    };
-                } catch (err) {
-                    console.error(
-                        `Error processing service ${item.service}:`,
-                        err
-                    );
-                    return null;
-                }
-            })
-        );
-
-        // Filter out null entries (invalid items)
-        const validCart = processedCart.filter((item) => item !== null);
-
-        // Update user's cart with only valid items
-        user.cart = validCart;
         await user.save();
-
-        // Populate service details and return
-        await user.populate("cart.service");
         res.json(user.cart);
     } catch (err) {
         console.error("Cart update error:", err);
         res.status(400).json({ msg: err.message });
+    }
+});
+
+// Add a new route to get cart
+router.get("/cart", auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) return res.status(404).json({ msg: "User not found" });
+
+        res.json({ cart: user.cart || [] });
+    } catch (err) {
+        console.error("Get cart error:", err);
+        res.status(500).json({ msg: "Server Error" });
     }
 });
 

@@ -9,7 +9,6 @@ import ServiceCart from "../components/ServiceCart";
 const ServiceList = () => {
     const { serviceName, subcategory, serviceType } = useParams();
     const { cartServices, addToCart, removeFromCart } = useContext(CartContext);
-
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

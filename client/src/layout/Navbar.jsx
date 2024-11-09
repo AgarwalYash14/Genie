@@ -8,92 +8,57 @@ import Autocomplete from "../components/AutoComplete";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import PortalLayout from "../components/PortalLayout";
-import { getUserDetails, logout } from "../utils/api";
 
 import { CartContext } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 const libraries = ["places"];
 
 export default function Navbar() {
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [user, setUser] = useState(null);
-    const navigate = useNavigate();
     const location = useLocation();
+    const navigate = useNavigate();
 
+    const { isAuthenticated, user, login, logout } = useAuth();
     const { getCartCount } = useContext(CartContext);
 
-    const checkUserLoggedIn = useCallback(async () => {
-        try {
-            const userData = await getUserDetails();
-            if (userData.isAuthenticated) {
-                setIsLoggedIn(true);
-                setUser(userData.user);
-            }
-            console.log(userData);
-        } catch (error) {
-            console.error("Error fetching user details:", error);
-            handleLogout();
-        }
-    }, []);
+    const openLogin = () => setShowLogin(true);
+    const closeLogin = useCallback(() => setShowLogin(false), []);
 
-    useEffect(() => {
-        checkUserLoggedIn();
-    }, [checkUserLoggedIn]);
-
-    useEffect(() => {}, [location]);
-
-    const openLogin = () => {
-        setShowLogin(true);
-    };
-
-    const closeLogin = useCallback(() => {
-        setShowLogin(false);
-    }, []);
-
-    const openRegister = () => {
-        setShowRegister(true);
-    };
-
-    const closeRegister = useCallback(() => {
-        setShowRegister(false);
-    }, []);
+    const openRegister = () => setShowRegister(true);
+    const closeRegister = useCallback(() => setShowRegister(false), []);
 
     const handleLoginSuccess = useCallback(
         (userData) => {
-            setIsLoggedIn(true);
-            setUser(userData);
+            login(userData);
             closeLogin();
         },
-        [closeLogin]
+        [closeLogin, login]
     );
 
     const handleRegisterSuccess = useCallback(
         (userData) => {
-            setIsLoggedIn(true);
-            setUser(userData);
+            login(userData);
             closeRegister();
         },
-        [closeRegister]
+        [closeRegister, login]
     );
 
     const handleLogout = useCallback(async () => {
         try {
             await logout();
-            setIsLoggedIn(false);
-            setUser(null);
-            // navigate("/");
+            navigate("/"); // Redirect to home page after logout
         } catch (error) {
             console.error("Logout failed", error);
         }
-    }, [navigate]);
+    }, [logout, navigate]);
 
     const [cartCount, setCartCount] = useState(0);
 
+    // Update cart count when it changes
     useEffect(() => {
-        const count = getCartCount();
-        setCartCount(count);
+        setCartCount(getCartCount());
     }, [getCartCount]);
 
     return (
@@ -108,9 +73,9 @@ export default function Navbar() {
                         GENIE
                     </Link>
                 </div>
-                <div className="hidden md:flex">
+                {/* <div className="hidden md:flex">
                     <Autocomplete libraries={libraries} />
-                </div>
+                </div> */}
                 <div className="hidden items-center gap-8 md:flex">
                     <Link to="/viewcart">
                         <div className="flex items-center gap-2 hover:text-orange-500">
@@ -138,7 +103,7 @@ export default function Navbar() {
                         <span className="h-6">Bookings</span>
                     </div>
                     <div className="w-[0.09rem] h-6 bg-black rounded-full"></div>
-                    {isLoggedIn ? (
+                    {isAuthenticated && user ? (
                         <>
                             <div>
                                 <span className="h-6">
