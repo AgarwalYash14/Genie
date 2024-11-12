@@ -1,4 +1,5 @@
 <div align="center">
+  <h1>GENIE</h1>
   <p><i>Your Trusted Home Services Companion</i></p>
 
   ![GitHub repo size](https://img.shields.io/github/repo-size/Agarwalyash14/Genie)
