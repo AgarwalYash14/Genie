@@ -138,3 +138,42 @@ export const clearUserCart = async () => {
         throw error.response?.data || error.message;
     }
 };
+
+export const createRazorpayOrder = async (orderData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/razorpay/create-order`,
+            orderData
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error creating Razorpay order:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Verify Razorpay Payment API
+export const verifyRazorpayPayment = async (paymentData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/razorpay/verify-payment`,
+            paymentData
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error verifying payment:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+export const getUserBookings = async (userId) => {
+    try {
+        const response = await axiosInstance.get(
+            `${API_URL}/razorpay/bookings/${userId}`
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching bookings:", error);
+        throw error.response?.data || error.message;
+    }
+};

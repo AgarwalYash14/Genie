@@ -185,19 +185,27 @@ export const CartProvider = ({ children, isAuthenticated }) => {
     };
 
     const getCartSubTotal = () => {
-        return cartServices
-            .reduce((total, item) => total + item.OurPrice * item.quantity, 0)
-            .toFixed(2);
+        const totalInclusive = cartServices.reduce(
+            (total, item) => total + item.OurPrice * item.quantity,
+            0
+        );
+        const tax = totalInclusive * 0.18;
+        return (totalInclusive - tax).toFixed(2);
     };
 
     const getCartTax = () => {
-        return (getCartSubTotal() * 0.18).toFixed(2); // 18% tax
+        return (
+            cartServices.reduce(
+                (total, item) => total + item.OurPrice * item.quantity,
+                0
+            ) * 0.18
+        ).toFixed(2);
     };
 
     const getCartTotal = () => {
-        return (
-            parseFloat(getCartSubTotal()) + parseFloat(getCartTax())
-        ).toFixed(2);
+        return cartServices
+            .reduce((total, item) => total + item.OurPrice * item.quantity, 0)
+            .toFixed(2);
     };
 
     const getCartCount = () => {

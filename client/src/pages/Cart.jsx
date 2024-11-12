@@ -2,8 +2,15 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { cart } from "../assets";
 import { useNavigate } from "react-router-dom";
+import {
+    clearUserCart,
+    createRazorpayOrder,
+    verifyRazorpayPayment,
+} from "../utils/api";
+import { useAuth } from "../context/AuthContext";
 
 export default function Cart() {
+    const { user, isAuthenticated } = useAuth();
     const navigate = useNavigate();
 
     const navigateToHome = () => {
@@ -41,6 +48,105 @@ export default function Cart() {
             </>
         );
     }
+
+    const handlePayment = async () => {
+        try {
+            if (!isAuthenticated) {
+                alert("Please login to proceed with payment");
+                navigate("/login");
+                return;
+            }
+
+            // Calculate cart totals
+            const subtotal = getCartSubTotal();
+            const tax = getCartTax();
+            const total = getCartTotal();
+
+            // Create order
+            const orderData = {
+                user: user._id,
+                amount: total * 100, // amount in paise
+                currency: "INR",
+                receipt: `receipt_${Date.now()}`,
+                items: cartServices.map((service) => ({
+                    serviceId: service._id,
+                    image: service.image,
+                    title: service.title,
+                    quantity: service.quantity,
+                    price: service.OurPrice,
+                    total: service.OurPrice * service.quantity,
+                })),
+                summary: {
+                    subtotal,
+                    tax,
+                    total,
+                    itemCount: cartServices.length,
+                },
+                customerDetails: {
+                    name: user.name,
+                    email: user.email,
+                    phone: user.phone,
+                },
+            };
+
+            const order = await createRazorpayOrder(orderData);
+
+            // Initialize Razorpay
+            const options = {
+                key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+                amount: orderData.amount,
+                currency: orderData.currency,
+                name: "GENIE",
+                description: `Order Total: ₹${total} (Incl. GST)`,
+                image: "https://raw.githubusercontent.com/AgarwalYash14/Genie/main/client/public/logo.png",
+                order_id: order.id,
+                handler: async function (response) {
+                    try {
+                        const verificationData = {
+                            userId: user._id,
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_signature: response.razorpay_signature,
+                            orderDetails: orderData,
+                        };
+
+                        const verification = await verifyRazorpayPayment(
+                            verificationData
+                        );
+
+                        if (verification.success) {
+                            await clearUserCart();
+                            navigate("/bookings");
+                        } else {
+                            throw new Error(
+                                verification.message ||
+                                    "Payment verification failed"
+                            );
+                        }
+                    } catch (error) {
+                        console.error("Payment verification failed:", error);
+                        alert(
+                            "Payment verification failed. Please contact support."
+                        );
+                    }
+                },
+                prefill: {
+                    name: user.name || "",
+                    email: user.email || "",
+                    contact: user.phone || "",
+                },
+                theme: {
+                    color: "#FFFFEE",
+                },
+            };
+
+            const razorpayInstance = new window.Razorpay(options);
+            razorpayInstance.open();
+        } catch (error) {
+            console.error("Payment initialization failed:", error);
+            alert("Unable to initialize payment. Please try again later.");
+        }
+    };
 
     return (
         <div className="flex gap-6 py-8">
@@ -176,7 +282,7 @@ export default function Cart() {
                     </div>
                 </div>
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() => handlePayment()}
                     className="w-full tracking-wider bg-blue-800 text-white p-6 hover:bg-blue-900 transition-colors duration-300"
                 >
                     CHECK OUT

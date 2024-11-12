@@ -9,6 +9,7 @@ import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart";
 import { AnimatePresence } from "framer-motion";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import Bookings from "./pages/Bookings";
 
 // Create a wrapper component that uses the auth context
 function AppContent() {
@@ -37,6 +38,7 @@ function AppContent() {
                             element={<ServiceList />}
                         />
                         <Route path="/viewcart" element={<Cart />} />
+                        <Route path="/bookings" element={<Bookings />} />
                     </Route>
                 </Routes>
             </Router>

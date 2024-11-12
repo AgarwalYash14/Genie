@@ -98,10 +98,16 @@ export default function Navbar() {
                             </div>
                         </div>
                     </Link>
-                    <div className="flex gap-2 hover:text-orange-500">
-                        <img src={bookings} alt="Bookings" className="h-6" />
-                        <span className="h-6">Bookings</span>
-                    </div>
+                    <Link to="/bookings">
+                        <div className="flex gap-2 hover:text-orange-500">
+                            <img
+                                src={bookings}
+                                alt="Bookings"
+                                className="h-6"
+                            />
+                            <span className="h-6">Bookings</span>
+                        </div>
+                    </Link>
                     <div className="w-[0.09rem] h-6 bg-black rounded-full"></div>
                     {isAuthenticated && user ? (
                         <>

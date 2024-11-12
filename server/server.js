@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 // Import routes
 import userRoutes from "./routes/users.js";
 import servicesRoutes from "./routes/services.js";
+import razorpayRoutes from "./routes/razorpay.js";
 
 // Set __dirname and __filename
 const __filename = fileURLToPath(import.meta.url);
@@ -20,15 +21,21 @@ dotenv.config();
 // Initialize express app
 const app = express();
 
+//Middleware
+app.use(express.json());
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cookieParser());
+
 // Serve static files
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
-//Middleware
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
-app.use(cookieParser());
-app.use(express.json());
-
 //Connect to MongoDB
+
+//Routes
+app.use("/api/users", userRoutes);
+app.use("/api/services", servicesRoutes);
+app.use("/api/razorpay", razorpayRoutes);
+
 mongoose
     .connect(process.env.MONGODB_URI)
     .then(() => {
@@ -37,10 +44,6 @@ mongoose
     .catch((err) => {
         console.log("Failed to connect to MongoDB", err);
     });
-
-//Routes
-app.use("/api/users", userRoutes);
-app.use("/api/services", servicesRoutes);
 
 //Start server
 const PORT = process.env.PORT || 5000;
