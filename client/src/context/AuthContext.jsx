@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }) => {
                 if (userData.isAuthenticated && userData.user) {
                     setIsAuthenticated(true);
                     setUser(userData.user);
+                    console.log("user Auth", userData.user);
                 } else {
                     handleLogout();
                 }

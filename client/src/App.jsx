@@ -1,5 +1,10 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useNavigate,
+} from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import Layout from "./layout/layout";
@@ -10,6 +15,8 @@ import Cart from "./pages/Cart";
 import { AnimatePresence } from "framer-motion";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Bookings from "./pages/Bookings";
+import PortalLayout from "./components/PortalLayout";
+import { PortalProvider } from "./context/PortalContext";
 
 // Create a wrapper component that uses the auth context
 function AppContent() {
@@ -20,12 +27,12 @@ function AppContent() {
     }
 
     return (
-        <CartProvider isAuthenticated={isAuthenticated}>
-            <Router>
+        <PortalProvider>
+            <CartProvider isAuthenticated={isAuthenticated}>
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<HomePage />} />
-                        <Route
+                        {/* <Route
                             path="/services/:serviceName"
                             element={<ServiceDetails />}
                         />
@@ -36,13 +43,31 @@ function AppContent() {
                         <Route
                             path="/services/:serviceName/:subcategory/:serviceType"
                             element={<ServiceList />}
-                        />
+                        /> */}
+                        <Route path="/services">
+                            <Route
+                                path=":serviceName"
+                                element={<ServiceDetails />}
+                            />
+                            <Route
+                                path=":serviceName/:subcategory"
+                                element={<ServiceList />}
+                            />
+                            <Route
+                                path=":serviceName/:subcategory/:serviceType"
+                                element={<ServiceList />}
+                            />
+                            <Route
+                                path=":serviceName/portal"
+                                element={<PortalLayout />}
+                            />
+                        </Route>
                         <Route path="/viewcart" element={<Cart />} />
                         <Route path="/bookings" element={<Bookings />} />
                     </Route>
                 </Routes>
-            </Router>
-        </CartProvider>
+            </CartProvider>
+        </PortalProvider>
     );
 }
 

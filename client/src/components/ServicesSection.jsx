@@ -35,7 +35,7 @@ export default function ServicesSection() {
 
     return (
         <>
-            <div className="py-2">
+            <div>
                 <h1 className="text-4xl py-4 font-[NeuwMachinaBold]">
                     OUR SERVICES
                 </h1>

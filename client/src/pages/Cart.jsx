@@ -8,10 +8,13 @@ import {
     verifyRazorpayPayment,
 } from "../utils/api";
 import { useAuth } from "../context/AuthContext";
+import PortalContext from "../context/PortalContext";
 
 export default function Cart() {
     const { user, isAuthenticated } = useAuth();
     const navigate = useNavigate();
+
+    const { openLogin } = useContext(PortalContext);
 
     const navigateToHome = () => {
         navigate("/");
@@ -49,14 +52,18 @@ export default function Cart() {
         );
     }
 
+    const handlePaymentWrap = (e) => {
+        e.preventDefault();
+        if (!isAuthenticated) {
+            openLogin();
+            return;
+        } else {
+            handlePayment();
+        }
+    };
+
     const handlePayment = async () => {
         try {
-            if (!isAuthenticated) {
-                alert("Please login to proceed with payment");
-                navigate("/login");
-                return;
-            }
-
             // Calculate cart totals
             const subtotal = getCartSubTotal();
             const tax = getCartTax();
@@ -64,8 +71,8 @@ export default function Cart() {
 
             // Create order
             const orderData = {
-                user: user._id,
-                amount: total * 100, // amount in paise
+                _id: user._id,
+                amount: parseFloat((total * 100).toFixed(2)),
                 currency: "INR",
                 receipt: `receipt_${Date.now()}`,
                 items: cartServices.map((service) => ({
@@ -83,11 +90,13 @@ export default function Cart() {
                     itemCount: cartServices.length,
                 },
                 customerDetails: {
-                    name: user.name,
+                    name: user.first_name,
                     email: user.email,
                     phone: user.phone,
                 },
             };
+
+            console.log("Order Data:", orderData);
 
             const order = await createRazorpayOrder(orderData);
 
@@ -102,9 +111,11 @@ export default function Cart() {
                 order_id: order.id,
                 handler: async function (response) {
                     try {
+                        console.log("Full Razorpay Response:", response);
+
                         const verificationData = {
                             userId: user._id,
-                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_order_id: order.id, // Use the order ID from the created order
                             razorpay_payment_id: response.razorpay_payment_id,
                             razorpay_signature: response.razorpay_signature,
                             orderDetails: orderData,
@@ -115,6 +126,9 @@ export default function Cart() {
                         );
 
                         if (verification.success) {
+                            cartServices.forEach((service) => {
+                                removeFromCart(service);
+                            });
                             await clearUserCart();
                             navigate("/bookings");
                         } else {
@@ -123,6 +137,7 @@ export default function Cart() {
                                     "Payment verification failed"
                             );
                         }
+                        console.log("verificationData", verificationData);
                     } catch (error) {
                         console.error("Payment verification failed:", error);
                         alert(
@@ -149,9 +164,9 @@ export default function Cart() {
     };
 
     return (
-        <div className="flex gap-6 py-8">
+        <div className="flex gap-6 pb-8">
             <div className="w-3/4 h-full pr-6 border-r border-black">
-                <h1 className="text-4xl font-bold uppercase tracking-wider pb-6">
+                <h1 className="text-4xl font-bold uppercase tracking-wider pb-6 font-[NeuwMachina]">
                     Cart
                 </h1>
                 <div className="w-full grid grid-cols-6 gap-8 text-gray-600 text-sm tracking-wider uppercase py-2 pr-8">
@@ -282,7 +297,7 @@ export default function Cart() {
                     </div>
                 </div>
                 <button
-                    onClick={() => handlePayment()}
+                    onClick={(e) => handlePaymentWrap(e)}
                     className="w-full tracking-wider bg-blue-800 text-white p-6 hover:bg-blue-900 transition-colors duration-300"
                 >
                     CHECK OUT

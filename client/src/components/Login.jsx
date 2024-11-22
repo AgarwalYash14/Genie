@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { login } from "../utils/api";
 
-export default function Login({ onLoginSuccess, onClose }) {
+export default function Login({ onLoginSuccess, onClose, onSwitchToRegister }) {
     const [userData, setUserData] = useState({
         emailOrPhone: "",
         password: "",
@@ -27,13 +27,18 @@ export default function Login({ onLoginSuccess, onClose }) {
             };
 
             const response = await login(loginData);
-            console.log("Login Successful", response);
 
             onLoginSuccess(response.user);
             onClose();
         } catch (error) {
             setError(error.msg || "Invalid Credentials");
         }
+    };
+
+    const handleSwitchToRegister = (e) => {
+        e.preventDefault();
+        onClose();
+        onSwitchToRegister();
     };
 
     return (
@@ -96,7 +101,10 @@ export default function Login({ onLoginSuccess, onClose }) {
                 </button>
                 <h1 className="text-sm text-center -mt-4">
                     Don&apos;t have an account?{" "}
-                    <span className="font-bold underline underline-offset-2">
+                    <span
+                        onClick={handleSwitchToRegister}
+                        className="font-bold underline underline-offset-2 tracking-wide"
+                    >
                         Register Now
                     </span>
                 </h1>

@@ -19,7 +19,7 @@ export const authenticateUser = async (req, res, next) => {
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
             // Get user from database (excluding password)
-            const user = await User.findById(decoded.user.id).select(
+            const user = await User.findById(decoded.user._id).select(
                 "-password"
             );
 
@@ -81,7 +81,7 @@ export const verifyResourceOwnership = (resourceField) => {
                 const resourceId =
                     req.params[resourceField] || req.body[resourceField];
 
-                if (resourceId !== req.user.id.toString()) {
+                if (resourceId !== req.user._id.toString()) {
                     return res.status(403).json({
                         success: false,
                         message: "Access denied. You don't own this resource.",

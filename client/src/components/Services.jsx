@@ -11,7 +11,7 @@ const Services = ({ serviceImage, serviceName, onServiceClick }) => {
                             alt={serviceName}
                             className="w-full h-36 object-contain p-3 border-b border-black bg-yellow-100"
                         />
-                        <h1 className="h-12 flex items-center justify-center px-4 text-sm">
+                        <h1 className="h-12 flex items-center justify-center px-4 text-sm bg-yellow-200">
                             {serviceName}
                         </h1>
                     </button>

@@ -4,7 +4,7 @@ import { TbArrowUpRight } from "react-icons/tb";
 export default function Hero() {
     return (
         <>
-            <div className="flex flex-col gap-8 py-6 max-md:gap-4">
+            <div className="flex flex-col gap-8 pb-6 max-md:gap-4">
                 <h1
                     className="text-center text-7xl font-[NeuwMachina]"
                     style={{

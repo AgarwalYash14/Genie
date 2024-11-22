@@ -1,13 +1,11 @@
 import mongoose from "mongoose";
 
 const serviceSchema = new mongoose.Schema({
-    category: String,
-    type: String,
-    image: String,
     title: String,
+    image: String,
     time: String,
-    OurPrice: Number,
-    MRP: Number,
+    OurPrice: String,
+    MRP: String,
     description: [String],
 });
 
@@ -18,23 +16,25 @@ const categorySchema = new mongoose.Schema({
 });
 
 const serviceTypeSchema = new mongoose.Schema({
-    name: String,
-    categoryImage: String,
     image: String,
     categories: [categorySchema],
 });
 
 const subcategorySchema = new mongoose.Schema({
     image: String,
+    // Make both serviceTypes and categories optional
     serviceTypes: {
         type: Map,
-        of: serviceTypeSchema,
+        of: {
+            image: String,
+            categories: [categorySchema],
+        },
         required: false,
     },
-    services: {
-        type: [serviceSchema],
+    // Direct categories for subcategories without serviceTypes
+    categories: {
+        type: [categorySchema],
         required: false,
-        default: undefined,
     },
 });
 
@@ -48,7 +48,6 @@ const ServiceDetailSchema = new mongoose.Schema({
     services: {
         type: [serviceSchema],
         required: false,
-        default: undefined,
     },
 });
 

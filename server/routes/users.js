@@ -55,14 +55,14 @@ router.post("/register", async (req, res) => {
 
         const payload = {
             user: {
-                id: user.id,
+                _id: user._id,
             },
         };
 
         jwt.sign(
             payload,
             process.env.JWT_SECRET,
-            { expiresIn: 3600 },
+            { expiresIn: "1d" },
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
@@ -73,7 +73,7 @@ router.post("/register", async (req, res) => {
                 }).json({
                     success: true,
                     user: {
-                        id: user.id,
+                        _id: user._id,
                         first_name: user.first_name,
                         last_name: user.last_name,
                         email: user.email,
@@ -117,14 +117,14 @@ router.post("/login", async (req, res) => {
 
         const payload = {
             user: {
-                id: user.id,
+                _id: user._id,
             },
         };
 
         jwt.sign(
             payload,
             process.env.JWT_SECRET,
-            { expiresIn: 3600 },
+            { expiresIn: "1d" },
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
@@ -133,7 +133,7 @@ router.post("/login", async (req, res) => {
                 }).json({
                     success: true,
                     user: {
-                        id: user.id,
+                        _id: user._id,
                         first_name: user.first_name,
                         last_name: user.last_name,
                         email: user.email,
@@ -166,7 +166,7 @@ router.get("/user", async (req, res) => {
             });
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const user = await User.findById(decoded.user.id).select("-password");
+        const user = await User.findById(decoded.user._id).select("-password");
 
         if (!user) {
             return res
@@ -201,7 +201,7 @@ const auth = async (req, res, next) => {
 // Update user's cart
 router.put("/cart", auth, async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user._id);
         if (!user) return res.status(404).json({ msg: "User not found" });
 
         const cartItems = req.body;
@@ -237,7 +237,7 @@ router.put("/cart", auth, async (req, res) => {
 // Add a new route to get cart
 router.get("/cart", auth, async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user._id);
         if (!user) return res.status(404).json({ msg: "User not found" });
 
         res.json({ cart: user.cart || [] });
@@ -250,7 +250,7 @@ router.get("/cart", auth, async (req, res) => {
 // Clear user's cart
 router.delete("/cart", auth, async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user._id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }

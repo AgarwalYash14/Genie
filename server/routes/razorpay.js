@@ -69,62 +69,66 @@ router.post("/verify-payment", async (req, res) => {
             razorpay_payment_id,
             razorpay_signature,
             orderDetails,
-            userId,
         } = req.body;
+        console.log("Received Data:", req.body);
 
-        // Verify signature
+        if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+            return res.status(400).json({
+                success: false,
+                message: "Missing payment verification details",
+            });
+        }
+
         const sign = razorpay_order_id + "|" + razorpay_payment_id;
         const expectedSign = crypto
             .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
             .update(sign)
             .digest("hex");
 
-        if (razorpay_signature !== expectedSign) {
-            return res.status(400).json({
-                success: false,
-                message: "Invalid signature",
-            });
-        }
+        console.log("Generated Signature:", expectedSign);
+        console.log("Razorpay Signature:", razorpay_signature);
 
-        // Create payment document
-        const paymentDoc = {
-            user: userId,
+        const payment = await razorpay.payments.fetch(razorpay_payment_id);
+
+        const newPayment = new Payment({
+            user: orderDetails._id,
             orderId: razorpay_order_id,
             paymentId: razorpay_payment_id,
-            signature: razorpay_signature,
-            amount: orderDetails.amount,
-            currency: orderDetails.currency,
-            status: "completed",
+            amount: payment.amount,
+            currency: payment.currency,
+            status: payment.status,
+            method: payment.method,
             items: orderDetails.items,
             summary: orderDetails.summary,
             customerDetails: orderDetails.customerDetails,
-        };
-
-        // Save payment
-        const payment = new Payment(paymentDoc);
-        await payment.save();
-
-        res.json({
-            success: true,
-            message: "Payment verified and saved successfully",
-            payment: payment,
+            attempts: payment.count,
         });
+
+        await newPayment.save();
+
+        if (razorpay_signature === expectedSign) {
+            res.json({
+                success: true,
+                message: "Payment verified and saved successfully",
+                paymentId: newPayment._id,
+            });
+        } else {
+            res.status(400).json({
+                success: false,
+                message: "Payment verification failed",
+            });
+        }
     } catch (error) {
         console.error("Error in verify-payment:", error);
-        res.status(500).json({
-            success: false,
-            message: "Error verifying payment",
-            error: error.message,
-        });
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 
 // Add new route to get user bookings
-router.get("/bookings/:userId", async (req, res) => {
+router.get("/bookings/:user", async (req, res) => {
     try {
         const bookings = await Payment.find({
-            user: req.params.userId,
-            status: "completed",
+            user: req.params.user,
         }).sort({ createdAt: -1 });
 
         res.json(bookings);

@@ -5,6 +5,7 @@ import { cart2, quality, tick } from "../assets";
 import ClipLoader from "react-spinners/ClipLoader";
 import { CartContext } from "../context/CartContext";
 import ServiceCart from "../components/ServiceCart";
+import { PackageOpen } from "lucide-react";
 
 const ServiceList = () => {
     const { serviceName, subcategory, serviceType } = useParams();
@@ -28,6 +29,7 @@ const ServiceList = () => {
                     const subcategoryData = data.subcategories[subcategory];
 
                     if (serviceType && subcategoryData.serviceTypes) {
+                        // Handle case with serviceTypes (e.g., Salon for Women)
                         const serviceTypeData =
                             subcategoryData.serviceTypes[serviceType];
                         if (serviceTypeData && serviceTypeData.categories) {
@@ -40,23 +42,28 @@ const ServiceList = () => {
                                     }))
                             );
                         }
+                    } else if (subcategoryData.categories) {
+                        // Handle case with direct categories (e.g., Spa for Women)
+                        categoriesList = subcategoryData.categories;
+                        servicesList = subcategoryData.categories.flatMap(
+                            (cat) =>
+                                (cat.services || []).map((service) => ({
+                                    ...service,
+                                    category: cat.name,
+                                }))
+                        );
                     } else if (subcategoryData.services) {
+                        // Handle case with direct services
                         servicesList = subcategoryData.services;
-                        // Assuming we don't have category objects in this case, we'll create minimal ones
                         categoriesList = [
                             ...new Set(
                                 servicesList.map((service) => service.category)
                             ),
-                        ].map((catName) => ({ name: catName }));
+                        ].map((catName) => ({
+                            name: catName,
+                            categoryImage: subcategoryData.categoryImage || "",
+                        }));
                     }
-                } else if (data.services) {
-                    servicesList = data.services;
-                    // Assuming we don't have category objects in this case, we'll create minimal ones
-                    categoriesList = [
-                        ...new Set(
-                            servicesList.map((service) => service.category)
-                        ),
-                    ].map((catName) => ({ name: catName }));
                 }
 
                 setServices(servicesList);
@@ -64,7 +71,7 @@ const ServiceList = () => {
                     categoriesList.sort((a, b) => a.name.localeCompare(b.name))
                 );
             } catch (err) {
-                console.error(err);
+                console.error("Error fetching services:", err);
                 setError("Failed to load services");
             } finally {
                 setLoading(false);
@@ -87,10 +94,10 @@ const ServiceList = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div className="relative grid grid-cols-4 gap-6 pt-10 pb-6 max-xl:grid-cols-5 max-md:flex max-md:flex-col">
+        <div className="relative grid grid-cols-4 gap-6 pb-6 max-xl:grid-cols-5 max-md:flex max-md:flex-col">
             {/* Sidebar Component  */}
 
-            <div className="sticky top-[7.5rem] self-start max-xl:col-span-2 max-md:static max-md:w-full max-md:text-center">
+            <div className="sticky top-28 self-start max-xl:col-span-2 max-md:static max-md:w-full max-md:text-center">
                 <h2 className="text-2xl font-bold pb-2 max-md:pb-2">
                     {serviceName}
                 </h2>
@@ -98,7 +105,7 @@ const ServiceList = () => {
                     {serviceType || subcategory}
                 </h3>
                 <div className="p-6 rounded-md border border-black max-md:hidden">
-                    <h1 className="font-black text-lg text-nowrap mb-4">
+                    <h1 className="font-black text-lg text-nowrap mb-4 tracking-wide">
                         Select a service
                     </h1>
                     <div className="grid grid-cols-3 gap-4 gap-y-5 max-lg:grid-cols-2">
@@ -128,18 +135,24 @@ const ServiceList = () => {
 
             {/* Services Component  */}
 
-            <div className="col-span-2 flex flex-col p-8 pb-0 rounded-md border border-black max-xl:col-span-3">
+            <div className="col-span-2 flex flex-col rounded-md p-8 pb-0 border border-black max-xl:col-span-3">
                 {categories.map((category, index) => (
                     <div
                         key={category.name}
                         ref={(el) => (categoryRefs.current[category.name] = el)}
                         className={
-                            index !== 0 ? "pt-8 border-t border-black" : ""
+                            index !== 0
+                                ? "scroll-mt-[6.5rem] pt-8 border-t border-black"
+                                : "scroll-mt-40"
                         }
                     >
-                        <h1 className="text-green-600 pb-2 text font-bold uppercase tracking-wide">
-                            {category.name}
-                        </h1>
+                        <div className="flex items-center pb-4 gap-2">
+                            <PackageOpen size={17} color="#16a34a "/>
+                            <h1 className="text-green-600 text-sm font-extrabold uppercase tracking-wide">
+                                {category.name}
+                            </h1>
+                        </div>
+
                         <div className="flex flex-col gap-8 mb-8">
                             {services
                                 .filter(
@@ -155,7 +168,7 @@ const ServiceList = () => {
                                         <div key={serviceIndex}>
                                             <div className="flex justify-between max-[]:">
                                                 <div className="w-8/12">
-                                                    <h4 className="font-bold">
+                                                    <h4 className="font-semibold tracking-wide">
                                                         {service.title}
                                                     </h4>
 
@@ -221,15 +234,17 @@ const ServiceList = () => {
                                                         )}
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col items-center">
-                                                    <img
-                                                        src={`${
-                                                            import.meta.env
-                                                                .VITE_BACKEND_URL
-                                                        }/${service.image}`}
-                                                        alt={service.title}
-                                                        className="w-36 h-24 object-cover object-top rounded border border-black text-sm bg-gray-100"
-                                                    />
+                                                <div className="w-36 flex flex-col items-center justify-end">
+                                                    {service.image && (
+                                                        <img
+                                                            src={`${
+                                                                import.meta.env
+                                                                    .VITE_BACKEND_URL
+                                                            }/${service.image}`}
+                                                            alt={service.title}
+                                                            className="w-36 h-24 object-cover object-top rounded border border-black text-sm bg-gray-100"
+                                                        />
+                                                    )}
                                                     {!cartServices.find(
                                                         (cartService) =>
                                                             cartService._id ===
@@ -284,7 +299,7 @@ const ServiceList = () => {
                                             </div>
                                             {serviceIndex <
                                                 filteredServices.length - 1 && (
-                                                <hr className="border-t border-dashed border-black" />
+                                                <hr className="border-t border-dashed border-black mt-6" />
                                             )}
                                         </div>
                                     )
@@ -295,7 +310,7 @@ const ServiceList = () => {
             </div>
 
             {/* Cart Component  */}
-            <div className="sticky top-[7.5rem] self-start overflow-hidden flex flex-col gap-6 max-xl:hidden">
+            <div className="sticky top-28 self-start overflow-hidden flex flex-col gap-6 max-xl:hidden">
                 <div className="h-96 flex flex-col items-center justify-center gap-4 rounded-md border border-black overflow-hidden">
                     {cartServices.length === 0 ? (
                         <>

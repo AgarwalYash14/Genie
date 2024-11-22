@@ -12,14 +12,45 @@ mongoose
 
 const populateServiceDetails = async () => {
     try {
-        await ServiceDetail.deleteMany({}); // Clear existing service details
+        await ServiceDetail.deleteMany({});
 
         for (const [serviceName, details] of Object.entries(
             servicesDetailsData
         )) {
+            const processedSubcategories = new Map();
+
+            for (const [subCatName, subCatDetails] of Object.entries(
+                details.subcategories
+            )) {
+                let processedSubCategory = {
+                    image: subCatDetails.image,
+                };
+
+                // Handle subcategories with serviceTypes
+                if (subCatDetails.serviceTypes) {
+                    processedSubCategory.serviceTypes = new Map();
+                    for (const [
+                        serviceTypeName,
+                        serviceTypeDetails,
+                    ] of Object.entries(subCatDetails.serviceTypes)) {
+                        processedSubCategory.serviceTypes.set(serviceTypeName, {
+                            image: serviceTypeDetails.image,
+                            categories: serviceTypeDetails.categories,
+                        });
+                    }
+                }
+
+                // Handle subcategories with direct categories
+                if (subCatDetails.categories) {
+                    processedSubCategory.categories = subCatDetails.categories;
+                }
+
+                processedSubcategories.set(subCatName, processedSubCategory);
+            }
+
             const serviceDetailData = {
                 serviceName,
-                subcategories: details.subcategories,
+                subcategories: processedSubcategories,
                 services: details.services,
             };
 
@@ -31,9 +62,8 @@ const populateServiceDetails = async () => {
             );
 
             const serviceDetail = new ServiceDetail(serviceDetailData);
-
             await serviceDetail.save();
-            const insertedDoc = await ServiceDetail.findOne({ serviceName });
+            console.log(`Inserted service detail for: ${serviceName}`);
         }
 
         console.log("All service details inserted successfully");

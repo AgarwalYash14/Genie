@@ -159,6 +159,7 @@ export const verifyRazorpayPayment = async (paymentData) => {
             `${API_URL}/razorpay/verify-payment`,
             paymentData
         );
+        console.log("response", response.data);
         return response.data;
     } catch (error) {
         console.error("Error verifying payment:", error);

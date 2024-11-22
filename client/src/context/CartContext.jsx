@@ -174,6 +174,7 @@ export const CartProvider = ({ children, isAuthenticated }) => {
         try {
             if (isAuthenticated) {
                 await clearUserCart();
+                setCartServices([]);
             }
             setCartServices([]);
             if (!isAuthenticated) {

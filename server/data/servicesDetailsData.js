@@ -1008,469 +1008,930 @@ export const servicesDetailsData = {
             },
             "Spa for Women": {
                 image: "assets/servicesSubCategories/spaWomen.svg",
-                services: {
-                    categories: [
-                        {
-                            name: "Post Natal",
-                            categoryImage:
-                                "assets/serviceDetails/WomenSalon&Spa/SpaForWomen/PostNatal/postNatal.svg",
-                            services: [
-                                {
-                                    title: "Post Natal Massage",
-                                    time: "75 mins",
-                                    OurPrice: "1299",
-                                    MRP: "1499",
-                                    description: [
-                                        "Reduces water retention and improves blood circulation",
-                                        "Helps in relaxation and eases muscle tension",
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            name: "Swedish Massage",
-                            categoryImage: "",
-                            services: [
-                                {
-                                    title: "Swedish Therapy + Free 10 mins head massage",
-                                    time: "70 mins",
-                                    OurPrice: "1299",
-                                    MRP: "1640",
-                                    description: [],
-                                },
-                                {
-                                    title: "Swedish 60 mins + Foot Massage 20 mins",
-                                    time: "80 mins",
-                                    OurPrice: "1748",
-                                    MRP: "1840",
-                                    description: [],
-                                },
-                                {
-                                    title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
-                                    time: "80 mins",
-                                    OurPrice: "1648",
-                                    MRP: "1740",
-                                    description: [],
-                                },
-                                {
-                                    title: "Stress relief swedish massage",
-                                    time: "75 mins",
-                                    OurPrice: "1299",
-                                    MRP: "1499",
-                                    description: [
-                                        "Medium to light pressure full body massage to relax & unwind",
-                                        "Treats superficial muscle layers, improves blood circulation & sleep quality",
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            name: "Stress Relief",
-                            categoryImage: "",
-                            services: [
-                                {
-                                    title: "Deep tissue therapy + Free 10 mins head massage",
-                                    time: "70 mins",
-                                    OurPrice: "1449",
-                                    MRP: "1790",
-                                    description: [],
-                                },
-                                {
-                                    title: "Top to toe stress relief massage",
-                                    time: "100 mins",
-                                    OurPrice: "1899",
-                                    MRP: "1899",
-                                    description: [
-                                        "Customisable pressure full body massage. Longer head massage & foot reflexology.",
-                                        "Most comprehensive massage experience. Provides extended scalp & foot care.",
-                                    ],
-                                },
-                                {
-                                    title: "Hectic day care massage",
-                                    time: "45 mins",
-                                    OurPrice: "899",
-                                    MRP: "899",
-                                    description: [
-                                        "Medium-pressure head, neck, shoulder and foot massage",
-                                        "Reduces muscle stiffness & fatigue to make you feel refreshed",
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            name: "Pain Relief",
-                            categoryImage: "",
-                            services: [
-                                {
-                                    title: "Deep tissue pain relief massage",
-                                    time: "75 mins",
-                                    OurPrice: "1299",
-                                    MRP: "1499",
-                                    description: [
-                                        "High-pressure full body massage to target pain points, knots & muscle soreness",
-                                        "Treats deeper muscle layers, heals sports injuries & improves flexibility",
-                                    ],
-                                },
-                                {
-                                    title: "Leg pain relief massage",
-                                    time: "40 mins",
-                                    OurPrice: "849",
-                                    MRP: "849",
-                                    description: [
-                                        "High-pressure focused massage to address all the pain points/ areas in the legs",
-                                        "Eliminates pain, stiffness & inflammation in the affected areas",
-                                    ],
-                                },
-                                {
-                                    title: "Back pain relief massage",
-                                    time: "40 mins",
-                                    OurPrice: "849",
-                                    MRP: "849",
-                                    description: [
-                                        "High-pressure focused massage to address all the pain points/ areas in the back",
-                                        "Eliminates pain, stiffness & inflammation in the affected areas",
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            name: "Skin Care Scrubs",
-                            categoryImage: "",
-                            services: [
-                                {
-                                    title: "Rejuvenating scrub & massage package",
-                                    time: "90 mins",
-                                    OurPrice: "1649",
-                                    MRP: "1649",
-                                    description: [
-                                        "20 mins full body scrub followed by medium to light pressure full body massage",
-                                        "Removes dead skin cells, improves blood circulation & sleep quality",
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            name: "Add-ons",
-                            categoryImage: "",
-                            services: [
-                                {
-                                    title: "Head massage",
-                                    time: "20 mins",
-                                    OurPrice: "349",
-                                    MRP: "349",
-                                    description: [
-                                        "Reduces muscle soreness, improves circulation",
-                                        "Promotes hair health & relieves stress",
-                                    ],
-                                },
-                                {
-                                    title: "Foot massage",
-                                    time: "20 mins",
-                                    OurPrice: "549",
-                                    MRP: "549",
-                                    description: [
-                                        "Micromovement techniques with thumb & fingers to cover all the pressure points",
-                                        "Relaxes your feet & entire body. Stimulates the nervous system.",
-                                    ],
-                                },
-                                {
-                                    title: "Face massage",
-                                    time: "20 mins",
-                                    OurPrice: "349",
-                                    MRP: "349",
-                                    description: [
-                                        "Gentle massage with upward & outward circular motions",
-                                        "Reduces fine lines, wrinkles, puffiness. Improves blood flow & facial appearance",
-                                    ],
-                                },
-                                {
-                                    title: "Head & shoulder massage",
-                                    time: "20 mins",
-                                    OurPrice: "449",
-                                    MRP: "449",
-                                    description: [
-                                        "Medium-pressure massage that covers head, neck & shoulders",
-                                        "Releases muscle tension & stiffness, nourishes scalp, conditions hair",
-                                    ],
-                                },
-                            ],
-                        },
-                    ],
-                },
+                categories: [
+                    {
+                        name: "Post Natal",
+                        categoryImage:
+                            "assets/serviceDetails/WomenSalon&Spa/SpaForWomen/PostNatal/postNatal.svg",
+                        services: [
+                            {
+                                title: "Post Natal Massage",
+                                time: "75 mins",
+                                OurPrice: "1299",
+                                MRP: "1499",
+                                description: [
+                                    "Reduces water retention and improves blood circulation",
+                                    "Helps in relaxation and eases muscle tension",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Swedish Massage",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Swedish Therapy + Free 10 mins head massage",
+                                time: "70 mins",
+                                OurPrice: "1299",
+                                MRP: "1640",
+                                description: [],
+                            },
+                            {
+                                title: "Swedish 60 mins + Foot Massage 20 mins",
+                                time: "80 mins",
+                                OurPrice: "1748",
+                                MRP: "1840",
+                                description: [],
+                            },
+                            {
+                                title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
+                                time: "80 mins",
+                                OurPrice: "1648",
+                                MRP: "1740",
+                                description: [],
+                            },
+                            {
+                                title: "Stress relief swedish massage",
+                                time: "75 mins",
+                                OurPrice: "1299",
+                                MRP: "1499",
+                                description: [
+                                    "Medium to light pressure full body massage to relax & unwind",
+                                    "Treats superficial muscle layers, improves blood circulation & sleep quality",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Stress Relief",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Deep tissue therapy + Free 10 mins head massage",
+                                time: "70 mins",
+                                OurPrice: "1449",
+                                MRP: "1790",
+                                description: [],
+                            },
+                            {
+                                title: "Top to toe stress relief massage",
+                                time: "100 mins",
+                                OurPrice: "1899",
+                                MRP: "1899",
+                                description: [
+                                    "Customisable pressure full body massage. Longer head massage & foot reflexology.",
+                                    "Most comprehensive massage experience. Provides extended scalp & foot care.",
+                                ],
+                            },
+                            {
+                                title: "Hectic day care massage",
+                                time: "45 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Medium-pressure head, neck, shoulder and foot massage",
+                                    "Reduces muscle stiffness & fatigue to make you feel refreshed",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Pain Relief",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Deep tissue pain relief massage",
+                                time: "75 mins",
+                                OurPrice: "1299",
+                                MRP: "1499",
+                                description: [
+                                    "High-pressure full body massage to target pain points, knots & muscle soreness",
+                                    "Treats deeper muscle layers, heals sports injuries & improves flexibility",
+                                ],
+                            },
+                            {
+                                title: "Leg pain relief massage",
+                                time: "40 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "High-pressure focused massage to address all the pain points/ areas in the legs",
+                                    "Eliminates pain, stiffness & inflammation in the affected areas",
+                                ],
+                            },
+                            {
+                                title: "Back pain relief massage",
+                                time: "40 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "High-pressure focused massage to address all the pain points/ areas in the back",
+                                    "Eliminates pain, stiffness & inflammation in the affected areas",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Skin Care Scrubs",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Rejuvenating scrub & massage package",
+                                time: "90 mins",
+                                OurPrice: "1649",
+                                MRP: "1649",
+                                description: [
+                                    "20 mins full body scrub followed by medium to light pressure full body massage",
+                                    "Removes dead skin cells, improves blood circulation & sleep quality",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Add-ons",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Head massage",
+                                time: "20 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Reduces muscle soreness, improves circulation",
+                                    "Promotes hair health & relieves stress",
+                                ],
+                            },
+                            {
+                                title: "Foot massage",
+                                time: "20 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Micromovement techniques with thumb & fingers to cover all the pressure points",
+                                    "Relaxes your feet & entire body. Stimulates the nervous system.",
+                                ],
+                            },
+                            {
+                                title: "Face massage",
+                                time: "20 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Gentle massage with upward & outward circular motions",
+                                    "Reduces fine lines, wrinkles, puffiness. Improves blood flow & facial appearance",
+                                ],
+                            },
+                            {
+                                title: "Head & shoulder massage",
+                                time: "20 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Medium-pressure massage that covers head, neck & shoulders",
+                                    "Releases muscle tension & stiffness, nourishes scalp, conditions hair",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
 
             "Hair Studio for Women": {
                 image: "assets/servicesSubCategories/hairStudio.svg",
-                services: [
+                categories: [
                     {
-                        title: "Blow-dry & Styling",
-
-                        image: "",
-                        title: "Blow-dry",
-                        time: "30 mins",
-                        OurPrice: "399",
-                        MRP: "399",
-                        description: ["Blow-dry with a round brush"],
+                        name: "Blow-dry & style",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Advanced Hairstyling",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "1000",
+                                MRP: "1000",
+                                description: [
+                                    "Transform your look with open, half-tie, braids, ponytail, or one-side styles!",
+                                ],
+                            },
+                            {
+                                title: "Advanced buns",
+                                image: "",
+                                time: "1 hr 10 mins",
+                                OurPrice: "1149",
+                                MRP: "1149",
+                                description: [
+                                    "Transform your look with Messy, Side, Low, High, or Textured Buns!",
+                                ],
+                            },
+                            {
+                                title: "Blow-dry: Straight & Smooth",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "For all hair types. Smooth, voluminous straight hair that lasts for a few hours.",
+                                ],
+                            },
+                            {
+                                title: "Blow-dry: In curl/Out curl",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "For all hair types. Bouncy, voluminous curls that lasts for a few hours.",
+                                ],
+                            },
+                            {
+                                title: "Straightening",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Sleek, frizz-free straightness with a high-end professional straightener",
+                                ],
+                            },
+                            {
+                                title: "Curls & waves",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Bouncy, defined curls with a high-end professional tong",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Cut & style",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Haircut",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Haircut of your choice from the catalogue by expert hairstylist",
+                                    "Blow-dry not included",
+                                ],
+                            },
+                            {
+                                title: "Kid's haircut",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "649",
+                                MRP: "649",
+                                description: [
+                                    "Haircut of your choice with blow-dry & styling by expert hairstylist",
+                                    "For girls, ages 6-15",
+                                ],
+                            },
+                            {
+                                title: "Mom's & daughter haircut",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "1049",
+                                MRP: "1049",
+                                description: [
+                                    "Haircut of your choice with blow-dry by expert hairstylist",
+                                    "Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Hair spa & cut",
+                                image: "",
+                                time: "1 hr 45 mins",
+                                OurPrice: "1648",
+                                MRP: "1648",
+                                description: [
+                                    "Hair Care: L'Oreal hair spa",
+                                    "Haircut: Haircut",
+                                ],
+                            },
+                            {
+                                title: "Haircut & styling",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "648",
+                                MRP: "648",
+                                description: [
+                                    "Haircut: Haircut",
+                                    "Styling: Blowdry: Straight & Smooth",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Trim & style",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Hair trim",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Remove split-ends with minimal length reduction",
+                                    "Blowdry not included",
+                                ],
+                            },
+                            {
+                                title: "Mom and daughter hair trim",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "Split-end removal by trimming",
+                                    "Blow-dry & hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Hair trim & styling",
+                                image: "",
+                                time: "1 hr 5 mins",
+                                OurPrice: "598",
+                                MRP: "598",
+                                description: [
+                                    "Styling: Blowdry: In-curl / out-curl",
+                                    "Hair trim : Hair trim",
+                                ],
+                            },
+                            {
+                                title: "Hair trim & spa",
+                                image: "",
+                                time: "1 hr 20 mins",
+                                OurPrice: "1548",
+                                MRP: "1548",
+                                description: [
+                                    "Hair trim: Hair trim",
+                                    "Hair Care: L'Oreal hair spa",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Hair care",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Keratin hair spa",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "Natural spa that rebuilds the lost moisture & shine into your hair",
+                                    "Enriched with wheat protein & cedar wood & peppermint. Hair wash not included.",
+                                ],
+                            },
+                            {
+                                title: "Hair spa & style",
+                                image: "",
+                                time: "1 hr 45 mins",
+                                OurPrice: "1498",
+                                MRP: "1498",
+                                description: [
+                                    "Hair care: L'Oreal hair spa",
+                                    "Styling: Blowdry: In-curl / out-curl",
+                                ],
+                            },
+                            {
+                                title: "Ayurvedic straightening & spa",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "Hydrate scalp with Neem and aloe vera for frizz free hair",
+                                    "Goodness of aloe-vera for healthy & hydrated scalp. Hair wash not included.",
+                                ],
+                            },
+                            {
+                                title: "L'Oreal hair spa",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "6-step repair treatment to revive & strengthen damaged hair and coloured hair",
+                                    "Steam therapy included. Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "L'Oreal repair mask",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "649",
+                                MRP: "649",
+                                description: [
+                                    "Hydrating repair treatment for healthy & bouncy hain Ideal for dry hair.",
+                                    "Hair wash & steam therapy not included",
+                                ],
+                            },
+                            {
+                                title: "Relaxing head massage",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Gentle massage to help promote blood flow, reduce stress & nourish the scalp",
+                                    "Hair wash & blowdry not included",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Keratin & hair botox",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Cut & botox/keratin",
+                                image: "",
+                                time: "3 hrs 45 mins",
+                                OurPrice: "5248",
+                                MRP: "5548",
+                                description: [
+                                    "Keratin: Long-length",
+                                    "Haircut: Haircut",
+                                ],
+                            },
+                            {
+                                title: "Keratin",
+                                image: "",
+                                time: "3 hrs",
+                                OurPrice: "3999",
+                                MRP: "3999",
+                                description: [
+                                    "Keratin hair treatment smoothens the hair, making it look shiny and frizz-free",
+                                ],
+                            },
+                            {
+                                title: "Hair botox",
+                                image: "",
+                                time: "3 hrs",
+                                OurPrice: "5499",
+                                MRP: "5499",
+                                description: [
+                                    "Single-session treatment to repair damaged, frizzy hair & promote healthy scalp",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Monthly color",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Cut & color",
+                                image: "",
+                                time: "1 hr 45 mins",
+                                OurPrice: "2697",
+                                MRP: "2847",
+                                description: [
+                                    "Roots: Color (L'Oréal Inoa): Shade 2: Darkest Brown",
+                                    "Roots: Color (L'Oréal Majriel): Shade 3: Dark Brown",
+                                    "Haircut: Haircut",
+                                ],
+                            },
+                            {
+                                title: "Hair color (application only)",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Coverage of up to 4 inches of grey hair with the chosen shade",
+                                    "Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Roots touch-up color (L'Oreal Inoa)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "Coverage of up to 2 inches of grey hair with the chosen shade",
+                                    "Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Roots touch-up color (L'Oreal Majriel)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Coverage of up to 2 inches of grey hair with the chosen shade",
+                                    "Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Global color: Color (L'Oreal Inoa)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "2699",
+                                MRP: "2699",
+                                description: [
+                                    "Even application of the chosen shade from root to tip of the hair",
+                                    "Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Global color: Color (L'Oreal Majriel)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "2399",
+                                MRP: "2399",
+                                description: [
+                                    "Even application of the chosen shade from root to tip of the hair",
+                                    "Hair wash not included",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Hair extensions (by Hair Originals)",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Color streaks (purple martini)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [],
+                            },
+                            {
+                                title: "Color streaks (punchy plum)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [],
+                            },
+                            {
+                                title: "Color streaks (mysterious mocha)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Fashion color",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "L'Oreal balayage/ombre",
+                                image: "",
+                                time: "2 hrs 30 mins",
+                                OurPrice: "3899",
+                                MRP: "3899",
+                                description: [
+                                    "Application of chosen shade with seamless blending for soft colour transition",
+                                    "Blow-dry included. Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "L'Oreal 10 signature highlights",
+                                image: "",
+                                time: "2 hrs 30 mins",
+                                OurPrice: "3499",
+                                MRP: "3499",
+                                description: [
+                                    "Precise application of chosen shade on closely spaced sections of hair",
+                                    "Blow-dry included. Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Fashion shades (L'Oreal Inoa)",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "2999",
+                                MRP: "2999",
+                                description: [
+                                    "Blow-dry included. Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Fashion shades (L'Oreal Majirel)",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "2599",
+                                MRP: "2599",
+                                description: [
+                                    "Blow-dry included. Hair wash not included",
+                                ],
+                            },
+                            {
+                                title: "Root touch up - (L'Oreal Inoa)",
+                                image: "",
+                                time: "50 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [
+                                    "Hair wash not included",
+                                    "Base hair color of Loreal Inoa or Loreal Majirel will be used with fashion shade",
+                                ],
+                            },
+                            {
+                                title: "Root touch up - (L'Oreal Majriel)",
+                                image: "",
+                                time: "50 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "Hair wash not included",
+                                    "Base hair color of Loreal Inoa or Loreal Majirel will be used with fashion shade",
+                                ],
+                            },
+                        ],
                     },
                 ],
             },
             "Nail Studio for Women": {
                 image: "assets/servicesSubCategories/nailStudio.svg",
-                services: [
+                categories: [
                     {
-                        title: "Long Lasting gel polish",
-
-                        image: "",
-                        title: "Gel Polish both hands",
-                        time: "120 mins",
-                        OurPrice: "599",
-                        MRP: "599",
-                        description: [
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
-                            "Removal of old gel-polish/extensions not included",
+                        name: "Long Lasting gel polish",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Gel Polish both hands",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                    "Removal of old gel-polish/extensions not included",
+                                ],
+                            },
+                            {
+                                title: "Gel Polish both feet",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                    "Removal of old gel-polish/extensions not included",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Long Lasting gel polish",
-
-                        image: "",
-                        title: "Gel Polish both feet",
-                        time: "120 mins",
-                        OurPrice: "599",
-                        MRP: "599",
-                        description: [
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
-                            "Removal of old gel-polish/extensions not included",
+                        name: "Gel nails extensions",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Nail Extensions both hands",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Acrylic nail extensions with gel polish",
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                ],
+                            },
+                            {
+                                title: "Nail Extensions both feet",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Acrylic nail extensions with gel polish",
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Gel nails extensions",
-
-                        image: "",
-                        title: "Nail Extensions both hands",
-                        time: "120 mins",
-                        OurPrice: "999",
-                        MRP: "999",
-                        description: [
-                            "Acrylic nail extensions with gel polish",
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
+                        name: "Gel nails overlays",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Nail Overlays both hands",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Acrylic nail overlays with gel polish",
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                ],
+                            },
+                            {
+                                title: "Nail Overlays both feet",
+                                image: "",
+                                time: "120 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Acrylic nail overlays with gel polish",
+                                    "Chip freel Wide rangel Lasts upto 3 weeks",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Gel nails extensions",
-
-                        image: "",
-                        title: "Nail Extensions both feet",
-                        time: "120 mins",
-                        OurPrice: "999",
-                        MRP: "999",
-                        description: [
-                            "Acrylic nail extensions with gel polish",
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
+                        name: "Manicure",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Advance Manicure",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Soak, scrub, cuticle care, massage, mask & polish",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Gel nails overlays",
+                        name: "Removal, Repair & Refill",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Gel Polish Removal",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: ["Removal of gel polish"],
+                            },
 
-                        image: "",
-                        title: "Nail Overlays both hands",
-                        time: "120 mins",
-                        OurPrice: "899",
-                        MRP: "899",
-                        description: [
-                            "Acrylic nail overlays with gel polish",
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
-                        ],
-                    },
-                    {
-                        title: "Gel nails overlays",
-
-                        image: "",
-                        title: "Nail Overlays both feet",
-                        time: "120 mins",
-                        OurPrice: "899",
-                        MRP: "899",
-                        description: [
-                            "Acrylic nail overlays with gel polish",
-                            "Chip freel Wide rangel Lasts upto 3 weeks",
-                        ],
-                    },
-
-                    {
-                        title: "Manicure",
-
-                        image: "",
-                        title: "Advance Manicure",
-                        time: "60 mins",
-                        OurPrice: "999",
-                        MRP: "999",
-                        description: [
-                            "Soak, scrub, cuticle care, massage, mask & polish",
-                        ],
-                    },
-                    {
-                        title: "Removal, Repair & Refill",
-
-                        image: "",
-                        title: "Gel Polish Removal",
-                        time: "30 mins",
-                        OurPrice: "199",
-                        MRP: "199",
-                        description: ["Removal of gel polish"],
-                    },
-                    {
-                        title: "Removal, Repair & Refill",
-
-                        image: "",
-                        title: "Gel extensions/overlays removal",
-                        time: "30 mins",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: ["Repair of broken nails"],
-                    },
-                    {
-                        title: "Removal, Repair & Refill",
-
-                        image: "",
-                        title: "Extensions Refill",
-                        time: "60 mins",
-                        OurPrice: "799",
-                        MRP: "799",
-                        description: ["Refill of extensions"],
-                    },
-                    {
-                        title: "Removal, Repair & Refill",
-
-                        image: "",
-                        title: "Extension Repair (per tip)",
-                        time: "15 mins",
-                        OurPrice: "99",
-                        MRP: "99",
-                        description: [
-                            "Includes repair for accidental breakage/ damage of extension tip",
-                            "Add as many tips as required",
+                            {
+                                title: "Gel extensions/overlays removal",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: ["Repair of broken nails"],
+                            },
+                            {
+                                title: "Extensions Refill",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "799",
+                                MRP: "799",
+                                description: ["Refill of extensions"],
+                            },
+                            {
+                                title: "Extension Repair (per tip)",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [
+                                    "Includes repair for accidental breakage/ damage of extension tip",
+                                    "Add as many tips as required",
+                                ],
+                            },
                         ],
                     },
                 ],
             },
             "Makeup & Styling Studio": {
                 image: "assets/servicesSubCategories/makeupStyle.svg",
-                services: [
+                categories: [
                     {
-                        title: "Makeup & Styling Package",
-
-                        image: "",
-                        title: "Basic Makeup Package",
-                        time: "2 hrs",
-                        OurPrice: "1999",
-                        MRP: "1999",
-                        description: [
-                            "Basic makeup for a simple, everyday look",
-                            "Includes foundation, concealer, blush, lipstick & eye makeup",
+                        name: "Makeup & Styling Package",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Basic Makeup Package",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "1999",
+                                MRP: "1999",
+                                description: [
+                                    "Basic makeup for a simple, everyday look",
+                                    "Includes foundation, concealer, blush, lipstick & eye makeup",
+                                ],
+                            },
+                            {
+                                title: "Luxe Makeup Package",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "3599",
+                                MRP: "3599",
+                                description: [
+                                    "Luxe makeup for a special occasion",
+                                    "Includes HD foundation, concealer, blush, lipstick & eye makeup",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Makeup & Styling Package",
-
-                        image: "",
-                        title: "Luxe Makeup Package",
-                        time: "2 hrs",
-                        OurPrice: "3599",
-                        MRP: "3599",
-                        description: [
-                            "Luxe makeup for a special occasion",
-                            "Includes HD foundation, concealer, blush, lipstick & eye makeup",
+                        name: "Professional Makeup",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Basic Makeup",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [
+                                    "Basic makeup for a simple, everyday look",
+                                    "Includes foundation, concealer, blush, lipstick & eye makeup",
+                                ],
+                            },
+                            {
+                                title: "HD Finish Makeup",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "2499",
+                                MRP: "2499",
+                                description: [
+                                    "HD makeup for a special occasion",
+                                    "Includes HD foundation, concealer, blush, lipstick & eye makeup",
+                                ],
+                            },
+                            {
+                                title: "Luxe glam up makeup",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "3099",
+                                MRP: "3099",
+                                description: [
+                                    "Luxe makeup for a special occasion",
+                                    "Includes HD foundation, concealer, blush, lipstick & eye makeup",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Professional Makeup",
-
-                        image: "",
-                        title: "Basic Makeup",
-                        time: "1 hr 15 mins",
-                        OurPrice: "1499",
-                        MRP: "1499",
-                        description: [
-                            "Basic makeup for a simple, everyday look",
-                            "Includes foundation, concealer, blush, lipstick & eye makeup",
+                        name: "Hair Styling",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Basic Hair Styling",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Basic hair styling for a simple, everyday look",
+                                    "Includes blow dry, straightening or curling",
+                                ],
+                            },
+                            {
+                                title: "Advance Hair Styling",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "999",
+                                MRP: "999",
+                                description: [
+                                    "Advance hair styling for a special occasion",
+                                    "Includes blow dry, straightening or curling",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Professional Makeup",
-
-                        image: "",
-                        title: "HD Finish Makeup",
-                        time: "1 hr 15 mins",
-                        OurPrice: "2499",
-                        MRP: "2499",
-                        description: [
-                            "HD makeup for a special occasion",
-                            "Includes HD foundation, concealer, blush, lipstick & eye makeup",
-                        ],
-                    },
-                    {
-                        title: "Professional Makeup",
-
-                        image: "",
-                        title: "Luxe glam up makeup",
-                        time: "1 hr 15 mins",
-                        OurPrice: "3099",
-                        MRP: "3099",
-                        description: [
-                            "Luxe makeup for a special occasion",
-                            "Includes HD foundation, concealer, blush, lipstick & eye makeup",
-                        ],
-                    },
-                    {
-                        title: "Hair Styling",
-
-                        image: "",
-                        title: "Basic Hair Styling",
-                        time: "40 mins",
-                        OurPrice: "599",
-                        MRP: "599",
-                        description: [
-                            "Basic hair styling for a simple, everyday look",
-                            "Includes blow dry, straightening or curling",
-                        ],
-                    },
-                    {
-                        title: "Hair Styling",
-
-                        image: "",
-                        title: "Advance Hair Styling",
-                        time: "1 hr 15 mins",
-                        OurPrice: "999",
-                        MRP: "999",
-                        description: [
-                            "Advance hair styling for a special occasion",
-                            "Includes blow dry, straightening or curling",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Saree draping",
-                        time: "20 mins",
-                        OurPrice: "399",
-                        MRP: "399",
-                        description: [
-                            "Professional saree draping for a special occasion",
-                            "Includes pleating, tucking & pinning",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Eye makeup",
-                        time: "25 mins",
-                        OurPrice: "599",
-                        MRP: "599",
-                        description: [
-                            "Eye makeup for a special occasion",
-                            "Includes eye shadow, liner, mascara & brow shaping",
+                        name: "Add-ons",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Eye makeup",
+                                image: "",
+                                time: "25 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Eye makeup for a special occasion",
+                                    "Includes eye shadow, liner, mascara & brow shaping",
+                                ],
+                            },
+                            {
+                                title: "Saree draping",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Professional saree draping for a special occasion",
+                                    "Includes pleating, tucking & pinning",
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -1482,493 +1943,383 @@ export const servicesDetailsData = {
         subcategories: {
             "Salon for Kids & Men": {
                 image: "assets/servicesSubCategories/menSalon.svg",
-                serviceTypes: {
-                    "Salon Royale": {
-                        image: "assets/serviceTypes/mSalonRoyale.jpeg",
+                categories: [
+                    {
+                        name: "Haircut & beard styling",
+                        categoryImage: "",
                         services: [
                             {
-                                title: "Haircut",
-
+                                title: "Haircut for men",
                                 image: "",
-                                title: "Haircut + Hair wash + Blow dry",
-                                time: "45 mins",
-                                OurPrice: "399",
-                                MRP: "399",
+                                time: "30 mins",
+                                OurPrice: "259",
+                                MRP: "259",
                                 description: [
-                                    "Haircut by top stylist, hair wash & blow dry for a fresh look",
+                                    "Professional haircut that suits your face shape",
                                 ],
                             },
                             {
-                                title: "Haircut",
-
+                                title: "Beard trimming & styling",
                                 image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard trim",
-                                time: "60 mins",
+                                time: "25 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Get customized beard shaping from trained stylists",
+                                ],
+                            },
+                            {
+                                title: "Haircut for kids",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "259",
+                                MRP: "259",
+                                description: [
+                                    "Specially trained stylists for boys aged 2 years and above",
+                                ],
+                            },
+                            {
+                                title: "Clean shave",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Ustraa shave with a single-use blade for the closest shave",
+                                ],
+                            },
+                            {
+                                title: "Beard Color (with product)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Even & mess-free colour application",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Massage",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Head, neck & shoulder massage",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "298",
+                                MRP: "298",
+                                description: [
+                                    "Relaxing oil massage to promote hair growth, treat stiff muscle & relieve stress",
+                                ],
+                            },
+                            {
+                                title: "Head massage",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [
+                                    "Choose from different types of head massages",
+                                ],
+                            },
+                            {
+                                title: "Hydrating face massage (10 mins)",
+                                image: "",
+                                time: "10 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [
+                                    "Refreshing massage with a moisturiser to improve blood flow & enhance glow",
+                                ],
+                            },
+                            {
+                                title: "Neck & shoulder massage",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Relaxing oil massage to treat stiff/ tense muscles & relieve stress",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Hair color",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Hair color (application only)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Please provide your own hair colour; we'll bring everything else",
+                                ],
+                            },
+                            {
+                                title: "L'Oreal matrix hair color",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Even & mess-free colour application",
+                                ],
+                            },
+                            {
+                                title: "Garnier hair color",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Even & mess-free colour application",
+                                ],
+                            },
+                            {
+                                title: "L'Oreal paris casting creme hair color",
+                                image: "",
+                                time: "30 mins",
                                 OurPrice: "499",
                                 MRP: "499",
                                 description: [
-                                    "Haircut by top stylist, hair wash, blow dry & beard trim for a fresh look",
+                                    "Glossy hair color with dazzling shine",
                                 ],
                             },
                             {
-                                title: "Haircut",
-
+                                title: "Anti-dandruff ritual",
                                 image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard shave",
-                                time: "60 mins",
-                                OurPrice: "549",
-                                MRP: "549",
+                                time: "35 mins",
+                                OurPrice: "650",
+                                MRP: "650",
                                 description: [
-                                    "Haircut by top stylist, hair wash, blow dry & beard shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard trim + Beard shave",
-                                time: "75 mins",
-                                OurPrice: "649",
-                                MRP: "649",
-                                description: [
-                                    "Haircut by top stylist, hair wash, blow dry, beard trim & shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash",
-                                time: "30 mins",
-                                OurPrice: "299",
-                                MRP: "299",
-                                description: [
-                                    "Haircut by top stylist & hair wash for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim",
-                                time: "45 mins",
-                                OurPrice: "399",
-                                MRP: "399",
-                                description: [
-                                    "Haircut by top stylist, hair wash & beard trim for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard shave",
-                                time: "45 mins",
-                                OurPrice: "449",
-                                MRP: "449",
-                                description: [
-                                    "Haircut by top stylist, hair wash & beard shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave",
-                                time: "60 mins",
-                                OurPrice: "549",
-                                MRP: "549",
-                                description: [
-                                    "Haircut by top stylist, hair wash, beard trim & shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask",
-                                time: "75 mins",
-                                OurPrice: "649",
-                                MRP: "649",
-                                description: [
-                                    "Haircut by top stylist, hair wash, beard trim & shave, face mask for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage",
-                                time: "90 mins",
-                                OurPrice: "799",
-                                MRP: "799",
-                                description: [
-                                    "Haircut by top stylist, hair wash, beard trim & shave, face mask, head massage for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage + Hair spa",
-                                time: "105 mins",
-                                OurPrice: "999",
-                                MRP: "999",
-                                description: [
-                                    "Haircut by top stylist, hair wash, beard trim & shave, face mask, head massage, hair spa for a fresh look",
-                                ],
-                            },
-
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage + Hair spa + Manicure",
-                                time: "120 mins",
-                                OurPrice: "1199",
-                                MRP: "1199",
-                                description: [
-                                    "Haircut by top stylist, hair wash, beard trim & shave, face mask, head massage, hair spa, manicure for a fresh look",
+                                    "Reduction in dandruff through exfoliation & cleansing",
+                                    "Includes active oil massage, tonic & mask treatment",
                                 ],
                             },
                         ],
                     },
-                    "Salon Prime": {
-                        image: "assets/serviceTypes/mSalonPrime.jpeg",
+                    {
+                        name: "Detan",
+                        categoryImage: "",
                         services: [
                             {
-                                title: "Haircut",
-
+                                title: "Face & neck detan",
                                 image: "",
-                                title: "Haircut + Hair wash + Blow dry",
-                                time: "45 mins",
-                                OurPrice: "299",
-                                MRP: "299",
-                                description: [
-                                    "Haircut by senior stylist, hair wash & blow dry for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard trim",
-                                time: "60 mins",
+                                time: "20 mins",
                                 OurPrice: "399",
                                 MRP: "399",
                                 description: [
-                                    "Haircut by senior stylist, hair wash, blow dry & beard trim for a fresh look",
+                                    "Detan for face & neck to remove tan & brighten skin",
                                 ],
                             },
                             {
-                                title: "Haircut",
-
+                                title: "Hands detan",
                                 image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard shave",
-                                time: "60 mins",
-                                OurPrice: "449",
-                                MRP: "449",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, blow dry & beard shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Blow dry + Beard trim + Beard shave",
-                                time: "75 mins",
-                                OurPrice: "549",
-                                MRP: "549",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, blow dry, beard trim & shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash",
                                 time: "30 mins",
-                                OurPrice: "249",
-                                MRP: "249",
+                                OurPrice: "399",
+                                MRP: "399",
                                 description: [
-                                    "Haircut by senior stylist & hair wash for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim",
-                                time: "45 mins",
-                                OurPrice: "299",
-                                MRP: "299",
-                                description: [
-                                    "Haircut by senior stylist, hair wash & beard trim for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard shave",
-                                time: "45 mins",
-                                OurPrice: "349",
-                                MRP: "349",
-                                description: [
-                                    "Haircut by senior stylist, hair wash & beard shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave",
-                                time: "60 mins",
-                                OurPrice: "449",
-                                MRP: "449",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, beard trim & shave for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask",
-                                time: "75 mins",
-                                OurPrice: "549",
-                                MRP: "549",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, beard trim & shave, face mask for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage",
-                                time: "90 mins",
-                                OurPrice: "649",
-                                MRP: "649",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, beard trim & shave, face mask, head massage for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage + Hair spa",
-                                time: "105 mins",
-                                OurPrice: "749",
-                                MRP: "749",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, beard trim & shave, face mask, head massage, hair spa for a fresh look",
-                                ],
-                            },
-                            {
-                                title: "Haircut",
-
-                                image: "",
-                                title: "Haircut + Hair wash + Beard trim + Beard shave + Face mask + Head massage + Hair spa + Manicure",
-                                time: "120 mins",
-                                OurPrice: "849",
-                                MRP: "849",
-                                description: [
-                                    "Haircut by senior stylist, hair wash, beard trim & shave, face mask, head massage, hair spa, manicure for a fresh look",
+                                    "Detan for hands to remove tan & brighten skin",
                                 ],
                             },
                         ],
                     },
-                },
+                    {
+                        name: "Facial & Cleanup",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Skin brightening facial",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "1399",
+                                MRP: "1399",
+                                description: [
+                                    "Orange peel extracts, vit C, green tea enriched facial to reduce dullnes",
+                                ],
+                            },
+                            {
+                                title: "Skin hydrating facial",
+                                image: "",
+                                time: "1 hr 15 mins",
+                                OurPrice: "1399",
+                                MRP: "1399",
+                                description: [
+                                    "Mulberry,saffron,arbutin enriched facial for deep cleansing & boosted hydration",
+                                ],
+                            },
+                            {
+                                title: "Charcoal de-toxifying cleanup",
+                                image: "",
+                                time: "35 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Vit-E, charcoal extracts for deep cleansing, dead skin removal & soft skin",
+                                    "Product used is of Bombay Shaving Company",
+                                ],
+                            },
+                            {
+                                title: "Office-ready cleanup",
+                                image: "",
+                                time: "35 mins",
+                                OurPrice: "699",
+                                MRP: "699",
+                                description: [
+                                    "Vit-E, charcoal extracts, lemon enriched cleanup to cleanse & soften the skin",
+                                ],
+                            },
+                            {
+                                title: "Coffee skin hydrating cleanup",
+                                image: "",
+                                time: "35 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Coffee extracts for new skin growth, improved texture & soft skin",
+                                    "Product used is of Bombay Shaving Company",
+                                ],
+                            },
+                            {
+                                title: "Oil free vacation cleanup",
+                                image: "",
+                                time: "35 mins",
+                                OurPrice: "699",
+                                MRP: "699",
+                                description: [
+                                    "Vit-C, green tea, grapefruit enriched cleanup to absorb oil & control sebum",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
 
             "Massage for Men": {
                 image: "assets/servicesSubCategories/menMassage.svg",
-                services: [
+                categories: [
                     {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish Therapy + Free 10 mins head massage",
-                        time: "70 mins",
-                        OurPrice: "1299",
-                        MRP: "1640",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish 60 mins + Foot Massage 20 mins",
-                        time: "80 mins",
-                        OurPrice: "1748",
-                        MRP: "1840",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Swedish 60 mins + Head & Shoulder Massage 20 mins",
-                        time: "80 mins",
-                        OurPrice: "1648",
-                        MRP: "1740",
-                        description: [],
-                    },
-                    {
-                        title: "Swedish massage",
-
-                        image: "",
-                        title: "Stress relief swedish massage",
-                        time: "75 mins",
-                        OurPrice: "1299",
-                        MRP: "1499",
-                        description: [
-                            "Medium to light pressure full body massage to relax & unwind",
-                            "Treats superficial muscle layers, improves blood circulation & sleep quality",
+                        name: "Pain relief",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Back pain relief massage",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "Customised massage with natural oils to alleviates soreness",
+                                ],
+                            },
+                            {
+                                title: "Leg pain relief massage",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "Customised massage with natural oils to alleviates soreness",
+                                ],
+                            },
+                            {
+                                title: "Deep tissue pain relief massage",
+                                image: "",
+                                time: "40 mins",
+                                OurPrice: "1399",
+                                MRP: "1399",
+                                description: [
+                                    "High-pressure palm movements to relieve muscle tension & soreness",
+                                ],
+                            },
+                            {
+                                title: "Deep tissue with head, neck & shoulder massage",
+                                image: "",
+                                time: "1 hr 40 mins",
+                                OurPrice: "1948",
+                                MRP: "1948",
+                                description: [
+                                    "60 mins high-pressure massage",
+                                    "40 mins medium-pressure head, neck & shoulder massage",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Deep tissue therapy + Free 10 mins head massage",
-                        time: "70 mins",
-                        OurPrice: "1449",
-                        MRP: "1790",
-                        description: [],
-                    },
-                    {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Top to toe stress relief massage",
-                        time: "100 mins",
-                        OurPrice: "1899",
-                        MRP: "1899",
-                        description: [
-                            "Customisable pressure full body massage. Longer head massage & foot reflexology.",
-                            "Most comprehensive massage experience. Provides extended scalp & foot care.",
+                        name: "Stress Relief",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Hectic day care stress relief massage",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [
+                                    "Medium-pressure head, neck, shoulder & foot massage",
+                                ],
+                            },
+                            {
+                                title: "Swedish stress relief massage",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [
+                                    "Medium-pressure massage to improve overall blood circulation",
+                                ],
+                            },
+                            {
+                                title: "Holistic de-stress massage",
+                                image: "",
+                                time: "1 hr 20 mins",
+                                OurPrice: "1549",
+                                MRP: "1549",
+                                description: [
+                                    "Medium-pressure massage with focus on head, neck & shoulder",
+                                ],
+                            },
+                            {
+                                title: "Top-to-toe stress relief massage",
+                                image: "",
+                                time: "1 hr 40 mins",
+                                OurPrice: "1949",
+                                MRP: "1949",
+                                description: [
+                                    "Full-body massage with scalp care & 20 mins foot reflexology",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Stress relief",
-
-                        image: "",
-                        title: "Hectic day care massage",
-                        time: "45 mins",
-                        OurPrice: "899",
-                        MRP: "899",
-                        description: [
-                            "Medium-pressure head, neck, shoulder and foot massage",
-                            "Reduces muscle stiffness & fatigue to make you feel refreshed",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Deep tissue pain relief massage",
-                        time: "75 mins",
-                        OurPrice: "1299",
-                        MRP: "1499",
-                        description: [
-                            "High-pressure full body massage to target pain points, knots & muscle soreness",
-                            "Treats deeper muscle layers, heals sports injuries & improves flexibility",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Leg pain relief massage",
-                        time: "40 mins",
-                        OurPrice: "849",
-                        MRP: "849",
-                        description: [
-                            "High-pressure focused massage to address all the pain points/ areas in the legs",
-                            "Eliminates pain, stiffness & inflammation in the affected areas",
-                        ],
-                    },
-                    {
-                        title: "Pain relief",
-
-                        image: "",
-                        title: "Back pain relief massage",
-                        time: "40 mins",
-                        OurPrice: "849",
-                        MRP: "849",
-                        description: [
-                            "High-pressure focused massage to address all the pain points/ areas in the back",
-                            "Eliminates pain, stiffness & inflammation in the affected areas",
-                        ],
-                    },
-                    {
-                        title: "Skin care scrubs",
-
-                        image: "",
-                        title: "Rejuvenating scrub & massage package",
-                        time: "90 mins",
-                        OurPrice: "1649",
-                        MRP: "1649",
-                        description: [
-                            "20 mins full body scrub followed by medium to light pressure full body massage",
-                            "Removes dead skin cells, improves blood circulation & sleep quality",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Head massage",
-                        time: "20 mins",
-                        OurPrice: "349",
-                        MRP: "349",
-                        description: [
-                            "Reduces muscle soreness, improves circulation",
-                            "Promotes hair health & relieves stress",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Foot massage",
-                        time: "20 mins",
-                        OurPrice: "549",
-                        MRP: "549",
-                        description: [
-                            "Micromovement techniques with thumb & fingers to cover all the pressure points",
-                            "Relaxes your feet & entire body. Stimulates the nervous system.",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Face massage",
-                        time: "20 mins",
-                        OurPrice: "349",
-                        MRP: "349",
-                        description: [
-                            "Gentle massage with upward & outward circular motions",
-                            "Reduces fine lines, wrinkles, puffiness. Improves blood flow & facial appearance",
-                        ],
-                    },
-                    {
-                        title: "Add-ons",
-
-                        image: "",
-                        title: "Head & shoulder massage",
-                        time: "20 mins",
-                        OurPrice: "449",
-                        MRP: "449",
-                        description: [
-                            "Medium-pressure massage that covers head, neck & shoulders",
-                            "Releases muscle tension & stiffness, nourishes scalp, conditions hair",
+                        name: "Post workout",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Sports recovery message",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "1349",
+                                MRP: "1349",
+                                description: [
+                                    "High-pressure full-body massage to reduce muscle pain & tension",
+                                ],
+                            },
+                            {
+                                title: "Deep tissue pain relief message",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "1399",
+                                MRP: "1399",
+                                description: [
+                                    "High-pressure palm movements to relieve muscle tension & soreness",
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -1980,322 +2331,535 @@ export const servicesDetailsData = {
         subcategories: {
             "Ac Repair & Service": {
                 image: "assets/servicesSubCategories/ac.svg",
-                services: [
+                categories: [
                     {
-                        title: "AC Service",
-
-                        image: "",
-                        title: "AC Service",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC service by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
+                        name: "Service",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ACService.svg",
+                        services: [
+                            {
+                                title: "Power saver AC service",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Thorough cleaning of indoor unit with foam-jet spray",
+                                ],
+                            },
+                            {
+                                title: "Anti-rust deep clean AC service",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "849",
+                                MRP: "849",
+                                description: [
+                                    "Prevents gas leaks with an anti-rust spray that deep cleans and protects your AC",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "AC Repair",
+                        name: "Repair & gas refill",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ACRepair.svg",
 
-                        image: "",
-                        title: "AC Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
+                        services: [
+                            {
+                                title: "AC repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                            {
+                                title: "AC gas leak fix & refill",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "2500",
+                                MRP: "2500",
+                                description: [
+                                    "Thorough inspection to detect leak & repair it before gas refill",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "AC Installation",
-
-                        image: "",
-                        title: "AC Installation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC installation by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Uninstallation",
-
-                        image: "",
-                        title: "AC Uninstallation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC uninstallation by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Gas Refill",
-
-                        image: "",
-                        title: "AC Gas Refill",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC gas refill by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC AMC",
-
-                        image: "",
-                        title: "AC AMC",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC AMC by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Gas Top-up",
-
-                        image: "",
-                        title: "AC Gas Top-up",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC gas top-up by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC PCB Repair",
-
-                        image: "",
-                        title: "AC PCB Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC PCB repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Fan Motor Repair",
-
-                        image: "",
-                        title: "AC Fan Motor Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC fan motor repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Condensor Repair",
-
-                        image: "",
-                        title: "AC Condensor Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC condensor repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Compressor Repair",
-
-                        image: "",
-                        title: "AC Compressor Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC compressor repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Capacitor Repair",
-
-                        image: "",
-                        title: "AC Capacitor Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC capacitor repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Thermostat Repair",
-
-                        image: "",
-                        title: "AC Thermostat Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC thermostat repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Sensor Repair",
-
-                        image: "",
-                        title: "AC Sensor Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC sensor repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Filter Repair",
-
-                        image: "",
-                        title: "AC Filter Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC filter repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Duct Cleaning",
-
-                        image: "",
-                        title: "AC Duct Cleaning",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC duct cleaning by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Gas Leakage Repair",
-
-                        image: "",
-                        title: "AC Gas Leakage Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC gas leakage repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Water Leakage Repair",
-
-                        image: "",
-                        title: "AC Water Leakage Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC water leakage repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Noise Repair",
-
-                        image: "",
-                        title: "AC Noise Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC noise repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Cooling Issue Repair",
-
-                        image: "",
-                        title: "AC Cooling Issue Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC cooling issue repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Remote Repair",
-
-                        image: "",
-                        title: "AC Remote Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC remote repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
-                        ],
-                    },
-                    {
-                        title: "AC Display Repair",
-
-                        image: "",
-                        title: "AC Display Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "AC display repair by expert technicians",
-                            "Service includes AC gas top-up, cleaning, and more",
+                        name: "Installation & Uninstallation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ACInstallation.svg",
+                        services: [
+                            {
+                                title: "AC installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "799",
+                                MRP: "799",
+                                description: [
+                                    "Installation of indoor & outdoor units with free gas check",
+                                ],
+                            },
+                            {
+                                title: "AC uninstallation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Uninstallation of both indoor & outdoor units",
+                                ],
+                            },
                         ],
                     },
                 ],
             },
             "Chimney Repair & Service": {
                 image: "assets/servicesSubCategories/chimney.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ChimneyRepair.svg",
+                        services: [
+                            {
+                                title: "Wall mount chimney repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                            {
+                                title: "Island chimney repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Cleaning",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ChimneyCleaning.svg",
+                        services: [
+                            {
+                                title: "Wall mount chimney basic cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Outer surface, mesh & inner mesh cleaned with solution to remove oil",
+                                ],
+                            },
+                            {
+                                title: "Island chimney basic cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "649",
+                                MRP: "649",
+                                description: [
+                                    "Outer surface, mesh & inner mesh cleaned with solution to remove oil",
+                                ],
+                            },
+                            {
+                                title: "Wall mount chimney deep cleaning",
+                                image: "",
+                                time: "1 hr 45 mins",
+                                OurPrice: "1199",
+                                MRP: "1199",
+                                description: [
+                                    "Chimney will be dismantled, each part cleaned with solution & reinstalled",
+                                ],
+                            },
+                            {
+                                title: "Island chimney deep cleaning",
+                                image: "",
+                                time: "1 hr 45 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [
+                                    "Chimney will be dismantled, each part cleaned with solution & reinstalled",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Installation & Uninstallation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/ChimneyInstallation.svg",
+                        services: [
+                            {
+                                title: "Wall mount chimney installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Installation of chimney with ducting & free gas check",
+                                ],
+                            },
+                            {
+                                title: "Islan chimney installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [
+                                    "Installation of chimney with ducting & free gas check",
+                                ],
+                            },
+                            {
+                                title: "Wall mount chimney dismantle",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "459",
+                                MRP: "459",
+                                description: [
+                                    "Uninstallation of chimney with ducting",
+                                ],
+                            },
+                            {
+                                title: "Island chimney dismantle",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "799",
+                                MRP: "799",
+                                description: [
+                                    "Uninstallation of chimney with ducting",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
             "Geyser Repair & Service": {
                 image: "assets/servicesSubCategories/geyser.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/GeyserRepair.svg",
+                        services: [
+                            {
+                                title: "Geyser repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Service",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/GeyserService.svg",
+                        services: [
+                            {
+                                title: "Geyser service",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Exterior & interior cleaning with descaling of the geyser",
+                                    "We do not service gas geysers",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Installation/Uninstallation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/GeyserInstallation.svg",
+                        services: [
+                            {
+                                title: "Geyser installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Installation of geyser with free gas check",
+                                ],
+                            },
+                            {
+                                title: "Geyser uninstallation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: ["Uninstallation of geyser"],
+                            },
+                        ],
+                    },
+                ],
             },
             "Water Purifier Repair & Service": {
                 image: "assets/servicesSubCategories/waterPurifier.svg",
-                services: [],
-            },
-            "Microwave Repair": {
-                image: "assets/servicesSubCategories/microwave.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WaterPurifierRepair.svg",
+                        services: [
+                            {
+                                title: "Water purifier repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Service",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WaterPurifierService.svg",
+                        services: [
+                            {
+                                title: "Water purifier service",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Filter & membrane check-up followed by filter replacement if required",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Installation/Uninstallation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WaterPurifierInstallation.svg",
+                        services: [
+                            {
+                                title: "Water purifier installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: ["Installation of water purifier"],
+                            },
+                            {
+                                title: "Water purifier uninstallation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Uninstallation of water purifier",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
             "Refrigerator Repair": {
                 image: "assets/servicesSubCategories/refrigerator.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Single Door",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/RefrigeratorSingleDoor.svg",
+                        services: [
+                            {
+                                title: "Single door refrigerator check-up",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Double Door",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/RefrigeratorDoubleDoor.svg",
+                        services: [
+                            {
+                                title: "Double door refrigerator check-up (inverter)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                            {
+                                title: "Double door refrigerator check-up (non-inverter)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Side-by-side door",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/RefrigeratorSideBySide.svg",
+                        services: [
+                            {
+                                title: "Side by side door refrigerator check-up",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
             "Television Repair": {
                 image: "assets/servicesSubCategories/television.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/TVRepair.svg",
+                        services: [
+                            {
+                                title: "TV repair",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Installation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/TVInstallation.svg",
+                        services: [
+                            {
+                                title: "TV installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Uninstalation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/TVUninstallation.svg",
+                        services: [
+                            {
+                                title: "TV uninstallation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
+                        ],
+                    },
+                ],
             },
             "Washing Machine Repair": {
                 image: "assets/servicesSubCategories/washingMachine.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WashingMachineRepair.svg",
+                        services: [
+                            {
+                                title: "Fully automatic washing machine check-up (top load)",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                            {
+                                title: "Fully automatic washing machine check-up (front load)",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                            {
+                                title: "Semi automatic washing machine check-up",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [
+                                    "Complete check-up to identify issues before repair",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Installation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WashingMachineInstallation.svg",
+                        services: [
+                            {
+                                title: "Washing machine installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Uninstalation",
+                        categoryImage:
+                            "/assets/serviceDetails/AC&Appliances/categories/WashingMachineUninstallation.svg",
+                        services: [
+                            {
+                                title: "Washing machine uninstallation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [],
+                            },
+                        ],
+                    },
+                ],
             },
         },
     },
@@ -2304,15 +2868,414 @@ export const servicesDetailsData = {
         subcategories: {
             "Bathroom & Kitchen cleaning": {
                 image: "assets/servicesSubCategories/bathroomCleaning.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Bathroom Cleaning",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Intensive Bathroom Cleaning",
+                                image: "",
+                                time: "1 hr 20 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Floor & tile cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Classic Bathroom Cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "429",
+                                MRP: "429",
+                                description: [
+                                    "Floor & tile cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Move-in Bathroom Cleaning",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Extra 10 mins of floor & tile cleaning with a scrub machine",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Kitchen Cleaning",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Complete Kitchen Cleaning",
+                                image: "",
+                                time: "5 hrs",
+                                OurPrice: "1398",
+                                MRP: "1398",
+                                description: [
+                                    "Deep cleaning of objects & surfaces with steam machine",
+                                    "We'll remove items & place them back after the cleaning",
+                                ],
+                            },
+                            {
+                                title: "Move-in Kitchen Cleaning",
+                                image: "",
+                                time: "3 hrs",
+                                OurPrice: "1199",
+                                MRP: "1199",
+                                description: [
+                                    "Oil & grease stain removal from walls, slabs, cabinets, stove, sink etc.",
+                                    "Cabinets cleaned inside. Removal & placing back items not included.",
+                                ],
+                            },
+                            {
+                                title: "Chimney Cleaning",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "599",
+                                MRP: "599",
+                                description: [
+                                    "Chimney exterior, mesh & filter cleaning with a steam machine",
+                                    "Excludes motor cleaning & repair",
+                                ],
+                            },
+                            {
+                                title: "Fridge Cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Deep cleaning of fridge exterior with steam machine",
+                                    "Wet wiping of interior to remove food spills, stains & odour",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Mini Services",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Ceiling Fan Cleaning",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [
+                                    "Ceiling fan cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Exhaust Fan Cleaning",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [
+                                    "Exhaust fan cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Kitchan sink Cleaning",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [
+                                    "Kitchen sink cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Gas stove Cleaning",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [
+                                    "Gas stove cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Window Cleaning",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Window cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Microwave Cleaning",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Microwave cleaning with a scrub machine",
+                                ],
+                            },
+                            {
+                                title: "Trolley & shelves Cleaning",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "899",
+                                MRP: "899",
+                                description: [],
+                            },
+                            {
+                                title: "Balcony Cleaning",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "429",
+                                MRP: "429",
+                                description: [],
+                            },
+                            {
+                                title: "2 ceiling fan cleaning",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "98",
+                                MRP: "98",
+                                description: [],
+                            },
+                        ],
+                    },
+                ],
             },
             "Full Home Cleaning": {
                 image: "assets/servicesSubCategories/homeCleaning.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Occupied Appartment",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Premium home deep cleaning",
+                                image: "",
+                                time: "5 hrs",
+                                OurPrice: "4499",
+                                MRP: "4499",
+                                description: [
+                                    "Full deep cleaning of bathrooms and kitchen, including inside trolleys/shelves",
+                                ],
+                            },
+                            {
+                                title: "Platinum home deep cleaning",
+                                image: "",
+                                time: "5 hrs",
+                                OurPrice: "5499",
+                                MRP: "5499",
+                                description: [
+                                    "Floor cleaning using industry grade machines",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Unfurnished Appartment",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Essential home cleaning",
+                                image: "",
+                                time: "4 hrs",
+                                OurPrice: "3999",
+                                MRP: "3999",
+                                description: [
+                                    "Floor cleaning using single disc machine and industry grade chemicals",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Occupied independent house",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "2000 - 3000 sq. ft house cleaning",
+                                image: "",
+                                time: "6 hrs 40 mins",
+                                OurPrice: "18699",
+                                MRP: "18699",
+                                description: [
+                                    "Disc machine is used for cleaning of the tiles",
+                                    "Dry vacuuming of all fabrics including sofa, carpet & mattress",
+                                ],
+                            },
+                            {
+                                title: "3000 - 4000 sq. ft house cleaning",
+                                image: "",
+                                time: "8 hrs",
+                                OurPrice: "21999",
+                                MRP: "21999",
+                                description: [
+                                    "Disc machine is used for cleaning of the tiles",
+                                    "Dry vacuuming of all fabrics including sofa, carpet & mattress",
+                                ],
+                            },
+                            {
+                                title: "4000 - 5000 sq. ft house cleaning",
+                                image: "",
+                                time: "8 hrs 20 mins",
+                                OurPrice: "28599",
+                                MRP: "28599",
+                                description: [
+                                    "Disc machine is used for cleaning of the tiles",
+                                    "Dry vacuuming of all fabrics including sofa, carpet & mattress",
+                                ],
+                            },
+                            {
+                                title: "5000 - 6000 sq. ft house cleaning",
+                                image: "",
+                                time: "9 hrs",
+                                OurPrice: "32999",
+                                MRP: "32999",
+                                description: [
+                                    "Disc machine is used for cleaning of the tiles",
+                                    "Dry vacuuming of all fabrics including sofa, carpet & mattress",
+                                ],
+                            },
+                            {
+                                title: "6000 - 7000 sq. ft house cleaning",
+                                image: "",
+                                time: "9 hrs",
+                                OurPrice: "39599",
+                                MRP: "39599",
+                                description: [
+                                    "Disc machine is used for cleaning of the tiles",
+                                    "Dry vacuuming of all fabrics including sofa, carpet & mattress",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Mini services",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Additional bathroom cleaning",
+                                image: "",
+                                time: "60 mins  ",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [
+                                    "Hard stain removal for an immaculate bathroom",
+                                    "Enhances shine of floors and tiles",
+                                ],
+                            },
+                            {
+                                title: "Refrigerator cleaning",
+                                image: "",
+                                time: "60 mins ",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Deep cleaning of refrigerator interior and exterior",
+                                    "Dry cleaning of the back side",
+                                ],
+                            },
+                            {
+                                title: "Carpet shampooing (upto 25 sq. ft)",
+                                image: "",
+                                time: "40 mins ",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Deep cleaning of carpet using a shampooing machine",
+                                    "Removes dirt, stains and odour",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
             "Sofa & Carpet Cleaning": {
                 image: "assets/servicesSubCategories/sofaCleaning.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Sofa",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Sofa cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Dry vacuuming to remove crumbs & dirt particles",
+                                    "Wet shampooing on fabric sofa to remove stains & spillages",
+                                ],
+                            },
+                            {
+                                title: "Cushions cleaning",
+                                image: "",
+                                time: "25 mins",
+                                OurPrice: "189",
+                                MRP: "189",
+                                description: [
+                                    "Includes cleaning of upto 5 cushions with covers",
+                                    "Wet shampooing & vacuuming to remove dust & stains",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Carpet",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Carpet cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Dry vacuuming to remove dust & dirt particles",
+                                    "Wet shampooing to remove stains & odour",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Dining table & chairs",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Dining table & chairs cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Dry vacuuming of cushioned chairs & wet wiping of dining table",
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Mattress",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Mattress cleaning",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "449",
+                                MRP: "449",
+                                description: [
+                                    "Deep cleaning of bed mattress on both sides",
+                                    "Dry & wet vacuuming, shampooing for dust & tough stain removal",
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
         },
     },
@@ -2321,407 +3284,1222 @@ export const servicesDetailsData = {
         subcategories: {
             Electrician: {
                 image: "assets/servicesSubCategories/electrician.svg",
-                services: [
+                categories: [
                     {
-                        title: "Electrical Wiring",
-
-                        image: "",
-                        title: "Electrical Wiring",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical wiring by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Switch & Socket",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Switchbox installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Installed in specified area for new power outlet",
+                                ],
+                            },
+                            {
+                                title: "AC switchbox installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "369",
+                                MRP: "369",
+                                description: [],
+                            },
+                            {
+                                title: "Switchboard installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "309",
+                                MRP: "309",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
+                            {
+                                title: "Smart switch installation",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "150",
+                                MRP: "150",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
+                            {
+                                title: "Smart appliance controller",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
+                            {
+                                title: "Wi-Fi smart switch installation",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
+                            {
+                                title: "Switch/socket replacement",
+                                image: "",
+                                time: "10 mins",
+                                OurPrice: "109",
+                                MRP: "109",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
+                            {
+                                title: "Switchboard/switchbox repair",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "120",
+                                MRP: "120",
+                                description: [
+                                    "Installed in existing wiring connections within the wall",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical Switch Repair",
-
-                        image: "",
-                        title: "Electrical Switch Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical switch repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Fan",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Fan installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "139",
+                                MRP: "139",
+                                description: [],
+                            },
+                            {
+                                title: "Fan uninstallation (ceiling/exhaust/wall)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [],
+                            },
+                            {
+                                title: "Fan replacement (ceiling/exhaust/wall)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "259",
+                                MRP: "259",
+                                description: [],
+                            },
+                            {
+                                title: "Fan repair (ceiling/exhaust/wall)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [],
+                            },
+                            {
+                                title: "Ceiling fan regulator replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "109",
+                                MRP: "109",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical Fan Repair",
-
-                        image: "",
-                        title: "Electrical Fan Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical fan repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Wall/ceiling Light",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Bulb/tubelight holder installation",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "119",
+                                MRP: "119",
+                                description: [],
+                            },
+                            {
+                                title: "CFL to LED replacement",
+                                image: "",
+                                time: "20 mins",
+                                OurPrice: "169",
+                                MRP: "169",
+                                description: [],
+                            },
+                            {
+                                title: "Decoration lights uninstallation (per 20m)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [],
+                            },
+                            {
+                                title: "Decoration lantern installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
+                            {
+                                title: "Chandelier installation",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [],
+                            },
+                            {
+                                title: "Wall/ceiling light installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical Light Repair",
-
-                        image: "",
-                        title: "Electrical Light Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical light repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Wiring",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "New external wiring",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [],
+                            },
+                            {
+                                title: "New internal wiring (per 5m)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical Socket Repair",
-
-                        image: "",
-                        title: "Electrical Socket Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical socket repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Doorbell",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Doorbell Installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "109",
+                                MRP: "109",
+                                description: [],
+                            },
+                            {
+                                title: "Doorbell replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "109",
+                                MRP: "109",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical MCB Repair",
-
-                        image: "",
-                        title: "Electrical MCB Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical MCB repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "MCB & submeter",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Single-pole MCB installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [
+                                    "Installation of a circuit breaker to prevent short circuit",
+                                ],
+                            },
+                            {
+                                title: "Double-pole MCB installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [
+                                    "Installation of a circuit breaker to prevent short circuit",
+                                ],
+                            },
+                            {
+                                title: "MCB/Fuse Replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "119",
+                                MRP: "119",
+                                description: [],
+                            },
+                            {
+                                title: "Submeter installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "319",
+                                MRP: "319",
+                                description: [],
+                            },
+                            {
+                                title: "3-phase changeover switch installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "369",
+                                MRP: "369",
+                                description: [
+                                    "Switch installation to change supply in a 3-phase power source",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Electrical Earthing Repair",
-
-                        image: "",
-                        title: "Electrical Earthing Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Electrical earthing repair by expert technicians",
-                            "Service includes electrical repair, wiring, and more",
+                        name: "Inverter & stabiliser",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Inverter installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "485",
+                                MRP: "485",
+                                description: [],
+                            },
+                            {
+                                title: "Stabiliser installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [],
+                            },
+                            {
+                                title: "Inverter fuse replacement",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [],
+                            },
+                            {
+                                title: "Inverter servicing",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "279",
+                                MRP: "279",
+                                description: [
+                                    "Terminal dust removal & distilled water top-up",
+                                ],
+                            },
+                            {
+                                title: "Inverter repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "210",
+                                MRP: "210",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Appliance",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Geyser installation",
+                                image: "assets/serviceDetails/Electrician, Plumber & Carpenter/Geyser.svg",
+                                time: "60 mins",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [],
+                            },
+                            {
+                                title: "TV installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [],
+                            },
+                            {
+                                title: "TV uninstallation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [],
+                            },
+                            {
+                                title: "Wifi CCTV installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
+                            {
+                                title: "Room heater repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "279",
+                                MRP: "279",
+                                description: [],
+                            },
+                            {
+                                title: "Karban airzone installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [
+                                    "Includes electrical connection & remote testing",
+                                ],
+                            },
+                            {
+                                title: "Karban airzone lite installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [
+                                    "Includes electrical connection & remote testing",
+                                ],
+                            },
+                            {
+                                title: "Video bell installation",
+                                image: "",
+                                time: "45 mins",
+                                OurPrice: "600",
+                                MRP: "600",
+                                description: [],
+                            },
+                            {
+                                title: "Mixer Grinder Repair",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "210",
+                                MRP: "210",
+                                description: [],
+                            },
+                            {
+                                title: "Mini home theater installation",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [
+                                    "Installation of 2 speakers, 1 sound bar & 1 subwoofer",
+                                ],
+                            },
+                            {
+                                title: "EV charger installation (2 wheeler)",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "750",
+                                MRP: "750",
+                                description: [],
+                            },
                         ],
                     },
                 ],
             },
             Plumber: {
                 image: "assets/servicesSubCategories/plumber.svg",
-                services: [
+                categories: [
                     {
-                        title: "Pipe Leakage",
-
-                        image: "",
-                        title: "Pipe Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Pipe leakage repair by expert technicians",
-                            "Service includes pipe repair, fitting, and more",
+                        name: "Bath Fittings",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Bath accessory installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "69",
+                                MRP: "69",
+                                description: [
+                                    "Small fittings such as towel hanger/shelves, soap dispenser, etc.",
+                                ],
+                            },
+                            {
+                                title: "Shower installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [
+                                    "Applicable for wall-mounted & handheld shower",
+                                ],
+                            },
                         ],
                     },
                     {
-                        title: "Tap Leakage",
-
-                        image: "",
-                        title: "Tap Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Tap leakage repair by expert technicians",
-                            "Service includes tap repair, fitting, and more",
+                        name: "Basin & Sink",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Wash basin installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [],
+                            },
+                            {
+                                title: "Wash pipe replacement",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [],
+                            },
+                            {
+                                title: "Sink drainage removal",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "119",
+                                MRP: "119",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Sink Leakage",
-
-                        image: "",
-                        title: "Sink Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Sink leakage repair by expert technicians",
-                            "Service includes sink repair, fitting, and more",
+                        name: "Grouting",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Bathroom tile grouting",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "1299",
+                                MRP: "1299",
+                                description: [],
+                            },
+                            {
+                                title: "Kitchen tile grouting",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "879",
+                                MRP: "879",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Toilet Leakage",
-
-                        image: "",
-                        title: "Toilet Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Toilet leakage repair by expert technicians",
-                            "Service includes toilet repair, fitting, and more",
+                        name: "Water Filer",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Shower filter installation",
+                                image: "",
+                                time: "10 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [],
+                            },
+                            {
+                                title: "Shower machine filter installation",
+                                image: "",
+                                time: "10 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Shower Leakage",
-
-                        image: "",
-                        title: "Shower Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Shower leakage repair by expert technicians",
-                            "Service includes shower repair, fitting, and more",
+                        name: "Drainage",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Drainage cover installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
+                            {
+                                title: "Bathroom drainage removal",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Geyser Leakage",
-
-                        image: "",
-                        title: "Geyser Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Geyser leakage repair by expert technicians",
-                            "Service includes geyser repair, fitting, and more",
+                        name: "Toilet",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Toilet seat cover replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
+                            {
+                                title: "Flush tank repair (external PVC)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
+                            {
+                                title: "Flush tank repair (concealed)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "169",
+                                MRP: "169",
+                                description: [],
+                            },
+                            {
+                                title: "Flush tank repair (external ceramic)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [],
+                            },
+                            {
+                                title: "Western toilet repair (floor mounted)",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "569",
+                                MRP: "569",
+                                description: [],
+                            },
+                            {
+                                title: "Toilet pot blockage removal",
+                                image: "",
+                                time: "2 hr 10 mins",
+                                OurPrice: "1099",
+                                MRP: "1099",
+                                description: [],
+                            },
+                            {
+                                title: "Jet spray installation/repair",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
+                            {
+                                title: "Western toilet replacement",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [],
+                            },
+                            {
+                                title: "Indian toilet installation",
+                                image: "",
+                                time: "2 hr 30 mins",
+                                OurPrice: "1499",
+                                MRP: "1499",
+                                description: [],
+                            },
+                            {
+                                title: "Flush tank replacement",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "409",
+                                MRP: "409",
+                                description: [],
+                            },
+                            {
+                                title: "Western toilet installation",
+                                image: "",
+                                time: "2 hr 30 mins",
+                                OurPrice: "1349",
+                                MRP: "1349",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Water Tank Leakage",
-
-                        image: "",
-                        title: "Water Tank Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water tank leakage repair by expert technicians",
-                            "Service includes water tank repair, fitting, and more",
+                        name: "Tap & mixer",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Tap repair",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [],
+                            },
+                            {
+                                title: "Water mixer tap repair",
+                                image: "",
+                                time: "25 mins",
+                                OurPrice: "179",
+                                MRP: "179",
+                                description: [],
+                            },
+                            {
+                                title: "Tap installation",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [],
+                            },
+                            {
+                                title: "Water mixer installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "329",
+                                MRP: "329",
+                                description: [],
+                            },
+                            {
+                                title: "Water nozzle installation",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "69",
+                                MRP: "69",
+                                description: [],
+                            },
+                            {
+                                title: "Tap replacement",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "59",
+                                MRP: "59",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Water Purifier Leakage",
-
-                        image: "",
-                        title: "Water Purifier Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier leakage repair by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
+                        name: "Water Tank",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Water tank repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "169",
+                                MRP: "169",
+                                description: [],
+                            },
+                            {
+                                title: "Water tank installation (overhead)",
+                                image: "",
+                                time: "2 hrs",
+                                OurPrice: "499",
+                                MRP: "499",
+                                description: [],
+                            },
+                            {
+                                title: "Water tank cleaning (loft placed)",
+                                image: "",
+                                time: "1 hr",
+                                OurPrice: "1099",
+                                MRP: "1099",
+                                description: [],
+                            },
+                            {
+                                title: "Overhead tank cleaning (open placed)",
+                                image: "",
+                                time: "1 hr",
+                                OurPrice: "799",
+                                MRP: "799",
+                                description: [],
+                            },
+                            {
+                                title: "Underground tank cleaning",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "1199",
+                                MRP: "1199",
+                                description: [],
+                            },
+                            {
+                                title: "Pipeline leakage repair",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [],
+                            },
+                            {
+                                title: "Water meter installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Water Motor Leakage",
-
-                        image: "",
-                        title: "Water Motor Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water motor leakage repair by expert technicians",
-                            "Service includes water motor repair, fitting, and more",
+                        name: "Motor",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Motor air cavity removal",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
+                            {
+                                title: "Motor installation/replacement",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [],
+                            },
                         ],
                     },
                     {
-                        title: "Water Heater Leakage",
-
-                        image: "",
-                        title: "Water Heater Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water heater leakage repair by expert technicians",
-                            "Service includes water heater repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Cooler Leakage",
-
-                        image: "",
-                        title: "Water Cooler Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water cooler leakage repair by expert technicians",
-                            "Service includes water cooler repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Filter Leakage",
-
-                        image: "",
-                        title: "Water Filter Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water filter leakage repair by expert technicians",
-                            "Service includes water filter repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Softener Leakage",
-
-                        image: "",
-                        title: "Water Softener Leakage",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water softener leakage repair by expert technicians",
-                            "Service includes water softener repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Change",
-
-                        image: "",
-                        title: "Water Purifier Filter Change",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter change by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Installation",
-
-                        image: "",
-                        title: "Water Purifier Installation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier installation by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Uninstallation",
-
-                        image: "",
-                        title: "Water Purifier Uninstallation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier uninstallation by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier AMC",
-
-                        image: "",
-                        title: "Water Purifier AMC",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier AMC by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Cleaning",
-
-                        image: "",
-                        title: "Water Purifier Filter Cleaning",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter cleaning by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Repair",
-
-                        image: "",
-                        title: "Water Purifier Filter Repair",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter repair by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Replacement",
-
-                        image: "",
-                        title: "Water Purifier Filter Replacement",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter replacement by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Installation",
-
-                        image: "",
-                        title: "Water Purifier Filter Installation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter installation by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter Uninstallation",
-
-                        image: "",
-                        title: "Water Purifier Filter Uninstallation",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter uninstallation by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
-                        ],
-                    },
-                    {
-                        title: "Water Purifier Filter AMC",
-
-                        image: "",
-                        title: "Water Purifier Filter AMC",
-                        time: "",
-                        OurPrice: "499",
-                        MRP: "499",
-                        description: [
-                            "Water purifier filter AMC by expert technicians",
-                            "Service includes water purifier repair, fitting, and more",
+                        name: "Water pipes",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "Washing machine inlet installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [],
+                            },
+                            {
+                                title: "Connection hose installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
                         ],
                     },
                 ],
             },
             Carpenter: {
                 image: "assets/servicesSubCategories/carpenter.svg",
-                services: [],
+                categories: [
+                    {
+                        name: "Clothes hanger",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/clothesHanger.svg",
+                        services: [
+                            {
+                                title: "Ceiling-mounted hanger installation",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [],
+                            },
+                            {
+                                title: "Wall/door hanger installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "139",
+                                MRP: "139",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Bed",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/bed.svg",
+                        services: [
+                            {
+                                title: "Bed support repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "319",
+                                MRP: "319",
+                                description: [],
+                            },
+                            {
+                                title: "Bed legs/Headboard repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Cupboard & drawer",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/cupboard&Drawer.svg",
+                        services: [
+                            {
+                                title: "Cupboard hinge installation (upto 2)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [],
+                            },
+                            {
+                                title: "Channel repair (one set)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "109",
+                                MRP: "109",
+                                description: [],
+                            },
+                            {
+                                title: "Drawer channel replacement (one set)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [],
+                            },
+                            {
+                                title: "Cupboard handle installation/replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [],
+                            },
+                            {
+                                title: "Cupboard lock installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "249",
+                                MRP: "249",
+                                description: [],
+                            },
+                            {
+                                title: "Cupboard lock replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [],
+                            },
+                            {
+                                title: "Cupboard lock repair",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "139",
+                                MRP: "139",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Door",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/door.svg",
+
+                        services: [
+                            {
+                                title: "Door accessory installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
+                            {
+                                title: "Peephole installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "99",
+                                MRP: "99",
+                                description: [],
+                            },
+                            {
+                                title: "Wooden door installation",
+                                image: "",
+                                time: "2 hrs 30 mins",
+                                OurPrice: "549",
+                                MRP: "549",
+                                description: [],
+                            },
+                            {
+                                title: "Major wooden door repair",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Adjusting & trimming of completely stuck door",
+                                ],
+                            },
+                            {
+                                title: "Minor wooden door repair",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [
+                                    "Repair of minor issues like door sticking or slight misalignment",
+                                ],
+                            },
+                            {
+                                title: "Door hinge installation (upto 4 hinges)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "199",
+                                MRP: "199",
+                                description: [
+                                    "Applicable for wooden door only",
+                                ],
+                            },
+                            {
+                                title: "Door hinge installation (with dismantle)",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "239",
+                                MRP: "239",
+                                description: [],
+                            },
+                            {
+                                title: "Door lock installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "399",
+                                MRP: "399",
+                                description: [],
+                            },
+                            {
+                                title: "Door lock replacement",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "319",
+                                MRP: "319",
+                                description: [],
+                            },
+                            {
+                                title: "Door lock repair",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "149",
+                                MRP: "149",
+                                description: [],
+                            },
+                            {
+                                title: "Mesh grill door repair/replacement",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "329",
+                                MRP: "329",
+                                description: [],
+                            },
+                            {
+                                title: "Overhead door closer installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "179",
+                                MRP: "179",
+                                description: [],
+                            },
+                            {
+                                title: "Door closer installation (wall-mounted)",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "349",
+                                MRP: "349",
+                                description: [],
+                            },
+                            {
+                                title: "Wooden sliding door repair",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "269",
+                                MRP: "269",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Drill & hang",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/drill&Hang.svg",
+                        services: [
+                            {
+                                title: "Bathroom holder & hanger installations",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "69",
+                                MRP: "69",
+                                description: [],
+                            },
+                            {
+                                title: "Drill & hang (wall decor)",
+                                image: "",
+                                time: "15 mins",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [],
+                            },
+                            {
+                                title: "Bathroom mirror installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
+                            {
+                                title: "Glass shelf installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [],
+                            },
+                            {
+                                title: "Wooden shelf installation",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "179",
+                                MRP: "179",
+                                description: [],
+                            },
+                            {
+                                title: "Corner guard/safety lock installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
+                            {
+                                title: "Bed fence installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "299",
+                                MRP: "299",
+                                description: [],
+                            },
+                            {
+                                title: "Safety gate installation",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "699",
+                                MRP: "699",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Furniture Repair",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/furniture.svg",
+                        services: [
+                            {
+                                title: "Plastic buffer installation (upto 4)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "79",
+                                MRP: "79",
+                                description: [],
+                            },
+                            {
+                                title: "Chair wheels fitting",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "89",
+                                MRP: "89",
+                                description: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "Window & Curtain",
+                        categoryImage:
+                            "/assets/serviceDetails/Electrician, Plumber & Carpenter/categories/window&Curtain.svg",
+                        services: [
+                            {
+                                title: "Curtain blinds' measurement",
+                                image: "",
+                                time: "60 mins",
+                                OurPrice: "69",
+                                MRP: "69",
+                                description: [],
+                            },
+                            {
+                                title: "Curtain rod installation (2 brackets)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "129",
+                                MRP: "129",
+                                description: [],
+                            },
+                            {
+                                title: "Shower curtain rod installation (2 brackets)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "139",
+                                MRP: "139",
+                                description: [],
+                            },
+                            {
+                                title: "Motorised blinds fitting (upto 5ft)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "209",
+                                MRP: "209",
+                                description: [],
+                            },
+                            {
+                                title: "Non-motorised blinds fitting (upto 5ft)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "159",
+                                MRP: "159",
+                                description: [],
+                            },
+                            {
+                                title: "Window AC frame installation",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "269",
+                                MRP: "269",
+                                description: [],
+                            },
+                            {
+                                title: "Window closing (post AC removal)",
+                                image: "",
+                                time: "1 hr 30 mins",
+                                OurPrice: "139",
+                                MRP: "139",
+                                description: [],
+                            },
+                            {
+                                title: "Window hinge installation (upto 4)",
+                                image: "",
+                                time: "30 mins",
+                                OurPrice: "169",
+                                MRP: "169",
+                                description: [],
+                            },
+                        ],
+                    },
+                ],
             },
         },
     },
@@ -2729,16 +4507,21 @@ export const servicesDetailsData = {
         subcategories: {
             "Painting Services": {
                 image: "assets/servicesSubCategories/painter.svg",
-                services: [
+                categories: [
                     {
-                        title: "Full home painting & waterproofing",
-                        image: "",
-                        title: "At home consulatation",
-                        time: "",
-                        OurPrice: "49",
-                        MRP: "49",
-                        description: [
-                            "Consult, quote and team of experts trained for high quality work",
+                        name: "Home Consultation",
+                        categoryImage: "",
+                        services: [
+                            {
+                                title: "At home consulatation",
+                                image: "",
+                                time: "",
+                                OurPrice: "49",
+                                MRP: "49",
+                                description: [
+                                    "Consult, quote and team of experts trained for high quality work",
+                                ],
+                            },
                         ],
                     },
                 ],

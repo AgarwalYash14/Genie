@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { register } from "../utils/api";
 
-export default function Register({ onRegisterSuccess, onClose }) {
+export default function Register({
+    onRegisterSuccess,
+    onClose,
+    onSwitchToLogin,
+}) {
     const [userData, setUserData] = useState({
         first_name: "",
         last_name: "",
@@ -29,6 +33,12 @@ export default function Register({ onRegisterSuccess, onClose }) {
         }
     };
 
+    const handleSwitchToLogin = (e) => {
+        e.preventDefault();
+        onClose();
+        onSwitchToLogin();
+    };
+
     return (
         <>
             <form
@@ -38,59 +48,65 @@ export default function Register({ onRegisterSuccess, onClose }) {
                 <h1 className="text-lg text-center">Register your Account</h1>
                 <div className="flex flex-col gap-3">
                     <div className="flex flex-col gap-2">
-                        <div className="flex flex-col gap-1">
+                        <div className="w-full flex gap-2">
                             <input
                                 type="text"
                                 placeholder="Enter First Name"
                                 name="first_name"
                                 value={userData.first_name}
                                 onChange={handleChange}
-                                className="text-sm rounded-md p-2 border border-dashed outline-none"
+                                className="w-1/2 text-sm rounded-md p-2 text-ellipsis border border-dashed outline-none"
                             />
-                        </div>
-                        <div className="flex flex-col gap-1">
                             <input
                                 type="text"
                                 placeholder="Enter Last Name"
                                 name="last_name"
                                 value={userData.last_name}
                                 onChange={handleChange}
-                                className="text-sm rounded-md p-2 border border-dashed outline-none"
+                                className="w-1/2 text-sm rounded-md p-2 text-ellipsis border border-dashed outline-none"
                             />
                         </div>
-                        <div className="flex flex-col gap-1">
-                            <input
-                                type="tel"
-                                placeholder="Enter Mobile No"
-                                autoComplete="off"
-                                name="phone"
-                                value={userData.phone}
-                                onChange={handleChange}
-                                className="text-sm rounded-md p-2 border border-dashed outline-none"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <input
-                                type="email"
-                                placeholder="Enter Email"
-                                autoComplete="off"
-                                name="email"
-                                value={userData.email}
-                                onChange={handleChange}
-                                className="text-sm rounded-md p-2 border border-dashed outline-none"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                autoComplete="off"
-                                name="password"
-                                value={userData.password}
-                                onChange={handleChange}
-                                className="text-sm rounded-md p-2 border border-dashed outline-none"
-                            />
-                        </div>
+                        <input
+                            type="tel"
+                            placeholder="Enter Mobile No"
+                            pattern="[0-9]{10}"
+                            maxLength="10"
+                            autoComplete="off"
+                            name="phone"
+                            value={userData.phone}
+                            onChange={handleChange}
+                            onKeyDown={(e) => {
+                                if (
+                                    !/[0-9]/.test(e.key) &&
+                                    e.key !== "Backspace" &&
+                                    e.key !== "Delete" &&
+                                    e.key !== "ArrowLeft" &&
+                                    e.key !== "ArrowRight" &&
+                                    e.key !== "Tab"
+                                ) {
+                                    e.preventDefault();
+                                }
+                            }}
+                            className="text-sm rounded-md p-2 border border-dashed outline-none"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Enter Email"
+                            autoComplete="off"
+                            name="email"
+                            value={userData.email}
+                            onChange={handleChange}
+                            className="text-sm rounded-md p-2 border border-dashed outline-none"
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            autoComplete="off"
+                            name="password"
+                            value={userData.password}
+                            onChange={handleChange}
+                            className="text-sm rounded-md p-2 border border-dashed outline-none"
+                        />
                     </div>
                 </div>
                 {error && (
@@ -104,7 +120,10 @@ export default function Register({ onRegisterSuccess, onClose }) {
                 </button>
                 <h1 className="text-sm text-center -mt-4">
                     Already have an account?{" "}
-                    <span className="font-bold underline underline-offset-2">
+                    <span
+                        onClick={handleSwitchToLogin}
+                        className="font-bold tracking-wide underline underline-offset-2"
+                    >
                         Login
                     </span>
                 </h1>

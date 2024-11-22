@@ -16,10 +16,6 @@ const paymentSchema = new mongoose.Schema({
         unique: true,
         sparse: true, // Allows null/undefined values
     },
-    signature: {
-        type: String,
-        sparse: true, // Allows null/undefined values
-    },
     amount: {
         type: Number,
         required: true,
@@ -31,8 +27,10 @@ const paymentSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["Pending", "Completed", "Failed"],
         default: "pending",
+    },
+    method: {
+        type:String,
     },
     failureReason: {
         type: String,
@@ -64,7 +62,6 @@ const paymentSchema = new mongoose.Schema({
     },
     attempts: {
         type: Number,
-        default: 1,
     },
     lastAttemptAt: {
         type: Date,

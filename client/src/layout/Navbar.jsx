@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { bookings, cart, logo } from "../assets";
 import { HiUser } from "react-icons/hi2";
@@ -11,23 +11,32 @@ import PortalLayout from "../components/PortalLayout";
 
 import { CartContext } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
+import PortalContext from "../context/PortalContext";
 
 const libraries = ["places"];
 
 export default function Navbar() {
-    const [showLogin, setShowLogin] = useState(false);
-    const [showRegister, setShowRegister] = useState(false);
-    const location = useLocation();
+    // const [showLogin, setShowLogin] = useState(false);
+    // const [showRegister, setShowRegister] = useState(false);
     const navigate = useNavigate();
+
+    const {
+        openLogin,
+        closeLogin,
+        openRegister,
+        closeRegister,
+        showLogin,
+        showRegister,
+    } = useContext(PortalContext);
 
     const { isAuthenticated, user, login, logout } = useAuth();
     const { getCartCount } = useContext(CartContext);
 
-    const openLogin = () => setShowLogin(true);
-    const closeLogin = useCallback(() => setShowLogin(false), []);
+    // const openLogin = () => setShowLogin(true);
+    // const closeLogin = useCallback(() => setShowLogin(false), []);
 
-    const openRegister = () => setShowRegister(true);
-    const closeRegister = useCallback(() => setShowRegister(false), []);
+    // const openRegister = () => setShowRegister(true);
+    // const closeRegister = useCallback(() => setShowRegister(false), []);
 
     const handleLoginSuccess = useCallback(
         (userData) => {
@@ -73,9 +82,9 @@ export default function Navbar() {
                         GENIE
                     </Link>
                 </div>
-                {/* <div className="hidden md:flex">
+                <div className="hidden md:flex">
                     <Autocomplete libraries={libraries} />
-                </div> */}
+                </div>
                 <div className="hidden items-center gap-8 md:flex">
                     <Link to="/viewcart">
                         <div className="flex items-center gap-2 hover:text-orange-500">
@@ -98,16 +107,18 @@ export default function Navbar() {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/bookings">
-                        <div className="flex gap-2 hover:text-orange-500">
-                            <img
-                                src={bookings}
-                                alt="Bookings"
-                                className="h-6"
-                            />
-                            <span className="h-6">Bookings</span>
-                        </div>
-                    </Link>
+                    {isAuthenticated && user ? (
+                        <Link to="/bookings">
+                            <div className="flex gap-2 hover:text-orange-500">
+                                <img
+                                    src={bookings}
+                                    alt="Bookings"
+                                    className="h-6"
+                                />
+                                <span className="h-6">Bookings</span>
+                            </div>
+                        </Link>
+                    ) : null}
                     <div className="w-[0.09rem] h-6 bg-black rounded-full"></div>
                     {isAuthenticated && user ? (
                         <>
@@ -152,12 +163,15 @@ export default function Navbar() {
                 <Login
                     onLoginSuccess={handleLoginSuccess}
                     onClose={closeLogin}
+                    onSwitchToRegister={openRegister}
                 />
             </PortalLayout>
             <PortalLayout isOpen={showRegister} onClose={closeRegister}>
                 <Register
                     onRegisterSuccess={handleRegisterSuccess}
                     onClose={closeRegister}
+                    onSwitchToLogin={openLogin}
+                    openLogin={openLogin}
                 />
             </PortalLayout>
         </>
