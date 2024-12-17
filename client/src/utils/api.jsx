@@ -269,7 +269,11 @@ export const createSubcategory = async (serviceId, formData) => {
     }
 };
 
-export const updateSubcategory = async (serviceId, subcategoryName, formData) => {
+export const updateSubcategory = async (
+    serviceId,
+    subcategoryName,
+    formData
+) => {
     try {
         const response = await axiosInstance.put(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}`,
@@ -296,7 +300,11 @@ export const deleteSubcategory = async (serviceId, subcategoryName) => {
 };
 
 // Service Type operations
-export const createServiceType = async (serviceId, subcategoryName, formData) => {
+export const createServiceType = async (
+    serviceId,
+    subcategoryName,
+    formData
+) => {
     try {
         const response = await axiosInstance.post(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types`,
@@ -314,7 +322,12 @@ export const createServiceType = async (serviceId, subcategoryName, formData) =>
 // Add similar functions for updating and deleting service types
 
 // Category operations
-export const createCategory = async (serviceId, subcategoryName, typeName, formData) => {
+export const createCategory = async (
+    serviceId,
+    subcategoryName,
+    typeName,
+    formData
+) => {
     try {
         const response = await axiosInstance.post(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories`,
@@ -332,7 +345,12 @@ export const createCategory = async (serviceId, subcategoryName, typeName, formD
 // Add similar functions for updating and deleting categories
 
 // Service Type operations (completing the missing functions)
-export const updateServiceType = async (serviceId, subcategoryName, typeKey, formData) => {
+export const updateServiceType = async (
+    serviceId,
+    subcategoryName,
+    typeKey,
+    formData
+) => {
     try {
         const response = await axiosInstance.put(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeKey}`,
@@ -347,7 +365,11 @@ export const updateServiceType = async (serviceId, subcategoryName, typeKey, for
     }
 };
 
-export const deleteServiceType = async (serviceId, subcategoryName, typeKey) => {
+export const deleteServiceType = async (
+    serviceId,
+    subcategoryName,
+    typeKey
+) => {
     try {
         const response = await axiosInstance.delete(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeKey}`
@@ -359,7 +381,13 @@ export const deleteServiceType = async (serviceId, subcategoryName, typeKey) => 
 };
 
 // Category operations (completing the missing functions)
-export const updateCategory = async (serviceId, subcategoryName, typeName, categoryId, formData) => {
+export const updateCategory = async (
+    serviceId,
+    subcategoryName,
+    typeName,
+    categoryId,
+    formData
+) => {
     try {
         const response = await axiosInstance.put(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories/${categoryId}`,
@@ -374,7 +402,12 @@ export const updateCategory = async (serviceId, subcategoryName, typeName, categ
     }
 };
 
-export const deleteCategory = async (serviceId, subcategoryName, typeName, categoryId) => {
+export const deleteCategory = async (
+    serviceId,
+    subcategoryName,
+    typeName,
+    categoryId
+) => {
     try {
         const response = await axiosInstance.delete(
             `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories/${categoryId}`

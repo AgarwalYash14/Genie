@@ -46,6 +46,7 @@ router.post("/register", async (req, res) => {
             phone,
             email,
             password,
+            role: "user",
         });
 
         const salt = await bcrypt.genSalt(10);
@@ -79,6 +80,7 @@ router.post("/register", async (req, res) => {
                         last_name: user.last_name,
                         email: user.email,
                         phone: user.phone,
+                        role: user.role,
                     },
                 });
             }
@@ -110,6 +112,9 @@ router.post("/login", async (req, res) => {
         if (!user) {
             return res.status(400).json({ msg: "Invalid Credentials" });
         }
+
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(password, salt);
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
@@ -155,7 +160,13 @@ router.post("/login", async (req, res) => {
 //Logout
 router.post("/logout", (req, res) => {
     res.header("Access-Control-Allow-Credentials", true);
-    res.clearCookie("token").json({ success: true });
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+        path: "/", // Clear from the entire domain
+    });
+    res.json({ success: true });
 });
 
 router.get("/user", async (req, res) => {
