@@ -66,7 +66,7 @@ router.post("/register", async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
-                    httpOnly: true,
+                    httpOnly: false,
                     secure: req.secure || process.env.NODE_ENV === "production",
                     maxAge: 3600000,
                     sameSite: "strict",
@@ -164,7 +164,7 @@ router.get("/user", async (req, res) => {
                 msg: "No token, authorization denied",
                 isAuthenticated: false,
             });
- 
+
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.user._id).select("-password");
 
