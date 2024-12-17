@@ -1,29 +1,26 @@
 // src/App.jsx
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    useNavigate,
-} from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import Layout from "./layout/layout";
-import ServiceDetails from "./components/ServiceDetails";
-import ServiceList from "./pages/ServiceList";
-import { CartProvider } from "./context/CartContext";
-import Cart from "./pages/Cart";
-import { AnimatePresence } from "framer-motion";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import Bookings from "./pages/Bookings";
+import { Routes, Route } from "react-router-dom";
 import PortalLayout from "./components/PortalLayout";
+import Layout from "./layout/layout";
+import HomePage from "./pages/HomePage";
+import ServiceList from "./pages/ServiceList";
+import ServiceDetails from "./components/ServiceDetails";
+import Cart from "./pages/Cart";
+import Bookings from "./pages/Bookings";
+import Admin from "./admin/Pages/Main";
+import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
+import AdminServicesPage from "./admin/Pages/AdminServicesPage";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import { PortalProvider } from "./context/PortalContext";
+import { CartProvider } from "./context/CartContext";
+import { AnimatePresence } from "framer-motion";
 
-// Create a wrapper component that uses the auth context
 function AppContent() {
     const { isAuthenticated, loading } = useAuth();
 
     if (loading) {
-        return <div>Loading...</div>; // Or your loading component
+        return <div>Loading...</div>;
     }
 
     return (
@@ -32,18 +29,6 @@ function AppContent() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<HomePage />} />
-                        {/* <Route
-                            path="/services/:serviceName"
-                            element={<ServiceDetails />}
-                        />
-                        <Route
-                            path="/services/:serviceName/:subcategory"
-                            element={<ServiceList />}
-                        />
-                        <Route
-                            path="/services/:serviceName/:subcategory/:serviceType"
-                            element={<ServiceList />}
-                        /> */}
                         <Route path="/services">
                             <Route
                                 path=":serviceName"
@@ -64,7 +49,20 @@ function AppContent() {
                         </Route>
                         <Route path="/viewcart" element={<Cart />} />
                         <Route path="/bookings" element={<Bookings />} />
+                        <Route path="*" element={<h1>Not Found</h1>} />
                     </Route>
+
+                    {/* Protected Admin Routes */}
+                    <Route
+                        path="/admin/*"
+                        element={
+                            <ProtectedAdminRoute>
+                                <Routes>
+                                    <Route path="*" element={<Admin />} />
+                                </Routes>
+                            </ProtectedAdminRoute>
+                        }
+                    />
                 </Routes>
             </CartProvider>
         </PortalProvider>

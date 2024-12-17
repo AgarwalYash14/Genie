@@ -96,8 +96,6 @@ export const CartProvider = ({ children, isAuthenticated }) => {
     }, [cartServices, isAuthenticated, loading]);
 
     const mergeCartsOnLogin = async (localCart, serverCart) => {
-        console.log("Merging carts:", { localCart, serverCart });
-
         const mergedCart = [...serverCart];
 
         localCart.forEach((localItem) => {
@@ -114,7 +112,6 @@ export const CartProvider = ({ children, isAuthenticated }) => {
         // Update server with merged cart
         try {
             await updateUserCart(mergedCart);
-            console.log("Successfully merged and updated cart:", mergedCart);
             return mergedCart;
         } catch (error) {
             console.error("Error updating merged cart:", error);

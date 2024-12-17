@@ -164,7 +164,7 @@ router.get("/user", async (req, res) => {
                 msg: "No token, authorization denied",
                 isAuthenticated: false,
             });
-
+ 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.user._id).select("-password");
 

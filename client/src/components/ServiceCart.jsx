@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { clearCartImg } from "../assets";
+import { cart, clearCartImg } from "../assets";
+import { Link } from "react-router-dom";
 
 export default function ServiceCart() {
     const { cartServices, addToCart, removeFromCart, clearCart, getCartTotal } =
@@ -72,11 +73,55 @@ export default function ServiceCart() {
                     </div>
                 ))}
             </div>
-            <div className="bg-blue-400 flex items-center justify-between p-3 px-4 mt-4 border-t border-black text-nowrap">
-                <div className="w-full flex justify-between">
+
+            <div className="bg-blue-400 flex items-center justify-between p-3 px-4 mt-4 border-t border-black text-nowrap text-sm uppercase">
+                <div className="flex gap-2">
                     <p>Total:</p>
                     <p>₹{getCartTotal()}</p>
                 </div>
+                <Link
+                    to="/viewcart"
+                    className="text- flex gap-2 items-center uppercase text-xs tracking-wider font-bold"
+                >
+                    <svg
+                        version="1.1"
+                        id="Layer_1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 48 48"
+                        style={{ enableBackground: "new 0 0 48 48" }}
+                        width="20px"
+                        height="20px"
+                    >
+                        <path
+                            style={{
+                                fill: "none",
+                                stroke: "#000000",
+                                strokeWidth: 4,
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeMiterlimit: 10,
+                            }}
+                            d="  M36.362,32.5H17.638c-2.401,0-4.462-1.706-4.912-4.064L9.5,11.5h35l-3.226,16.936C40.825,30.794,38.763,32.5,36.362,32.5z"
+                            fill="#000000"
+                        />
+                        <path
+                            style={{
+                                fill: "none",
+                                stroke: "#000000",
+                                strokeWidth: 4,
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeMiterlimit: 10,
+                            }}
+                            d="  M9.5,11.5L9.203,9.939C8.933,8.524,7.696,7.5,6.256,7.5H3.5"
+                            fill="#000000"
+                        />
+                        <circle cx="20" cy="39" r="3" fill="#000000" />
+                        <circle cx="34" cy="39" r="3" fill="#000000" />
+                    </svg>
+                    View Cart
+                </Link>
             </div>
         </div>
     );

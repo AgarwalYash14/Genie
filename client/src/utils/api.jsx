@@ -159,7 +159,6 @@ export const verifyRazorpayPayment = async (paymentData) => {
             `${API_URL}/razorpay/verify-payment`,
             paymentData
         );
-        console.log("response", response.data);
         return response.data;
     } catch (error) {
         console.error("Error verifying payment:", error);
@@ -175,6 +174,280 @@ export const getUserBookings = async (userId) => {
         return response.data;
     } catch (error) {
         console.error("Error fetching bookings:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+//Admin API
+export const getDashboardStats = async (timeRange = "all") => {
+    try {
+        const response = await axiosInstance.get(
+            `${API_URL}/admin/dashboard/stats`,
+            {
+                params: { timeRange },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching dashboard stats:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+export const createService = async (formData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/admin/services/`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error creating service:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Update an existing service
+export const updateService = async (id, formData) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/services/${id}`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error updating service:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Delete a service
+export const deleteService = async (id) => {
+    try {
+        const response = await axiosInstance.delete(
+            `${API_URL}/admin/services/${id}`
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting service:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Get service details by service ID
+export const getServiceDetailsById = async (serviceId) => {
+    try {
+        const response = await axiosInstance.get(
+            `${API_URL}/admin/servicedetails/${serviceId}`
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching service details:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Subcategory operations
+export const createSubcategory = async (serviceId, formData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const updateSubcategory = async (serviceId, subcategoryName, formData) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const deleteSubcategory = async (serviceId, subcategoryName) => {
+    try {
+        const response = await axiosInstance.delete(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}`
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Service Type operations
+export const createServiceType = async (serviceId, subcategoryName, formData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Add similar functions for updating and deleting service types
+
+// Category operations
+export const createCategory = async (serviceId, subcategoryName, typeName, formData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Add similar functions for updating and deleting categories
+
+// Service Type operations (completing the missing functions)
+export const updateServiceType = async (serviceId, subcategoryName, typeKey, formData) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeKey}`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const deleteServiceType = async (serviceId, subcategoryName, typeKey) => {
+    try {
+        const response = await axiosInstance.delete(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeKey}`
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Category operations (completing the missing functions)
+export const updateCategory = async (serviceId, subcategoryName, typeName, categoryId, formData) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories/${categoryId}`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const deleteCategory = async (serviceId, subcategoryName, typeName, categoryId) => {
+    try {
+        const response = await axiosInstance.delete(
+            `${API_URL}/admin/servicedetails/${serviceId}/subcategories/${subcategoryName}/types/${typeName}/categories/${categoryId}`
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Service Detail operations
+export const createServiceDetail = async (serviceId, formData) => {
+    try {
+        const response = await axiosInstance.post(
+            `${API_URL}/admin/services/${serviceId}/details`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const updateServiceDetail = async (serviceId, detailId, formData) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/services/${serviceId}/details/${detailId}`,
+            formData,
+            {
+                headers: { "Content-Type": "multipart/form-data" },
+            }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const deleteServiceDetail = async (serviceId, detailId) => {
+    try {
+        const response = await axiosInstance.delete(
+            `${API_URL}/admin/services/${serviceId}/details/${detailId}`
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+// Get all bookings (admin only)
+export const getAllBookings = async () => {
+    try {
+        const response = await axiosInstance.get(`${API_URL}/admin/bookings`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching all bookings:", error);
+        throw error.response?.data || error.message;
+    }
+};
+
+// Update booking status (admin only)
+export const updateBookingStatus = async (bookingId, status) => {
+    try {
+        const response = await axiosInstance.put(
+            `${API_URL}/admin/bookings/${bookingId}/status`,
+            { status }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error updating booking status:", error);
         throw error.response?.data || error.message;
     }
 };

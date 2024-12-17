@@ -44,13 +44,6 @@ router.post("/create-order", async (req, res) => {
 
         const order = await razorpay.orders.create(options);
 
-        // Log order creation for debugging
-        console.log("Order created successfully:", {
-            orderId: order.id,
-            amount: order.amount,
-            receipt: order.receipt,
-        });
-
         res.json(order);
     } catch (error) {
         console.error("Error creating order:", error);
@@ -70,7 +63,6 @@ router.post("/verify-payment", async (req, res) => {
             razorpay_signature,
             orderDetails,
         } = req.body;
-        console.log("Received Data:", req.body);
 
         if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
             return res.status(400).json({
@@ -85,10 +77,11 @@ router.post("/verify-payment", async (req, res) => {
             .update(sign)
             .digest("hex");
 
-        console.log("Generated Signature:", expectedSign);
-        console.log("Razorpay Signature:", razorpay_signature);
-
         const payment = await razorpay.payments.fetch(razorpay_payment_id);
+
+        if (payment.status === "captured") {
+            payment.status = "SERVICE_BOOKED";
+        }
 
         const newPayment = new Payment({
             user: orderDetails._id,

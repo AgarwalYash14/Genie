@@ -5,8 +5,12 @@ const PortalContext = createContext();
 export default PortalContext;
 
 export function PortalProvider({ children }) {
+    const [showAddress, setShowAddress] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
+
+    const openAddress = () => setShowAddress(true);
+    const closeAddress = useCallback(() => setShowAddress(false), []);
 
     const openLogin = () => setShowLogin(true);
     const closeLogin = useCallback(() => setShowLogin(false), []);
@@ -17,10 +21,13 @@ export function PortalProvider({ children }) {
     return (
         <PortalContext.Provider
             value={{
+                showAddress,
+                openAddress,
+                closeAddress,
                 showLogin,
-                showRegister,
                 openLogin,
                 closeLogin,
+                showRegister,
                 openRegister,
                 closeRegister,
             }}

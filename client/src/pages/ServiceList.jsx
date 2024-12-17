@@ -135,14 +135,14 @@ const ServiceList = () => {
 
             {/* Services Component  */}
 
-            <div className="col-span-2 flex flex-col rounded-md p-8 pb-0 border border-black max-xl:col-span-3">
+            <div className="col-span-2 flex flex-col rounded-md mt-4 p-8 pb-0 border border-black max-xl:col-span-3">
                 {categories.map((category, index) => (
                     <div
                         key={category.name}
                         ref={(el) => (categoryRefs.current[category.name] = el)}
                         className={
                             index !== 0
-                                ? "scroll-mt-[6.5rem] pt-8 border-t border-black"
+                                ? "scroll-mt-28 pt-8 border-t border-black"
                                 : "scroll-mt-40"
                         }
                     >

@@ -14,7 +14,7 @@ export const servicesDetailsData = {
                                 services: [
                                     {
                                         title: "Full arms + Full legs waxing (tin waxing)",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FAplusFLWplusTW.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "954",
                                         MRP: "954",
@@ -22,7 +22,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Full arms + Full legs waxing (roll-on wax)",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FAplusFLWplusROW.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "1605",
                                         MRP: "1605",
@@ -30,7 +30,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Underarms waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/UnderarmsWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "99",
                                         MRP: "99",
@@ -40,7 +40,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Full arms + underarms waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FAplusUW.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "549",
                                         MRP: "549",
@@ -50,7 +50,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Back waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/BackWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "499",
                                         MRP: "499",
@@ -60,7 +60,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Stomach waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/StomachWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "449",
                                         MRP: "449",
@@ -70,7 +70,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Half legs waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/HalfLegswaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "249",
                                         MRP: "249",
@@ -80,7 +80,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Full body waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FullBodyWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "1699",
                                         MRP: "1699",
@@ -90,7 +90,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Full legs waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FullLegsWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "499",
                                         MRP: "499",
@@ -100,7 +100,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Bikini line waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/BikiniLineWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "499",
                                         MRP: "499",
@@ -110,7 +110,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Bikini waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/BikiniWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "1099",
                                         MRP: "1099",
@@ -205,7 +205,7 @@ export const servicesDetailsData = {
                                 services: [
                                     {
                                         title: "AVL sea-algae manicure",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/AVLM.svg",
+                                        image: "",
                                         time: "45 mins",
                                         OurPrice: "999",
                                         MRP: "999",
@@ -215,7 +215,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Bombini luxury manicure",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/BombiniLM.svg",
+                                        image: "",
                                         time: "60 mins",
                                         OurPrice: "1399",
                                         MRP: "1399",
@@ -225,7 +225,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Cut, file & polish",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/CutFilePolishM.svg",
+                                        image: "",
                                         time: "15 mins",
                                         OurPrice: "249",
                                         MRP: "249",
@@ -242,7 +242,7 @@ export const servicesDetailsData = {
                                 services: [
                                     {
                                         title: "Cut, file & polish",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/CutFilePolishP.svg",
+                                        image: "",
                                         time: "15 mins",
                                         OurPrice: "99",
                                         MRP: "99",
@@ -252,7 +252,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "AVL sea-algae Pedicure",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/AVLP.svg",
+                                        image: "",
                                         time: "45 mins",
                                         OurPrice: "1299",
                                         MRP: "1299",
@@ -262,7 +262,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Bombini luxury pedicure",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/BombiniLP.svg",
+                                        image: "",
                                         time: "60 mins",
                                         OurPrice: "1799",
                                         MRP: "1799",
@@ -279,7 +279,7 @@ export const servicesDetailsData = {
                                 services: [
                                     {
                                         title: "Threading",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/Threading.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "99",
                                         MRP: "99",
@@ -289,7 +289,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Face waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FaceWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "199",
                                         MRP: "199",
@@ -299,7 +299,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Threading",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/Threading.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "99",
                                         MRP: "99",
@@ -309,7 +309,7 @@ export const servicesDetailsData = {
                                     },
                                     {
                                         title: "Face waxing",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/FaceWaxing.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "199",
                                         MRP: "199",
@@ -353,7 +353,7 @@ export const servicesDetailsData = {
                                 services: [
                                     {
                                         title: "Head massage",
-                                        image: "assets/serviceDetails/WomenSalon&Spa/SalonForWomen/Luxe/HeadMassage.svg",
+                                        image: "",
                                         time: "",
                                         OurPrice: "399",
                                         MRP: "399",

@@ -54,9 +54,9 @@ export default function Hero() {
                                             before:content-[''] before:absolute before:top-0 before:bottom-0 
                                             before:-left-[3rem] before:w-[6rem] before:bg-[#FFFFEE] before:rounded-tl-[2.25rem]"
                                 ></div>
-                                <div className="absolute bottom-0 right-0">
-                                    <button className="font-[NeuwMachinaBold] text-amber-50 text-3xl px-[3.75rem] py-12 rounded-[1.75rem] bg-blue-400">
-                                        Book a Service
+                                <div className="absolute bottom-0 right-0 z-[10000]">
+                                    <button className="font-[NeuwMachinaBold] text-amber-50 text-3xl px-[3.75rem] py-12 rounded-[1.75rem] bg-blue-400 cursor-pointer">
+                                        <a href="/ah">Book a Service</a>
                                     </button>
                                     <div className="max-lg:hidden">
                                         <h1 className="before:content-[''] before:absolute before:bottom-0 before:-left-[5.8rem] before:h-20 before:w-20 before:bg-transparent before:rounded-br-[3rem] before:shadow-[0_34px_0_0_#FFFFEE]"></h1>

@@ -23,13 +23,11 @@ export const AuthProvider = ({ children }) => {
         const checkAuth = async () => {
             try {
                 setLoading(true);
-                // The token is now managed by cookies, so we don't need to check localStorage
                 const userData = await getUserDetails();
 
                 if (userData.isAuthenticated && userData.user) {
                     setIsAuthenticated(true);
                     setUser(userData.user);
-                    console.log("user Auth", userData.user);
                 } else {
                     handleLogout();
                 }
@@ -45,7 +43,6 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = (userData) => {
-        // Since we're using HTTP-only cookies, we don't need to store the token
         setIsAuthenticated(true);
         setUser(userData.user || userData);
     };
@@ -71,6 +68,11 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // Add isAdmin helper function
+    const isAdmin = () => {
+        return user?.role === "admin";
+    };
+
     return (
         <AuthContext.Provider
             value={{
@@ -79,6 +81,7 @@ export const AuthProvider = ({ children }) => {
                 loading,
                 login,
                 logout: handleLogout,
+                isAdmin, // Add isAdmin to the context
             }}
         >
             {!loading && children}

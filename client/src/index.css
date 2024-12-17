@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,9 +84,9 @@ body {
     scrollbar-color: #60a5fa #f0f0f0;
 }
 
-button {
+/* button {
     cursor: url("/cursor.svg"), pointer;
-}
+} */
 
 input {
     cursor: url("/cursor.svg"), pointer;
@@ -95,7 +97,8 @@ textarea {
 }
 
 .logo {
-    font-family: "TBJNorguba";
+    font-family: "Space Grotesk";
+    text-transform: lowercase;
 }
 
 @layer utilities {

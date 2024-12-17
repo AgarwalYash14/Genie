@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { getUserBookings } from "../utils/api";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { ImageOff } from "lucide-react";
 
 export default function Bookings() {
     const [bookings, setBookings] = useState([]);
@@ -39,8 +40,6 @@ export default function Bookings() {
 
         if (isAuthenticated) {
             setLoading(true); // Trigger loading indicator on auth change
-            console.log("User authenticated");
-            console.log("user", user);
 
             fetchBookings();
         }
@@ -69,7 +68,7 @@ export default function Bookings() {
 
     if (bookings.length === 0) {
         return (
-            <div className="relative h-[77.45vh]">
+            <div className="relative">
                 <h1 className="text-4xl font-bold uppercase tracking-wider pb-6  font-[NeuwMachina]">
                     Your Bookings
                 </h1>
@@ -81,15 +80,15 @@ export default function Bookings() {
     }
 
     return (
-        <div className="min-h-[77.45vh] pb-8">
-            <h1 className="text-4xl font-bold uppercase tracking-wider pb-4 font-[NeuwMachina] border-b border-gray-600">
+        <div className="pb-8">
+            <h1 className="text-4xl font-bold uppercase tracking-wider pb-6 font-[NeuwMachina]">
                 Your Bookings
             </h1>
-            <div className="space-y-8 pt-10">
+            <div className="space-y-8">
                 {bookings.map((booking) => (
                     <div
                         key={booking.orderId}
-                        className="bg-white rounded-md shadow-lg border border-gray-500 overflow-hidden"
+                        className="bg-amber-50 rounded-md shadow-lg border border-gray-500 overflow-hidden"
                     >
                         <div className="bg-yellow-200 flex justify-between items-center p-6 py-3 border-b border-gray-500">
                             <div className="flex gap-12">
@@ -124,60 +123,111 @@ export default function Bookings() {
                             </span>
                         </div>
 
-                        <div className="h-full flex justify-between">
-                            <div className="w-full px-6">
+                        <div className="max-h-80 flex justify-between">
+                            <div className="w-full px-6 overflow-auto">
                                 {booking.items.map((item, index) => (
                                     <div
                                         key={index}
-                                        className="flex justify-between items-center py-6 border-b border-gray-200 last:border-0"
+                                        className="flex justify-between items-center py-6 border-b border-dashed border-gray-500 last:border-0"
                                     >
                                         <div className="flex items-center gap-6">
-                                            <img
-                                                src={`${
-                                                    import.meta.env
-                                                        .VITE_BACKEND_URL
-                                                }/${item.image}`}
-                                                alt={item.title}
-                                                className="w-40 h-24 object-cover rounded-lg shadow-md"
-                                            />
+                                            {item.image ? (
+                                                <img
+                                                    src={`${
+                                                        import.meta.env
+                                                            .VITE_BACKEND_URL
+                                                    }/${item.image}`}
+                                                    alt={item.title}
+                                                    className="w-40 h-24 object-cover rounded-lg border border-black shadow-md"
+                                                />
+                                            ) : (
+                                                <div className="w-40 h-24 flex flex-col gap-1 items-center justify-center border border-black bg-gray-100 rounded">
+                                                    <ImageOff
+                                                        size={16}
+                                                        color="#525252"
+                                                    />
+                                                    <h1 className="text-xs text-neutral-600">
+                                                        Image unavailable
+                                                    </h1>
+                                                </div>
+                                            )}
                                             <div className="flex flex-col gap-0.5">
-                                                <h3 className="font-semibold tracking-wide leading-[1.1]">
+                                                <h3 className="font-semibold tracking-wide">
                                                     {item.title}
                                                 </h3>
                                                 <p className="text-sm text-gray-800">
-                                                    ₹{item.total.toFixed(2)}
+                                                    ₹{item.price.toFixed(2)}
                                                 </p>
-                                                <p className="text-gray-600 text-sm pt-1">
-                                                    Quantity: {item.quantity}
-                                                </p>
+                                                <div className="flex gap-5 pt-1">
+                                                    <p className="text-gray-600 text-sm">
+                                                        Quantity:{" "}
+                                                        {item.quantity}
+                                                    </p>
+                                                    {/* <p className="text-sm text-gray-800">
+                                                        ₹{item.total.toFixed(2)}
+                                                    </p> */}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="w-1/5 min-w-60 bg-gray-50 border-l border-gray-300 p-6">
-                                <div className="h-full flex flex-col justify-end max-w-xs ml-auto space-y-1 text-sm">
-                                    <div className="flex justify-between text-gray-600">
-                                        <span>Subtotal:</span>
-                                        <span>
-                                            ₹
-                                            {booking.summary.subtotal.toFixed(
-                                                2
-                                            )}
-                                        </span>
+                            <div className="w-1/4 min-w-60 bg-amber-100 border-l border-gray-600 p-6 sticky bottom-0">
+                                <div className="h-full flex flex-col justify-between jus max-w-xs ml-auto space-y-1">
+                                    <div className="flex flex-col gap-4 pr-4 overflow-auto">
+                                        {booking.items.map((item, index) => (
+                                            <div
+                                                key={index}
+                                                className="text-sm"
+                                            >
+                                                <h3 className="tracking-wide">
+                                                    {item.title}
+                                                </h3>
+                                                <div className="flex justify-between text-xs">
+                                                    <p className="text-gray-800">
+                                                        ₹{item.price.toFixed(2)}{" "}
+                                                        X {item.quantity}
+                                                    </p>
+                                                    <p className="text-gray-800">
+                                                        ₹{item.total.toFixed(2)}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
-                                    <div className="flex justify-between text-gray-600">
-                                        <span>Tax:</span>
-                                        <span>
-                                            ₹{booking.summary.tax.toFixed(2)}
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between text-base tracking-wide font-bold pt-2 border-t">
-                                        <span>Total:</span>
-                                        <span>
-                                            ₹{booking.summary.total.toFixed(2)}
-                                        </span>
+
+                                    <div>
+                                        <div className="border-y border-gray-600 py-2 mt-4 text-sm">
+                                            <div className="flex justify-between text-gray-600">
+                                                <span>Subtotal:</span>
+                                                <span>
+                                                    ₹
+                                                    {booking.summary.subtotal.toFixed(
+                                                        2
+                                                    )}
+                                                </span>
+                                            </div>
+                                            <div className="flex justify-between text-gray-600">
+                                                <span>Tax:</span>
+                                                <span>
+                                                    ₹
+                                                    {booking.summary.tax.toFixed(
+                                                        2
+                                                    )}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-between tracking-wide font-bold pt-2 text-sm">
+                                            <span>Total:</span>
+                                            <span>
+                                                ₹
+                                                {booking.summary.total.toFixed(
+                                                    2
+                                                )}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

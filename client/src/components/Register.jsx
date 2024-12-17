@@ -25,7 +25,6 @@ export default function Register({
         setError("");
         try {
             const response = await register(userData);
-            console.log("Register Successful", response);
             onRegisterSuccess(response.user);
             onClose();
         } catch (error) {

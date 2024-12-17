@@ -99,3 +99,26 @@ export const verifyResourceOwnership = (resourceField) => {
         }
     };
 };
+
+export const isAdmin = async (req, res, next) => {
+    try {
+        const token = req.cookies.token;
+        
+        if (!token) {
+            return res.status(401).json({ message: "No token, authorization denied" });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.userId);
+
+        if (!user || user.role !== 'admin') {
+            return res.status(403).json({ message: "Not authorized as admin" });
+        }
+
+        req.user = user;
+        next();
+    } catch (error) {
+        console.error('Auth middleware error:', error);
+        res.status(401).json({ message: "Token is not valid" });
+    }
+};
