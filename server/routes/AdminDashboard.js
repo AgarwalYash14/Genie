@@ -40,11 +40,12 @@ router.get("/stats", async (req, res) => {
             .sort({ createdAt: -1 })
             .populate("user", "first_name last_name email")
             .lean();
+        console.log(payments);
 
         // Calculate revenue statistics
         const revenueStats = payments.reduce(
             (acc, payment) => {
-                if (payment.status === "captured") {
+                if (payment.status === "SERVICE_BOOKED") {
                     acc.total += payment.summary?.total || 0;
                     acc.count += 1;
                 }
@@ -58,7 +59,7 @@ router.get("/stats", async (req, res) => {
             {
                 $match: {
                     ...dateFilter,
-                    status: "captured",
+                    status: "SERVICE_BOOKED",
                     "items.title": { $exists: true },
                 },
             },
@@ -92,15 +93,19 @@ router.get("/stats", async (req, res) => {
                         $switch: {
                             branches: [
                                 {
-                                    case: { $eq: ["$_id", "captured"] },
+                                    case: { $eq: ["$_id", "SERVICE_BOOKED"] },
                                     then: "Success",
                                 },
                                 {
-                                    case: { $eq: ["$_id", "pending"] },
+                                    case: {
+                                        $eq: ["$_id", "PROVIDER_ASSIGNED"],
+                                    },
                                     then: "Pending",
                                 },
                                 {
-                                    case: { $eq: ["$_id", "failed"] },
+                                    case: {
+                                        $eq: ["$_id", "SERVICE_COMPLETED"],
+                                    },
                                     then: "Failed",
                                 },
                             ],
@@ -115,7 +120,7 @@ router.get("/stats", async (req, res) => {
         const monthlyRevenue = await Payment.aggregate([
             {
                 $match: {
-                    status: "captured",
+                    status: "SERVICE_BOOKED",
                     createdAt: {
                         $gte: new Date(
                             new Date().setFullYear(new Date().getFullYear() - 1)
