@@ -117,7 +117,11 @@ router.delete("/:id", async (req, res) => {
 
         // Delete the image file if it exists
         if (service.serviceImage) {
-            const imagePath = path.join(process.cwd(), "public", service.serviceImage);
+            const imagePath = path.join(
+                process.cwd(),
+                "public",
+                service.serviceImage
+            );
             if (fs.existsSync(imagePath)) {
                 fs.unlinkSync(imagePath);
             }
@@ -125,7 +129,7 @@ router.delete("/:id", async (req, res) => {
 
         // Delete the service from database
         const deletedService = await Service.findByIdAndDelete(id);
-        
+
         res.json({ message: "Service deleted successfully", deletedService });
     } catch (error) {
         res.status(500).json({
@@ -138,7 +142,9 @@ router.delete("/:id", async (req, res) => {
 // Get service details
 router.get("/:id/details", async (req, res) => {
     try {
-        const service = await Service.findById(req.params.id).populate("details");
+        const service = await Service.findById(req.params.id).populate(
+            "details"
+        );
         if (!service) {
             return res.status(404).json({ message: "Service not found" });
         }
@@ -182,36 +188,40 @@ router.post("/:id/details", upload.single("image"), async (req, res) => {
 });
 
 // Update service detail
-router.put("/:id/details/:detailId", upload.single("image"), async (req, res) => {
-    try {
-        const service = await Service.findById(req.params.id);
-        if (!service) {
-            return res.status(404).json({ message: "Service not found" });
+router.put(
+    "/:id/details/:detailId",
+    upload.single("image"),
+    async (req, res) => {
+        try {
+            const service = await Service.findById(req.params.id);
+            if (!service) {
+                return res.status(404).json({ message: "Service not found" });
+            }
+
+            const detail = service.details.id(req.params.detailId);
+            if (!detail) {
+                return res.status(404).json({ message: "Detail not found" });
+            }
+
+            const { title, price, description } = req.body;
+            detail.title = title;
+            detail.price = parseFloat(price);
+            detail.description = description;
+
+            if (req.file) {
+                detail.image = `assets/services/${req.file.filename}`;
+            }
+
+            await service.save();
+            res.json(detail);
+        } catch (error) {
+            res.status(400).json({
+                message: "Error updating service detail",
+                error: error.message,
+            });
         }
-
-        const detail = service.details.id(req.params.detailId);
-        if (!detail) {
-            return res.status(404).json({ message: "Detail not found" });
-        }
-
-        const { title, price, description } = req.body;
-        detail.title = title;
-        detail.price = parseFloat(price);
-        detail.description = description;
-
-        if (req.file) {
-            detail.image = `assets/services/${req.file.filename}`;
-        }
-
-        await service.save();
-        res.json(detail);
-    } catch (error) {
-        res.status(400).json({
-            message: "Error updating service detail",
-            error: error.message,
-        });
     }
-});
+);
 
 // Delete service detail
 router.delete("/:id/details/:detailId", async (req, res) => {

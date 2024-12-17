@@ -66,10 +66,11 @@ router.post("/register", async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
-                    httpOnly: false,
-                    secure: req.secure || process.env.NODE_ENV === "production",
-                    maxAge: 3600000,
-                    sameSite: "strict",
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === "production",
+                    sameSite:
+                        process.env.NODE_ENV === "production" ? "None" : "Lax",
+                    maxAge: 24 * 60 * 60 * 1000, // 1 day
                 }).json({
                     success: true,
                     user: {
@@ -128,8 +129,11 @@ router.post("/login", async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.cookie("token", token, {
+                    httpOnly: true,
                     secure: process.env.NODE_ENV === "production",
-                    maxAge: 3600000,
+                    sameSite:
+                        process.env.NODE_ENV === "production" ? "None" : "Lax",
+                    maxAge: 24 * 60 * 60 * 1000, // 1 day
                 }).json({
                     success: true,
                     user: {
