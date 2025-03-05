@@ -78,10 +78,36 @@ Genie is an innovative on-demand home services platform designed to revolutioniz
    npm install
    nodemon index.js
    ```
-   Server will run on http://localhost:3000
+   Server will run on http://localhost:5000
 
 4. **Environment Variables**
    Create `.env` files in both client and server directories with necessary configurations.
+
+    ```.env.example ``` (Server)
+    ```bash
+    PORT = 5000
+    CLIENT_URL = http://localhost:5173
+    NODE_ENV = development
+    MONGODB_URI = mongodb://localhost:27017/Genie
+    # Example for MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority&appName=YourAppName
+    JWT_SECRET = your_jwt_secret_key_here
+    RAZORPAY_KEY_SECRET = your_razorpay_secret_key_here
+    RAZORPAY_KEY_ID = your_razorpay_key_id_here
+   ```
+   ```.env.example ``` (Client)
+   ```bash
+    VITE_PLACES_NEW_API_KEY = YOUR_GOOGLE_PLACES_API_KEY
+    VITE_BACKEND_URL = http://localhost:5000
+    VITE_RAZORPAY_KEY_ID = YOUR_RAZORPAY_KEY_ID
+   ```
+
+## 🔑 Admin Credentials
+
+### To access the admin panel, use the following credentials:
+```https://yourgenie.vercel.app/```
+- Admin Email: ```admin@gmail```
+- Admin Password: ```admin@1234```
+- Admin Email: ```/admin```
 
 ## 🌈 Benefits
 
