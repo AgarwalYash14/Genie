@@ -3,6 +3,7 @@
   <p><i>Your Trusted Home Services Companion</i></p>
 
   ![GitHub repo size](https://img.shields.io/github/repo-size/Agarwalyash14/Genie)
+  ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Agarwalyash14.Genie)
   ![GitHub stars](https://img.shields.io/github/stars/Agarwalyash14/Genie)
   ![GitHub forks](https://img.shields.io/github/forks/Agarwalyash14/Genie)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
