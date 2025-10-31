@@ -22,10 +22,13 @@ export default function AdminNavbar() {
                 <LayoutDashboard size={18} />
                 Dashboard
             </Link>
-            {/* <Link to="/admin/services" className={getButtonClass("/admin/services")}>
+            <Link
+                to="/admin/services"
+                className={getButtonClass("/admin/services")}
+            >
                 <PackageOpen size={18} strokeWidth={1.5} />
                 Services
-            </Link> */}
+            </Link>
             <Link
                 to="/admin/bookings"
                 className={getButtonClass("/admin/bookings")}

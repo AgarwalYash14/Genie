@@ -6,7 +6,7 @@ export default function Footer() {
                 <div className="flex max-[525px]:justify-center">
                     <h1>Developed by&nbsp;</h1>
                     <a
-                        href="https://agarwalyash.me/"
+                        href="https://agarwalyash.tech/"
                         target="_blank"
                         className="text-red-600 underline underline-offset-2 hover:text-green-600 transition-colors"
                     >
