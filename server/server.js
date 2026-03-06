@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import helmet from "helmet";
 
 // Import routes
 import userRoutes from "./routes/users.js";
@@ -26,6 +27,9 @@ dotenv.config();
 
 // Initialize express app
 const app = express();
+
+// Security headers
+app.use(helmet());
 
 //Middleware
 app.use(express.json());

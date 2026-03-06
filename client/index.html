@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="/favico.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="google-site-verification"
+            content="SWz8X8DCVop67wcMRFhVd2-G0SSz74upYEAxVFwLogM"
+        />
         <title>Genie - Home Services Platform</title>
         <link
             rel="preload"
@@ -110,31 +114,31 @@
         <script>
             // Add your JS to handle loader visibility
             window.onload = function () {
-                const loader = document.getElementById("loader");
-                const loadingFill = document.getElementById("loading-fill");
+                const loader = document.getElementById("loader")
+                const loadingFill = document.getElementById("loading-fill")
 
                 // Calculate the loading time
                 const totalLoadingTime =
                     performance.timing.loadEventEnd -
-                    performance.timing.navigationStart;
+                    performance.timing.navigationStart
                 const displayDuration =
-                    totalLoadingTime > 2000 ? totalLoadingTime : 2000; // Minimum duration of 2 seconds
+                    totalLoadingTime > 2000 ? totalLoadingTime : 2000 // Minimum duration of 2 seconds
 
                 // Animate the loading fill to match the loading time
-                loadingFill.style.animation = `loading ${displayDuration}ms linear forwards`;
+                loadingFill.style.animation = `loading ${displayDuration}ms linear forwards`
 
                 // Delay the transition to the homepage
                 setTimeout(() => {
-                    loader.style.display = "none"; // Hide loader after loading
-                    document.body.style.overflow = ""; // Restore original overflow
-                    document.documentElement.style.overflow = ""; // Restore original overflow
-                    window.scrollTo(0, 0); // Scroll to the top of the page
-                }, displayDuration); // 1 second delay after loading completes
-            };
+                    loader.style.display = "none" // Hide loader after loading
+                    document.body.style.overflow = "" // Restore original overflow
+                    document.documentElement.style.overflow = "" // Restore original overflow
+                    window.scrollTo(0, 0) // Scroll to the top of the page
+                }, displayDuration) // 1 second delay after loading completes
+            }
 
             // Hide scrollbar on loading screen
-            document.documentElement.style.overflow = "hidden";
-            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden"
+            document.body.style.overflow = "hidden"
         </script>
     </body>
 </html>
