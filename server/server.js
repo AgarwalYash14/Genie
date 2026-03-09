@@ -28,14 +28,13 @@ dotenv.config();
 // Initialize express app
 const app = express();
 
-// Security headers
-import helmet from "helmet";
-
+// Security middleware
 app.use(
   helmet({
     crossOriginResourcePolicy: { policy: "cross-origin" }
   })
 );
+
 //Middleware
 app.use(express.json());
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
