@@ -3,7 +3,7 @@ export default function Footer() {
         <>
             <div className="flex justify-between border-t border-black py-4 text-sm text-center max-[525px]:flex-col max-[525px]:gap-1">
                 <h1>&copy; Genie, 2024. All rights reserved.</h1>
-                <div className="flex max-[525px]:justify-center">
+                {/* <div className="flex max-[525px]:justify-center">
                     <h1>Developed by&nbsp;</h1>
                     <a
                         href="https://agarwalyash.tech/"
@@ -12,7 +12,7 @@ export default function Footer() {
                     >
                         Yash A.
                     </a>
-                </div>
+                </div> */}
             </div>
         </>
     );
